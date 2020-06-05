@@ -5,6 +5,7 @@ import random
 import logging
 import discord.ext
 from discord.ext import commands
+
 logger = logging.getLogger('discord')
 
 
@@ -214,24 +215,6 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="ban")
-@commands.has_permissions(ban_members=True)
-async def ban(ctx, member: discord.Member, *, reason=None):
-    if member == ctx.message.author:
-        await ctx.send("You can't ban yourself, derp!")
-        return
-    if reason is None:
-        await ctx.send(f"Make sure you provide a reason with this command {ctx.author.mention}.")
-        return
-    else:
-        messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`"
-        await member.send(messageok)
-        await member.ban(reason=reason)
-        embed = discord.Embed(title=f"{member} has been casted from {ctx.guild.name}!", color=config.color)
-        embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
-        await ctx.send(embed=embed)
-
-
 @bot.command(name="askreggie", aliases=["ask136"])
 async def askreggie(ctx, *, arg):
     answers = gifs.Askreggie
@@ -247,19 +230,34 @@ async def honk(ctx):
     await ctx.send(embed=embed)
 
 
-@bot.command()
-@commands.has_permissions(administrator=True)
-async def unban(ctx, *, member):
-    banned_users = await ctx.guild.bans()
-    member_name, member_discriminator = member.split("#")
+@bot.command(name="ban")
+@commands.has_permissions(ban_members=True)
+async def ban(ctx, member: discord.Member, *, reason=None):
+    if member == ctx.message.author:
+        await ctx.send("You can't ban yourself, derp!")
+        return
+    if reason is None:
+        await ctx.send(f"Make sure you provide a reason with this command {ctx.author.mention}.")
+        return
+    else:
+        messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`"
+        await member.send(messageok)
+        await member.ban(reason=reason)
+        embed = discord.Embed(title=f"{member} has been casted from {ctx.guild.name}!", color=config.color)
+        embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
+        embed.set_footer(text=f"Reason: {reason}")
+        await ctx.send(embed=embed)
 
-    for ban_entry in banned_users:
-        user = ban_entry.user
 
-        if (user.name, user.discriminator) == (member_name, member_discriminator):
-            await ctx.guild.unban(user)
-            await ctx.send(f'Unbanned {user.mention}')
-            return
+@bot.command(name='unban')
+@commands.has_permissions(ban_members=True)
+async def _unban(ctx, id: int):
+    user = await bot.fetch_user(id)
+    await ctx.guild.unban(user)
+    clearname = str(user).split("#")
+    embed = discord.Embed(title=f"Unbanned {clearname[0]}", color=config.color)
+    embed.set_footer(text=user)
+    await ctx.send(embed=embed)
 
 
 class cmds:
