@@ -1,18 +1,18 @@
 import discord
 import random
 import logging
+logger = logging.getLogger('discord')
 import config
 import gifs
 import cmdinfo
 
-logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
 from discord.ext import commands
-bot = commands.Bot(command_prefix=["p!", "?"])
+bot = commands.Bot(command_prefix=["!"])
 bot.remove_command('help')
 
 @bot.event
