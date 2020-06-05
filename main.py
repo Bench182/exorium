@@ -342,7 +342,7 @@ class syntax:
     lick = "`?lick @user1 @user2..."
     ban = "`?ban @user | ID Reason`"
     kick = "`?kick @user | ID reason`"
-    softban = "`?softban @user | ID reason"
+    softban = "`?softban @user | ID reason`"
 
 
 print(discord.__version__)
