@@ -15,7 +15,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 
-bot = commands.Bot(command_prefix=["!"])
+bot = commands.Bot(command_prefix=["p!, ?"])
 bot.remove_command('help')
 
 
