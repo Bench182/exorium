@@ -1,8 +1,9 @@
 import discord
 import random
 import logging
-import asyncio
-from discord.ext.commands import Bot
+import config
+import gifs
+import cmdinfo
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -27,7 +28,7 @@ async def on_error(self, ctx, error):
             self.logger = await self.setupLogger(self.webhookId)
 
         error = getattr(error, 'original', error)
-        
+
         emb = discord.Embed(title="Error", color=0xffff00)
         emb.description = str(error)
         chan = "`Direct Message`"
@@ -35,13 +36,13 @@ async def on_error(self, ctx, error):
         if isinstance(ctx.channel, discord.TextChannel):
             chan = ctx.channel.name
             gui = f"Guild: {ctx.guild.name} (ID:{ctx.guild.id})"
-        emb.add_field(name="Error Context", 
+        emb.add_field(name="Error Context",
             value="".join([f"Message: `{ctx.message.content}` (ID: {ctx.message.id})\n",
                 f"User: {ctx.author.name}#{ctx.author.discriminator} (ID: {ctx.author.id}\n",
-                f"Channel: #{chan} (ID: {ctx.channel.id})\n", 
+                f"Channel: #{chan} (ID: {ctx.channel.id})\n",
                 gui
             ])
-        ) 
+        )
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
@@ -50,7 +51,7 @@ async def latency(ctx):
   await ctx.send(embed=embed)
 
 @bot.command(name='help')
-async def links(ctx):
+async def help(ctx):
   embed=discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
   embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss`\n`random`\n`info`\n`honk`\n`askreggie`\n`ban`\n`unban`", inline=True)
   embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\nrandom selection\nshows command info\nHONKS\nAsk Reggie a question\nban a member\nunban a member`", inline=True)
@@ -84,7 +85,7 @@ async def avatar(ctx, *, user: discord.Member=None):
       user = ctx.author
     else:
       user = user
-      eA = discord.Embed(title='Avatar', 
+      eA = discord.Embed(title='Avatar',
       color=config.color)
       eA.set_author(name=user, icon_url=user.avatar_url)
       eA.set_image(url=user.avatar_url)
@@ -118,8 +119,6 @@ async def variables(ctx):
 
 @bot.command(name='snuggle', brief='Snuggling, how sweet')
 async def snuggle(ctx, *args):
-  author = ctx.message.author
-  user_name = author.name
   if (len(args) == 0):
    return
   embed=discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**snuggled**" + " " +  '**,** '.join(args) + "**, how cute!**"))
@@ -130,8 +129,6 @@ async def snuggle(ctx, *args):
 
 @bot.command(name='hug', brief='Fandom hug!')
 async def hug(ctx, *args):
-  author = ctx.message.author
-  user_name = author.name
   if (len(args) == 0):
    return
   embed=discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**hugged**" + " " + '**,** '.join(args) + "**, how lovely!**"))
@@ -142,8 +139,6 @@ async def hug(ctx, *args):
 
 @bot.command(name='pat', brief='Pats, wholesome!')
 async def pat(ctx, *args):
-  author = ctx.message.author
-  user_name = author.name
   if (len(args) == 0):
    return
   embed=discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**pat**" + " " +  '**,** '.join(args) + "**, how beautiful!**"))
@@ -154,8 +149,6 @@ async def pat(ctx, *args):
 
 @bot.command(name='boop', brief='Boop!')
 async def boop(ctx, *args):
-  author = ctx.message.author
-  user_name = author.name
   if (len(args) == 0):
    return
   embed=discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " "+ "**booped**" + " " + '**,** '.join(args) + "**, so soft!**"))
@@ -165,9 +158,7 @@ async def boop(ctx, *args):
   await ctx.send(embed=embed)
 
 @bot.command(name='kiss', brief='Smooch!')
-async def boop(ctx, *args):
-  author = ctx.message.author
-  user_name = author.name
+async def kiss(ctx, *args):
   if (len(args) == 0):
    return
   embed=discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " "+ "**smooched**" + " " + '**,** '.join(args) + "**, lovely!**"))
@@ -177,9 +168,7 @@ async def boop(ctx, *args):
   await ctx.send(embed=embed)
 
 @bot.command(name="lick", brief='Licking, lol')
-async def boop(ctx, *args):
-  author = ctx.message.author
-  user_name = author.name
+async def lick(ctx, *args):
   if (len(args) == 0):
    return
   embed=discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " "+ "**licked**" + " " + '**,** '.join(args) + "**, tasty!**"))
@@ -255,13 +244,8 @@ async def unban(ctx, *, member):
             await ctx.send(f'Unbanned {user.mention}')
             return
 
-@bot.command(name = "search")
-async def search(ctx, *, arg):
- data=json.loads(urllib.request.urlopen(f"https://api.giphy.com/v1/gifs/search?api_key=LobyMqIMQkNLHSsJdpeFXlIGLI96uxQ3&q={arg}&limit=25&offset=0&rating=G&lang=en").read())
- print("request")
- await ctx.send(response.content + "test")
 
-class cmds: 
+class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged person, kyoot!"
     boop = "Boops the pinged person, boop!"
@@ -281,7 +265,8 @@ class cmds:
     lick = "Licks the pinged person, yum!"
     ban = "Bans the mentioned person"
 
-class syntax: 
+
+class syntax:
     hug = "`?hug @user1 @user2...`"
     snuggle = "`?snuggle @user1 @user2...`"
     boop = "`?boop @user1 @user2...`"
@@ -301,10 +286,7 @@ class syntax:
     lick = "`?lick @user1 @user2..."
     ban = "`?ban @user1 Reason`"
 
-import config
-import gifs
-import cmdinfo
- 
+
 print(discord.__version__)
 
 bot.run(config.token)
