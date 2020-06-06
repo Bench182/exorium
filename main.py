@@ -332,11 +332,9 @@ async def decide(ctx, *, arg):
 
 @bot.event
 async def on_message(message):
-    if message.content == "msgreact":
-        delmsg = await message.channel.send("In 2 seconds a reaction will pop up")
-        time.sleep(2)
-        await message.add_reaction("😮")
-        await message.delete(delmsg)
+    if message.channel.id == 715978778580615288:
+        await message.add_reaction("✅")
+        await message.add_reaction("❌")
     await bot.process_commands(message)
 
 
