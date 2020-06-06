@@ -1,6 +1,7 @@
 import gifs
 import config
 import discord
+import time
 import random
 import logging
 import discord.ext
@@ -215,7 +216,7 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="askreggie", aliases=["ask136"])
+@bot.command(name="askreggie", aliases=["ask136", "asklyka"])
 async def askreggie(ctx, *, arg):
     answers = gifs.Askreggie
     answer = random.choice(answers)
@@ -297,6 +298,34 @@ async def softban(ctx, member: discord.Member, *, reason=None):
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
         embed.set_footer(text=f"Reason: {reason}")
         await ctx.send(embed=embed)
+
+
+@bot.command(name="poll")
+async def poll(ctx, *, arg):
+    choice = str(arg).split(",")
+    n = 1
+    reactionlist = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
+    embed = discord.Embed(title="Poll", color=config.color)
+    for x in choice:
+        embed.add_field(name="Option " + reactionlist[n-1], value=f"{x}", inline=False)
+        n = n+1
+    botmsg = await ctx.send(embed=embed)
+    en = 1
+    for emoji in reactionlist:
+        await botmsg.add_reaction(emoji)
+        en = en+1
+        if en >= n:
+            break
+
+
+@bot.event
+async def on_message(message):
+    if message.content == "msgreact":
+        delmsg = await message.channel.send("In 2 seconds a reaction will pop up")
+        time.sleep(2)
+        await message.add_reaction("😮")
+        await message.delete(delmsg)
+    await bot.process_commands(message)
 
 
 class cmds:
