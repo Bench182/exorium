@@ -157,7 +157,7 @@ async def pat(ctx, *args):
     await ctx.send(embed=embed)
 
 
-@bot.command(name='boop', aliases=['bp'] brief='Boop!')
+@bot.command(name='boop', aliases=['bp'], brief='Boop!')
 async def boop(ctx, *args):
     if (len(args) == 0):
         return
@@ -168,7 +168,7 @@ async def boop(ctx, *args):
     await ctx.send(embed=embed)
 
 
-@bot.command(name='kiss', aliases=['smooch'] brief='Smooch!')
+@bot.command(name='kiss', aliases=['smooch'], brief='Smooch!')
 async def kiss(ctx, *args):
     if (len(args) == 0):
         return
