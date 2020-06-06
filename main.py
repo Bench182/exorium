@@ -215,7 +215,7 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="askreggie", aliases=["ask136", 'ar', 'asklyka'])
+@bot.command(name="askreggie", aliases=["ask136", "ar", "asklyka"])
 async def askreggie(ctx, *, arg):
     answers = gifs.Askreggie
     answer = random.choice(answers)
@@ -249,7 +249,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         await ctx.send(embed=embed)
 
 
-@bot.command(name='unban', 'pardon')
+@bot.command(name='unban')
 @commands.has_permissions(ban_members=True)
 async def _unban(ctx, id: int):
     user = await bot.fetch_user(id)
