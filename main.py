@@ -157,7 +157,7 @@ async def pat(ctx, *args):
     await ctx.send(embed=embed)
 
 
-@bot.command(name='boop', brief='Boop!')
+@bot.command(name='boop', aliases=['bp'] brief='Boop!')
 async def boop(ctx, *args):
     if (len(args) == 0):
         return
@@ -168,7 +168,7 @@ async def boop(ctx, *args):
     await ctx.send(embed=embed)
 
 
-@bot.command(name='kiss', brief='Smooch!')
+@bot.command(name='kiss', aliases=['smooch'] brief='Smooch!')
 async def kiss(ctx, *args):
     if (len(args) == 0):
         return
@@ -215,7 +215,7 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="askreggie", aliases=["ask136"])
+@bot.command(name="askreggie", aliases=["ask136", 'ar', 'asklyka'])
 async def askreggie(ctx, *, arg):
     answers = gifs.Askreggie
     answer = random.choice(answers)
@@ -249,7 +249,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         await ctx.send(embed=embed)
 
 
-@bot.command(name='unban')
+@bot.command(name='unban', 'pardon')
 @commands.has_permissions(ban_members=True)
 async def _unban(ctx, id: int):
     user = await bot.fetch_user(id)
