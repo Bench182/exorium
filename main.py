@@ -302,6 +302,7 @@ async def softban(ctx, member: discord.Member, *, reason=None):
 
 @bot.command(name="poll")
 async def poll(ctx, *, arg):
+    await ctx.message.delete()
     choice = str(arg).split(",")
     n = 1
     reactionlist = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"]
@@ -309,6 +310,7 @@ async def poll(ctx, *, arg):
     for x in choice:
         embed.add_field(name="Option " + reactionlist[n-1], value=f"{x}", inline=False)
         n = n+1
+    embed.set_footer(text=f"Poll cast by {ctx.message.author}")
     botmsg = await ctx.send(embed=embed)
     en = 1
     for emoji in reactionlist:
