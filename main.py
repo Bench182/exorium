@@ -335,14 +335,9 @@ async def on_message(message):
     if message.channel.id == 715978778580615288:
         await message.add_reaction("✅")
         await message.add_reaction("❌")
-    await bot.process_commands(message)
-
-
-"""@bot.event
-async def on_message(message):
     if 'mrow' in message.content:
         await message.add_reaction("🐱")
-    await bot.process_commands(message)"""
+    await bot.process_commands(message)
 
 
 class cmds:
