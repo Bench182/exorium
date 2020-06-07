@@ -1,6 +1,7 @@
 import gifs
 import config
 import discord
+import time
 import random
 import logging
 import discord.ext
@@ -190,6 +191,17 @@ async def lick(ctx, *args):
     await ctx.send(embed=embed)
 
 
+@bot.command(name="cuddle")
+async def cuddle(ctx, *args):
+    if (len(args) == 0):
+        return
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**cuddled**" + " " + '**,** '.join(args) + "**, heartwarming!**"))
+    GIFlist = gifs.CuddleList
+    GIF = random.choice(GIFlist)
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+
+
 @bot.command(name='random', brief='Randomness!')
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
@@ -334,7 +346,7 @@ async def on_message(message):
     if message.channel.id == 715978778580615288:
         await message.add_reaction("✅")
         await message.add_reaction("❌")
-    if 'pussy' in message.content:
+    if 'mrow' in message.content:
         await message.add_reaction("🐱")
     if message.channel.id == 715973728827211897:
         if message.attachments:
