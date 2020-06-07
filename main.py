@@ -338,6 +338,13 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
+"""@bot.event
+async def on_message(message):
+    if 'mrow' in message.content:
+        await message.add_reaction("🐱")
+    await bot.process_commands(message)"""
+
+
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged person, kyoot!"
