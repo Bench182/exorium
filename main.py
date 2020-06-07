@@ -16,7 +16,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 
-bot = commands.Bot(command_prefix=["p!", "?"])
+bot = commands.Bot(command_prefix=["!"])
 bot.remove_command('help')
 
 
@@ -324,7 +324,7 @@ async def poll(ctx, *, arg):
 async def decide(ctx, *, arg):
     await ctx.message.delete()
     embed = discord.Embed(title=arg, color=config.color)
-    embed.set_footer(text=f"Asked by {ctx.author.name}")
+    embed.set_footer(text=f"Asked by {ctx.message.author}")
     botmsg = await ctx.send(embed=embed)
     await botmsg.add_reaction("✅")
     await botmsg.add_reaction("❌")
@@ -337,6 +337,9 @@ async def on_message(message):
         await message.add_reaction("❌")
     if 'mrow' in message.content:
         await message.add_reaction("🐱")
+    if message.channel.id == 715973728827211897:
+        if message.attachments:
+            await message.add_reaction("👍")
     await bot.process_commands(message)
 
 
