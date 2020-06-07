@@ -1,7 +1,6 @@
 import gifs
 import config
 import discord
-import time
 import random
 import logging
 import discord.ext
@@ -55,8 +54,8 @@ async def latency(ctx):
 @bot.command(name='help')
 async def help(ctx):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
-    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss`\n`random`\n`info`\n`honk`\n`askreggie`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide`", inline=True)
-    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\nrandom selection\nshows command info\nHONKS\nask Reggie a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question`", inline=True)
+    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`askreggie`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide`", inline=True)
+    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Reggie a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question`", inline=True)
     embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` Bluewydahoosk#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
@@ -356,10 +355,10 @@ async def on_message(message):
 
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
-    snuggle = "Snuggles the pinged person, kyoot!"
-    boop = "Boops the pinged person, boop!"
-    kiss = "Smooches the pinged person :*"
-    pat = "Pats the pinged person, good boy!"
+    snuggle = "Snuggles the pinged persons, kyoot!"
+    boop = "Boops the pinged persons, boop!"
+    kiss = "Smooches the pinged persons :*"
+    pat = "Pats the pinged persons, good boy!"
     ping = "Displays the latency of the bo -connection lost"
     invite = "Displays the invite link to invite TPKP to your server"
     stats = "Shows some neat stats about TPKP"
@@ -371,12 +370,13 @@ class cmds:
     honk = "HONK"
     askreggie = "Ask Reggie the almighty, and he shall give you an answer"
     unban = "Unbans the given user"
-    lick = "Licks the pinged person, yum!"
+    lick = "Licks the pinged persons, yum!"
     ban = "Bans the mentioned person"
     kick = "Kicks the specified person"
     softban = "Softbans (bans and unbans) the specified"
     poll = "Cast a poll if you can't agree about something!"
     decide = "Casts a simple yes / no poll"
+    cuddle = "Cuddle the pinged persons"
 
 
 class syntax:
@@ -402,6 +402,7 @@ class syntax:
     softban = "`?softban @user | ID reason"
     poll = "`?poll choice1, choice2, choice3 [...]`"
     decide = "`?decide <question>"
+    cuddle = "?cuddle @user1 @user2...`"
 
 
 print(discord.__version__)
