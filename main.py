@@ -1,7 +1,6 @@
 import gifs
 import config
 import discord
-import time
 import random
 import logging
 import discord.ext
@@ -335,7 +334,7 @@ async def on_message(message):
     if message.channel.id == 715978778580615288:
         await message.add_reaction("✅")
         await message.add_reaction("❌")
-    if 'mrow' in message.content:
+    if 'pussy' in message.content:
         await message.add_reaction("🐱")
     if message.channel.id == 715973728827211897:
         if message.attachments:
