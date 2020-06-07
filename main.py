@@ -16,13 +16,13 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 
-bot = commands.Bot(command_prefix=["!"])
+bot = commands.Bot(command_prefix=["p!", "?"])
 bot.remove_command('help')
 
 
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="with other protogens | p!help", type=1)
+    activity = discord.Game(name="in TPK | p!help", type=1)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)
     print("Toothless is ready ^-^")
     print(f"Toothless is currently in {len(bot.guilds)} guilds")
@@ -158,7 +158,7 @@ async def pat(ctx, *args):
     await ctx.send(embed=embed)
 
 
-@bot.command(name='boop', brief='Boop!')
+@bot.command(name='boop', aliases=['bp'], brief='Boop!')
 async def boop(ctx, *args):
     if (len(args) == 0):
         return
@@ -169,7 +169,7 @@ async def boop(ctx, *args):
     await ctx.send(embed=embed)
 
 
-@bot.command(name='kiss', brief='Smooch!')
+@bot.command(name='kiss', aliases=['smooch'], brief='Smooch!')
 async def kiss(ctx, *args):
     if (len(args) == 0):
         return
@@ -216,7 +216,7 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="askreggie", aliases=["ask136", "asklyka"])
+@bot.command(name="askreggie", aliases=["ask136", "ar", "asklyka"])
 async def askreggie(ctx, *, arg):
     answers = gifs.Askreggie
     answer = random.choice(answers)
