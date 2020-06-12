@@ -254,10 +254,10 @@ async def ban(ctx, member: discord.Member, *, reason=None):
     else:
         messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`"
         await member.send(messageok)
-        await member.ban(reason=reason)
+        await member.ban(reason=f"{ctx.message.author}: {reason}")
         embed = discord.Embed(title=f"{member} has been casted from {ctx.guild.name}!", color=config.color)
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
-        embed.set_footer(text=f"Reason: {reason}")
+        embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
 
 
@@ -284,10 +284,10 @@ async def kick(ctx, member: discord.Member, *, reason=None):
     else:
         messageok = f"You have been kicked from **{ctx.guild.name}** | Reason: `{reason}`"
         await member.send(messageok)
-        await member.kick(reason=reason)
+        await member.kick(reason=f"{ctx.message.author}: {reason}")
         embed = discord.Embed(title=f"{member} has been kicked from {ctx.guild.name}!", color=config.color)
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
-        embed.set_footer(text=f"Reason: {reason}")
+        embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
 
 
@@ -303,11 +303,11 @@ async def softban(ctx, member: discord.Member, *, reason=None):
     else:
         messageok = f"You have been softbanned from **{ctx.guild.name}** | Reason: `{reason}`"
         await member.send(messageok)
-        await member.ban(reason=reason)
+        await member.ban(reason=f"{ctx.message.author}: {reason}")
         await member.unban()
         embed = discord.Embed(title=f"{member} has been softcasted from {ctx.guild.name}!", color=config.color)
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
-        embed.set_footer(text=f"Reason: {reason}")
+        embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
 
 
