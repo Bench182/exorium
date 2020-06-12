@@ -101,6 +101,7 @@ async def links(ctx):
     embed = discord.Embed(title='The Paw Kingdom Links', color=config.color)
     embed.add_field(name='Discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
     embed.add_field(name="Contact", value="ChosenFate#5108\nBluewydahoosk#2923")
+    embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
     await ctx.send(embed=embed)
