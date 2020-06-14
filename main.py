@@ -54,8 +54,8 @@ async def latency(ctx):
 @bot.command(name='help')
 async def help(ctx):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
-    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`askreggie`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide`", inline=True)
-    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Reggie a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question`", inline=True)
+    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`asktooth`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide`", inline=True)
+    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Tooth a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question`", inline=True)
     embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` Bluewydahoosk#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
@@ -227,11 +227,11 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="askreggie", aliases=["ask136", "ar", "asklyka"])
+@bot.command(name="asktooth", aliases=["ask136"])
 async def askreggie(ctx, *, arg):
-    answers = gifs.Askreggie
+    answers = gifs.AskTooth
     answer = random.choice(answers)
-    embed = discord.Embed(title=f"{arg} - Reggie says {answer}", color=config.color)
+    embed = discord.Embed(title=f"{arg} - Tooth says {answer}", color=config.color)
     await ctx.send(embed=embed)
 
 
@@ -369,7 +369,7 @@ class cmds:
     random = "Can't make a choice? Use the random command! Only 2 options possible at this point"
     info = "You already know what this does, derp"
     honk = "HONK"
-    askreggie = "Ask Reggie the almighty, and he shall give you an answer"
+    asktooth = "Ask Tooth the almighty, and he shall give you an answer"
     unban = "Unbans the given user"
     lick = "Licks the pinged persons, yum!"
     ban = "Bans the mentioned person"
