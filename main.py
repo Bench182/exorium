@@ -223,8 +223,8 @@ async def on_command_error(ctx, error):
 
 
 @bot.command(name="askprotopaw", aliases=["askpp", "askproto"])
-async def askreggie(ctx, *, arg):
-    answers = gifs.AskTooth
+async def askprotopaw(ctx, *, arg):
+    answers = gifs.AskProtopaw
     answer = random.choice(answers)
     embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
     await ctx.send(embed=embed)
