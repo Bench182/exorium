@@ -46,7 +46,7 @@ async def on_error(self, ctx, error):
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
-    embed = discord.Embed(title="TPKP latency", color=config.color)
+    embed = discord.Embed(title="ProtoPaw latency", color=config.color)
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
 
@@ -64,14 +64,14 @@ async def help(ctx):
 
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")
 async def invite(ctx):
-    embed = discord.Embed(title="TPKP invite link", color=config.color)
-    embed.add_field(name="Invite toothless here", value="https://bit.ly/pawbotinv")
+    embed = discord.Embed(title="ProtoPaw invite link", color=config.color)
+    embed.add_field(name="Invite ProtoPaw here", value="https://bit.ly/pawbotinv")
     await ctx.send(embed=embed)
 
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")
 async def statistics(ctx):
-    embed = discord.Embed(title="Statistics TPKP:", description="Global Bot Statistics", color=config.color)
+    embed = discord.Embed(title="Statistics ProtoPaw:", description="Global Bot Statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     embed.add_field(name="More:", value="Coming soon...", inline=False)
@@ -103,7 +103,7 @@ async def links(ctx):
     embed.add_field(name="Contact", value="ChosenFate#5108\nBluewydahoosk#2923")
     embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of " + ctx.guild.name + ")
     await ctx.send(embed=embed)
 
 
