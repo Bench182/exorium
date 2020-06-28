@@ -58,7 +58,7 @@ async def help(ctx):
     embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Tooth a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question`", inline=True)
     embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` Bluewydahoosk#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
 
@@ -103,7 +103,7 @@ async def links(ctx):
     embed.add_field(name="Contact", value="ChosenFate#5108\nBluewydahoosk#2923")
     embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of " + ctx.guild.name + ")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
 
