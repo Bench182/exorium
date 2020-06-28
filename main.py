@@ -18,15 +18,10 @@ logger.addHandler(handler)
 bot = commands.Bot(command_prefix=["p!", "?"])
 bot.remove_command('help')
 
-
 @bot.event
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
-    await bot.change_presence(status=discord.Status.dnd, activity=activity)
-    print("Toothless is ready ^-^")
-    print(f"Toothless is currently in {len(bot.guilds)} guilds")
-    print('Bot has started successfully')
-
+    await bot.change_presence(status=discord.Status.online, activity=activity)
 
 async def on_error(self, ctx, error):
     if self.logger is None:
@@ -46,7 +41,7 @@ async def on_error(self, ctx, error):
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
-    embed = discord.Embed(title="TPKP latency", color=config.color)
+    embed = discord.Embed(title="ProtoPaw latency", color=config.color)
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
 
@@ -54,24 +49,24 @@ async def latency(ctx):
 @bot.command(name='help')
 async def help(ctx):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
-    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`asktooth`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide`", inline=True)
-    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Tooth a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question`", inline=True)
-    embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` Bluewydahoosk#2923", inline=False)
+    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`asktooth`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide\nserverinfo`", inline=True)
+    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Tooth a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question\nget server info`", inline=True)
+    embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` BluewytheRenegade#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
 
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")
 async def invite(ctx):
-    embed = discord.Embed(title="TPKP invite link", color=config.color)
-    embed.add_field(name="Invite toothless here", value="https://bit.ly/Toothlessbot")
+    embed = discord.Embed(title="ProtoPaw invite link", color=config.color)
+    embed.add_field(name="Invite ProtoPaw here", value="https://bit.ly/pawbotinv")
     await ctx.send(embed=embed)
 
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")
 async def statistics(ctx):
-    embed = discord.Embed(title="Statistics TPKP:", description="Global Bot Statistics", color=config.color)
+    embed = discord.Embed(title="Statistics ProtoPaw:", description="Global Bot Statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     embed.add_field(name="More:", value="Coming soon...", inline=False)
@@ -98,20 +93,20 @@ async def avatar(ctx, *, user: discord.Member = None):
 
 @bot.command(name='links', brief='Discord related links')
 async def links(ctx):
-    embed = discord.Embed(title='The Paw Kingdom Links', color=config.color)
-    embed.add_field(name='Discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
-    embed.add_field(name="Contact", value="ChosenFate#5108\nBluewydahoosk#2923")
+    embed = discord.Embed(title='Protopaw Links', color=config.color)
+    embed.add_field(name='Support/community discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
+    embed.add_field(name="Contact", value="ChosenFate#5108\nBluewytheRenegade#2923")
     embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
 
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])
 async def serverinfo(ctx):
     embed = discord.Embed(title="Server information", color=config.color)
-    embed.add_field(name="Info:", value="Membercount:\nBots:\nRegion:\n", inline=True)
-    embed.add_field(name="Value", value=str(len(ctx.guild.members)) + "\n7\n" + str(ctx.guild.region) + "\n", inline=True)
+    embed.add_field(name="Info:", value="Membercount:\nRegion:\n", inline=True)
+    embed.add_field(name="Value", value=str(len(ctx.guild.members)) + "\n" + str(ctx.guild.region) + "\n", inline=True)
     embed.set_author(name=ctx.guild.name + " Statistics", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
 
@@ -213,9 +208,9 @@ async def info(ctx, arg):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
     embed.add_field(name=arg, value=getattr(cmds, arg), inline=True)
     embed.add_field(name="Syntax of " + arg, value=getattr(syntax, arg), inline=True)
-    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` Bluewydahoosk#2923", inline=False)
+    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` BluewytheRenegade#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
 
@@ -227,11 +222,11 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="asktooth", aliases=["ask136"])
-async def askreggie(ctx, *, arg):
-    answers = gifs.AskTooth
+@bot.command(name="askprotopaw", aliases=["askpp", "askproto"])
+async def askprotopaw(ctx, *, arg):
+    answers = gifs.AskProtopaw
     answer = random.choice(answers)
-    embed = discord.Embed(title=f"{arg} - Tooth says {answer}", color=config.color)
+    embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
     await ctx.send(embed=embed)
 
 
