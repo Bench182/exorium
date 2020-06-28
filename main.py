@@ -208,7 +208,7 @@ async def info(ctx, arg):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
     embed.add_field(name=arg, value=getattr(cmds, arg), inline=True)
     embed.add_field(name="Syntax of " + arg, value=getattr(syntax, arg), inline=True)
-    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` Bluewydahoosk#2923", inline=False)
+    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` BluewytheRenegade#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
     await ctx.send(embed=embed)
@@ -222,11 +222,11 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")
 
 
-@bot.command(name="asktooth", aliases=["ask136"])
+@bot.command(name="askprotopaw", aliases=["askpp", "askproto"])
 async def askreggie(ctx, *, arg):
     answers = gifs.AskTooth
     answer = random.choice(answers)
-    embed = discord.Embed(title=f"{arg} - Tooth says {answer}", color=config.color)
+    embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
     await ctx.send(embed=embed)
 
 
