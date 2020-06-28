@@ -21,7 +21,7 @@ bot.remove_command('help')
 @bot.event
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
-    await bot.change_presence(status=discord.Status.dnd, activity=activity)
+    await bot.change_presence(status=discord.Status.online, activity=activity)
 
 async def on_error(self, ctx, error):
     if self.logger is None:
