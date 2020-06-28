@@ -65,7 +65,7 @@ async def help(ctx):
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")
 async def invite(ctx):
     embed = discord.Embed(title="TPKP invite link", color=config.color)
-    embed.add_field(name="Invite toothless here", value="https://bit.ly/Toothlessbot")
+    embed.add_field(name="Invite toothless here", value="https://bit.ly/pawbotinv")
     await ctx.send(embed=embed)
 
 
