@@ -93,9 +93,9 @@ async def avatar(ctx, *, user: discord.Member = None):
 
 @bot.command(name='links', brief='Discord related links')
 async def links(ctx):
-    embed = discord.Embed(title='The Paw Kingdom Links', color=config.color)
-    embed.add_field(name='Discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
-    embed.add_field(name="Contact", value="ChosenFate#5108\nBluewydahoosk#2923")
+    embed = discord.Embed(title='Protopaw Links', color=config.color)
+    embed.add_field(name='Support/community discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
+    embed.add_field(name="Contact", value="ChosenFate#5108\nBluewytheRenegade#2923")
     embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
@@ -105,8 +105,8 @@ async def links(ctx):
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])
 async def serverinfo(ctx):
     embed = discord.Embed(title="Server information", color=config.color)
-    embed.add_field(name="Info:", value="Membercount:\nBots:\nRegion:\n", inline=True)
-    embed.add_field(name="Value", value=str(len(ctx.guild.members)) + "\n7\n" + str(ctx.guild.region) + "\n", inline=True)
+    embed.add_field(name="Info:", value="Membercount:\nRegion:\n", inline=True)
+    embed.add_field(name="Value", value=str(len(ctx.guild.members)) + str(ctx.guild.region) + "\n", inline=True)
     embed.set_author(name=ctx.guild.name + " Statistics", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
 
