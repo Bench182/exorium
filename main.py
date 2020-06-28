@@ -210,7 +210,7 @@ async def info(ctx, arg):
     embed.add_field(name="Syntax of " + arg, value=getattr(syntax, arg), inline=True)
     embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` BluewytheRenegade#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for being a part of The Paw Kingdom!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
 
