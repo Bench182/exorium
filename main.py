@@ -106,7 +106,7 @@ async def links(ctx):
 async def serverinfo(ctx):
     embed = discord.Embed(title="Server information", color=config.color)
     embed.add_field(name="Info:", value="Membercount:\nRegion:\n", inline=True)
-    embed.add_field(name="Value", value=str(len(ctx.guild.members)) + \n + str(ctx.guild.region) + "\n", inline=True)
+    embed.add_field(name="Value", value=str(len(ctx.guild.members)) + "\n" + str(ctx.guild.region) + "\n", inline=True)
     embed.set_author(name=ctx.guild.name + " Statistics", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
 
