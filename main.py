@@ -18,15 +18,10 @@ logger.addHandler(handler)
 bot = commands.Bot(command_prefix=["p!", "?"])
 bot.remove_command('help')
 
-
 @bot.event
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
     await bot.change_presence(status=discord.Status.dnd, activity=activity)
-    print("Toothless is ready ^-^")
-    print(f"Toothless is currently in {len(bot.guilds)} guilds")
-    print('Bot has started successfully')
-
 
 async def on_error(self, ctx, error):
     if self.logger is None:
