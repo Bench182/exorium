@@ -35,7 +35,7 @@ async def on_error(self, ctx, error):
         gui = "Guild: [None]"
         if isinstance(ctx.channel, discord.TextChannel):
             chan = ctx.channel.name
-            gui = f"Guild: {ctx.guild.name} (ID:{ctx.guild.id})"
+            gui = (f"Guild: {ctx.guild.name} (ID:{ctx.guild.id})")
             emb.add_field(name="Error Context", value="".join([f"Message: `{ctx.message.content}` (ID: {ctx.message.id})\n", f"User: {ctx.author.name}#{ctx.author.discriminator} (ID: {ctx.author.id}\n", f"Channel: #{chan} (ID: {ctx.channel.id})\n", gui]))
 
 
