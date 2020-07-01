@@ -18,11 +18,13 @@ logger.addHandler(handler)
 bot = commands.Bot(command_prefix=["p!", "?"])
 bot.remove_command('help')
 
+
 @bot.event
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
     await bot.change_presence(status=discord.Status.online, activity=activity)
-    
+
+
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
     embed = discord.Embed(title="ProtoPaw latency", color=config.color)
