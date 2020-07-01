@@ -22,23 +22,7 @@ bot.remove_command('help')
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
     await bot.change_presence(status=discord.Status.online, activity=activity)
-
-async def on_error(self, ctx, error):
-    if self.logger is None:
-        self.logger = await self.setupLogger(self.webhookId)
-
-        error = getattr(error, 'original', error)
-
-        emb = discord.Embed(title="Error", color=0xffff00)
-        emb.description = str(error)
-        chan = "`Direct Message`"
-        gui = "Guild: [None]"
-        if isinstance(ctx.channel, discord.TextChannel):
-            chan = ctx.channel.name
-            gui = (f"Guild: {ctx.guild.name} (ID:{ctx.guild.id})")
-            emb.add_field(name="Error Context", value="".join([f"Message: `{ctx.message.content}` (ID: {ctx.message.id})\n", f"User: {ctx.author.name}#{ctx.author.discriminator} (ID: {ctx.author.id}\n", f"Channel: #{chan} (ID: {ctx.channel.id})\n", gui]))
-
-
+    
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
     embed = discord.Embed(title="ProtoPaw latency", color=config.color)
