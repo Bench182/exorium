@@ -35,8 +35,8 @@ async def latency(ctx):
 @bot.command(name='help')
 async def help(ctx):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
-    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`asktooth`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide\nserverinfo`", inline=True)
-    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask Tooth a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question\nget server info`", inline=True)
+    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`askprotopaw`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide\nserverinfo`", inline=True)
+    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask ProtoPaw a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question\nget server info`", inline=True)
     embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` BluewytheRenegade#2923", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
@@ -324,12 +324,7 @@ async def decide(ctx, *, arg):
 
 @bot.event
 async def on_message(message):
-    if message.channel.id == 715978778580615288:
-        await message.add_reaction("✅")
-        await message.add_reaction("❌")
-    if 'mrow' in message.content:
-        await message.add_reaction("🐱")
-    if message.channel.id == 715973728827211897:
+    if message.channel.id in gifs.votechannels:
         if message.attachments:
             await message.add_reaction("👍")
     await bot.process_commands(message)
@@ -350,7 +345,7 @@ class cmds:
     random = "Can't make a choice? Use the random command! Only 2 options possible at this point"
     info = "You already know what this does, derp"
     honk = "HONK"
-    asktooth = "Ask Tooth the almighty, and he shall give you an answer"
+    askprotopaw = "Ask ProtoPaw, and he shall give you an answer"
     unban = "Unbans the given user"
     lick = "Licks the pinged persons, yum!"
     ban = "Bans the mentioned person"
