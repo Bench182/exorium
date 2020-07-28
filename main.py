@@ -341,8 +341,8 @@ async def on_message(message):
 @bot.event
 async def on_message(message):
 
- if "hotel" in message.content:
-    await message.channel.send("trivago")
+ if "kyoot" in message.content:
+    await message.channel.send("no u")
         
     class cmds:
     hug = "Hugs the pinged person, kyoot!"
