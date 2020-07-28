@@ -341,10 +341,10 @@ async def on_message(message):
 @bot.event
 async def on_message(message):
 
-    if "kyoot" in message.content:
+    if "kyoot" in message.content.lower():
         await message.channel.send("no u")
 
-    if "cute" in message.content:
+    if "cute" in message.content.lower():
         await message.channel.send("no u")
     await bot.process_commands(message)
 
