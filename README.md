@@ -16,4 +16,11 @@ ProtoPaw is currently being developed by:
 
 ----
 
+## Moderation commands
+
+|test|testing|
+|----|-------|
+testing | something
+
 https://discord.gg/k64tAer
+
