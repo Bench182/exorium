@@ -343,7 +343,12 @@ async def on_message(message):
 
  if "kyoot" in message.content:
     await message.channel.send("no u")
-        
+
+@bot.event
+async def on_message(message):
+    
+ if "cute" in message.content:
+    await message.channel.send("no u")
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged persons, kyoot!"
