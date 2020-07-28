@@ -338,6 +338,16 @@ async def on_message(message):
             await message.add_reaction("👍")
     await bot.process_commands(message)
 
+ @bot.event
+async def on_message(message):
+
+    if "kyoot" in message.content:
+        await message.channel.send("no u")
+
+    if "cute" in message.content:
+        await message.channel.send("no u")
+    await bot.process_commands(message)
+
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged persons, kyoot!"
