@@ -338,7 +338,7 @@ async def on_message(message):
             await message.add_reaction("👍")
     await bot.process_commands(message)
 
- @bot.event
+@bot.event
 async def on_message(message):
 
     if "kyoot" in message.content:
