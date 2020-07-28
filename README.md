@@ -18,9 +18,10 @@ ProtoPaw is currently being developed by:
 
 ## Moderation commands
 
-|test|testing|
+|Commands|Explanation|
 |----|-------|
-testing | something
+ban | Permanently bans users, upon banning sends an embed with gif, the reason and the moderator who performed the action. Only usable if user is in the guild. Can currently not tempban, we are working on allowing tempbanning and using this command on users not in the guild.
+
 
 https://discord.gg/k64tAer
 
