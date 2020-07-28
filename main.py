@@ -341,7 +341,7 @@ async def on_message(message):
 @bot.event
 async def on_message(message):
 
- if "kyoot" in message.content or "cute" in message.content:
+ if "kyoot" in message.content:
     await message.channel.send("no u")
 
 class cmds:
