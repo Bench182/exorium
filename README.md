@@ -1,4 +1,4 @@
-# protogen Information
+#ProtoPaw
 ----
 ProtoPaw is a publicly available bot with a bunch of features, these will be displayed here together with some information. Please note that ProtoPaw is continuously being developed and more features will be added, as well as improving already existing features. The prefixes of this bot are ?, p!
 
