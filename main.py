@@ -338,8 +338,13 @@ async def on_message(message):
             await message.add_reaction("👍")
     await bot.process_commands(message)
 
+@bot.event
+async def on_message(message):
 
-class cmds:
+ if "hotel" in message.content:
+    await message.channel.send("trivago")
+        
+    class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged persons, kyoot!"
     boop = "Boops the pinged persons, boop!"
