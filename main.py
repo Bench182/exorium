@@ -55,7 +55,7 @@ async def help(ctx):
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")
 async def invite(ctx):
     embed = discord.Embed(title="ProtoPaw invite link", color=config.color)
-    embed.add_field(name="Invite ProtoPaw here", value="https://bit.ly/pawbotinv")
+    embed.add_field(name="Invite ProtoPaw here", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)")
     await ctx.send(embed=embed)
 
 
