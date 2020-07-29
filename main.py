@@ -356,6 +356,9 @@ async def on_message(message):
     
     if "c ute" in message.content.lower():
         await message.channel.send("no u")
+        
+    if "cu te" in message.content.lower():
+        await message.channel.send("no u")
     await bot.process_commands(message)
 
 class cmds:
