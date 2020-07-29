@@ -20,7 +20,7 @@ ProtoPaw is currently being developed by:
 
 |Commands|Explanation|
 |----|-------|
-ban | Permanently bans users, upon banning sends then an embed with a gif, the reason, and the moderator who performed the action. Only usable if the user is in the guild. The bot can't currently tempban. We are working on allowing tempbanning and using this command on users not in the guild.
+ban | Permanently bans users, upon banning sends an embed with a gif, the reason, and the moderator who performed the action. Only usable if the user is in the guild. The bot currently can't tempban. We are working on allowing tempbanning and using this command on users not in the guild.
 
 
 https://discord.gg/k64tAer
