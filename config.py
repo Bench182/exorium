@@ -1,3 +1,3 @@
-thumbnail = ('https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1')
+token = 'token'
 
 color = (0x442857)
