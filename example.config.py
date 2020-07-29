@@ -2,4 +2,4 @@ token = 'AUTHTOKEN'
 
 thumbnail = 'NAILTHUMB'
 
-color = 'COLOUR'
+color = (COLOUR)
