@@ -334,7 +334,11 @@ async def decide(ctx, *, arg):
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
-    
+
+@bot.command(name="testsay")
+async def testsay(ctx):
+    await ctx.send("<:shibathink:728335857156882452>")
+
 @bot.event
 async def on_message(message):
     if message.channel.id in gifs.votechannels:
