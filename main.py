@@ -336,8 +336,8 @@ async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
 
 @bot.command(name='say')
-async def say(ctx, arg*):
-    Arglist = arg*
+async def say(ctx, *arg):
+    Arglist = *arg
     await ctx.send(Arglist)
 
 @bot.event
