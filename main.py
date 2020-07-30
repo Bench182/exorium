@@ -342,7 +342,7 @@ async def say(ctx, *, sentence):
     embed.set_footer(text=f"Executed by {ctx.message.author}")
     botmsg = await ctx.send(embed=embed)
 
-@bot.command ()
+@bot.command()
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await message.send(f"{ctx.author.mention} said:\n{sentence2}")
