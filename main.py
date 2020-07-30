@@ -336,7 +336,7 @@ async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
 
 @bot.command()
-async def say(content):
+async def say(*, content):
     await bot.say(content)
 
 @bot.event
