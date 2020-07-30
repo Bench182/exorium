@@ -343,9 +343,10 @@ async def say(ctx, *, sentence):
     botmsg = await ctx.send(embed=embed)
 
 @bot.command ()
-async def say2(ctx, *, sentence):
+async def say2(ctx, *, sentence2):
     await ctx.message.delete()
-    await message.send(f"{ctx.author.mention} said:\n{sentence}")
+    await message.send(f"{ctx.author.mention} said:\n{sentence2}")
+
 @bot.event
 async def on_message(message):
     if message.channel.id in gifs.votechannels:
