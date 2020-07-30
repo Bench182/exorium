@@ -330,7 +330,10 @@ async def decide(ctx, *, arg):
     await botmsg.add_reaction("✅")
     await botmsg.add_reaction("❌")
 
-
+@bot.command(name="revive")
+async def revive(ctx):
+    await ctx.send("<@&738356235841175594>")
+    
 @bot.event
 async def on_message(message):
     if message.channel.id in gifs.votechannels:
