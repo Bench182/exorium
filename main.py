@@ -341,7 +341,11 @@ async def say(ctx, *, sentence):
     embed = discord.Embed(title=sentence, color=config.color)
     embed.set_footer(text=f"Executed by {ctx.message.author}")
     botmsg = await ctx.send(embed=embed)
-    
+
+@bot.command ()
+async def say2(ctx, *, sentence):
+    await ctx.message.delete()
+    await message.send(f"{ctx.author.mention} said:\n{sentence}")
 @bot.event
 async def on_message(message):
     if message.channel.id in gifs.votechannels:
