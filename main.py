@@ -335,9 +335,10 @@ async def decide(ctx, *, arg):
 async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
 
-@bot.command(name="testsay")
-async def testsay(ctx):
-    await ctx.send("<:shibathink:728335857156882452>")
+@bot.command(name='say')
+async def randomchoice(ctx, arg):
+    Arglist = [arg1]
+    await ctx.send(Arglist)
 
 @bot.event
 async def on_message(message):
