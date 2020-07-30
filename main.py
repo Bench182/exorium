@@ -331,6 +331,7 @@ async def decide(ctx, *, arg):
     await botmsg.add_reaction("❌")
 
 @bot.command(name="revive")
+@commands.has_permissions(mention_members=True)
 async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
     
