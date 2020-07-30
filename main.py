@@ -337,6 +337,7 @@ async def revive(ctx):
 
 @bot.command()
 async def say(ctx, *, sentence):
+    await ctx.message.delete()
     await ctx.send(f"{ctx.message.author.mention} has said:\n**{sentence}**")
 
 @bot.event
