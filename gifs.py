@@ -15,4 +15,4 @@ AskProtopaw = ["yes", "no", "maybe", "probably", "certainly", "unlikely", "absol
 CuddleList = ["https://thumbs.gfycat.com/WaterloggedFabulousIbis-small.gif", "https://media3.giphy.com/media/h4BprYiFYNxRe/giphy.gif"]
 
 votechannels = [731848766327619586, 731829759146721320]
-"
+
