@@ -335,10 +335,9 @@ async def decide(ctx, *, arg):
 async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
 
-@bot.command(name='say')
-async def say(ctx, args):
-    Arglist = args
-    await ctx.send(Arglist)
+@bot.command()
+async def say(content):
+await bot.say(content)
 
 @bot.event
 async def on_message(message):
