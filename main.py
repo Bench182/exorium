@@ -337,7 +337,7 @@ async def revive(ctx):
 
 @bot.command()
 async def say(content):
-await bot.say(content)
+    await bot.say(content)
 
 @bot.event
 async def on_message(message):
