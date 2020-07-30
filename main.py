@@ -336,7 +336,7 @@ async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
 
 @bot.command(name='say')
-async def randomchoice(ctx, arg):
+async def say(ctx, arg):
     Arglist = [arg1]
     await ctx.send(Arglist)
 
