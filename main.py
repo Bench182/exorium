@@ -336,8 +336,8 @@ async def revive(ctx):
     await ctx.send("<@&738356235841175594>")
 
 @bot.command()
-async def say(ctx, *, something):
-    await ctx.send(f"{ctx.message.author.mention} said: **{something}**")
+async def say(ctx, *, sentence):
+    await ctx.send(f"{ctx.message.author.mention} has said:\n**{sentence}**")
 
 @bot.event
 async def on_message(message):
