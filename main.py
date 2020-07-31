@@ -345,7 +345,7 @@ async def say(ctx, *, sentence):
 @bot.command()
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
-    return await ctx.message.send(f"{ctx.author.mention} said:\n{sentence2}")
+    await ctx.message.send(f"{ctx.author.mention} said:\n{sentence2}")
 
 @bot.event
 async def on_message(message):
