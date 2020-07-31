@@ -47,5 +47,4 @@ say|?say <arguments>|Let the bot say what you said in an embed
 
 ----
 ## TODO
-You can see everything that's on our To Do list here:
-https://github.com/FireGamingYT/protogen/projects/1
+You can see everything that's on our To Do list [here](https://github.com/FireGamingYT/protogen/projects/1)
