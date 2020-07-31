@@ -48,7 +48,7 @@ async def help(ctx):
     embed.add_field(name="**🔨 moderation**", value="`ban` `unban` `kick` `softban`", inline=True)
     embed.add_field(name="**🤖 bot related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**🏗️ Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide`", inline=True)
-    embed.add_field(name="**🤝 Interaction**", value="`hug` `snuggle` `boop` `kiss` `pat` `honk` `cuddle` `askproto`", inline=False)
+    embed.add_field(name="**🤝 Interaction**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `honk`\n `cuddle` `askproto`", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
