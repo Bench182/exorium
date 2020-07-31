@@ -50,7 +50,7 @@ async def help(ctx):
     embed.add_field(name="**🏗️ Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide`", inline=True)
     embed.add_field(name="**🤝 Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `honk`\n `cuddle` `askproto`\n`lick`", inline=True)
     embed.add_field(name="**❔ Others**", value="`say` `say2`", inline=True)
-    embed.add_field(name="**Developers**", value="`- BluewyFurGamesYT#5108`\n`- ChosenFate#5108`", inline=True)
+    embed.add_field(name="**Developers**", value="`BluewyFurGamesYT#5108`\n`ChosenFate#5108`", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
