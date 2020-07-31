@@ -336,6 +336,7 @@ async def decide(ctx, *, arg):
 @bot.command(name="revive")
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
+    await ctx.message.delete()
     await ctx.send("<@&738356235841175594>")
 
 @bot.command()
