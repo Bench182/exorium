@@ -354,7 +354,6 @@ async def say2(ctx, *, sentence2):
 
 @bot.command(name='eval', pass_context=True)
 async def eval_(ctx, *, command):
-    if message.author == "698080201158033409":
         res = eval(command)
     if inspect.isawaitable(res):
         await bot.say(await res)
