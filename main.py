@@ -112,7 +112,7 @@ async def serverinfo(ctx):
 @bot.command(name='variable', brief='test variables')
 async def variables(ctx):
     embed = discord.Embed(title='variable tests', color=config.color)
-    embed.add_field(name='test:', value=str(len(ctx.guild.bots)), inline=False)
+    embed.add_field(name='test:', value=len(Guild.owner), inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_author(name="The Paw Kingdom Links", url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1", icon_url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     await ctx.send(embed=embed)
