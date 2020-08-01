@@ -354,7 +354,7 @@ async def say2(ctx, *, sentence2):
 
 @bot.command(name='eval', pass_context=True)
 async def eval_(ctx, *, command):
-        res = eval(command)
+    res = eval(command)
     if inspect.isawaitable(res):
         await bot.say(await res)
     else:
