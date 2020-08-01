@@ -352,14 +352,6 @@ async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
 
-@bot.command(name='eval', pass_context=True)
-async def eval_(ctx, *, command):
-    res = eval(command)
-    if inspect.isawaitable(res):
-        await bot.say(await res)
-    else:
-        await bot.say(res)
-
 @bot.event
 async def on_message(message):
     if message.channel.id in gifs.votechannels:
