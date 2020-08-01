@@ -187,10 +187,11 @@ async def lick(ctx, *args):
 @bot.command(name="bellyrub")
 async def bellyrub(ctx, *args):
     if (len(args) == 0):
-        return  
+        return
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**bellyrubs**" + " " + '**,** '.join(args) + "**, lovely!**"))
-    GIFLIST= gifs.BellyrubList
+    GIFlist = gifs.BellyrubList
     GIF = random.choice(GIFlist)
+    embed.set_image(url=GIF)
     await ctx.send(embed=embed)
     
 @bot.command(name="cuddle")
