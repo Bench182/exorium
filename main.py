@@ -3,6 +3,7 @@ import config
 import discord
 import random
 import logging
+import inspect
 import discord.ext
 from discord.ext import commands
 
@@ -350,6 +351,15 @@ async def say(ctx, *, sentence):
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
+
+@bot.command(name='eval', pass_context=True)
+async def eval_(ctx, *, command):
+    if message.author == "698080201158033409":
+    res = eval(command)
+    if inspect.isawaitable(res):
+        await bot.say(await res)
+    else:
+        await bot.say(res)
 
 @bot.event
 async def on_message(message):
