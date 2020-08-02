@@ -14,7 +14,7 @@ AskProtopaw = ["yes", "no", "maybe", "probably", "certainly", "unlikely", "absol
 
 CuddleList = ["https://thumbs.gfycat.com/WaterloggedFabulousIbis-small.gif", "https://media3.giphy.com/media/h4BprYiFYNxRe/giphy.gif"]
 
-BellyrubList = ["https://media.tenor.co/videos/dbc7f597669c5e2ae276a58666ed8b0b/mp4", "https://media.tenor.co/videos/6a028e6a3907b08e866f7abcd1f3848f/mp4", "https://media.tenor.co/videos/eaee31044b0b4308152b47816c7a8bac/mp4", "https://media.tenor.co/videos/bda168884bacfc5d110f32e7ccf6a27c/mp4"]
+BellyrubList = ["https://i.imgur.com/VnoVdts.gif", "https://i.imgur.com/AGb1AKb.gif", "https://i.imgur.com/PbYykOz.gif", "https://i.imgur.com/xxx0Ykb.gif"]
 
 votechannels = [731848766327619586, 731829759146721320]
 
