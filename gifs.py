@@ -74,7 +74,9 @@ AwooList = ["https://cdn.discordapp.com/attachments/715969701771083820/739429902
             "https://cdn.discordapp.com/attachments/726377118304305245/739430488091000863/unknown.gif",
             "https://cdn.discordapp.com/attachments/726377118304305245/739430548895825930/unknown.gif",
             "https://cdn.discordapp.com/attachments/726377118304305245/739430608673177650/unknown.gif",
-            "https://cdn.discordapp.com/attachments/726377118304305245/739430699672797324/unknown.gif"]
+            "https://cdn.discordapp.com/attachments/726377118304305245/739430699672797324/unknown.gif",
+            "https://media.giphy.com/media/jPSjVZLPOGVa0/giphy.gif", "https://media.giphy.com/media/lLoYlICw9DEY0/giphy.gif",
+            "https://media.giphy.com/media/OQI1KMVGJyniwVwnl3/giphy.gif", "https://media.giphy.com/media/2nXYb1jf0FVRK/giphy.gif"]
 
 votechannels = [731848766327619586, 731829759146721320]
 
