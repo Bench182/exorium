@@ -25,6 +25,7 @@ snuggle|?snuggle @user1 @user2...|Snuggles the pinged persons, kyoot!
 boop|?boop @user1 @user2...|Boops the pinged persons, boop!
 kiss|?kiss  @user1 @user2...|Smooches the pinged persons :*
 pat|?pat  @user1 @user2...!|Pats the pinged persons, good boy!
+awoo|?awoo @user1 @user2...| Awoo at the pinged persons
 ping|?ping|Displays the latency of the bo -connection lost
 invite|?invite|Displays the invite link to invite TPKP to your server
 stats|?stats|Shows some neat stats about TPKP
