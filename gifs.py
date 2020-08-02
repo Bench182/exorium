@@ -16,7 +16,12 @@ CuddleList = ["https://thumbs.gfycat.com/WaterloggedFabulousIbis-small.gif", "ht
 
 BellyrubList = ["https://i.imgur.com/VnoVdts.gif", "https://i.imgur.com/AGb1AKb.gif", "https://i.imgur.com/PbYykOz.gif", "https://i.imgur.com/xxx0Ykb.gif"]
 
-AwooList = ["https://cdn.discordapp.com/attachments/715969701771083820/739429902402715748/unknown.gif"]
+AwooList = ["https://cdn.discordapp.com/attachments/715969701771083820/739429902402715748/unknown.gif", 
+            "https://cdn.discordapp.com/attachments/726377118304305245/739430343962001468/unknown.gif",
+            "https://cdn.discordapp.com/attachments/726377118304305245/739430488091000863/unknown.gif",
+            "https://cdn.discordapp.com/attachments/726377118304305245/739430548895825930/unknown.gif",
+            "https://cdn.discordapp.com/attachments/726377118304305245/739430608673177650/unknown.gif",
+            "https://cdn.discordapp.com/attachments/726377118304305245/739430699672797324/unknown.gif"]
 
 votechannels = [731848766327619586, 731829759146721320]
 
