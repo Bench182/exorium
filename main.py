@@ -384,9 +384,7 @@ async def say2(ctx, *, sentence2):
 
 @bot.event
 async def on_message(message):
-    if message.channel.id in gifs.votechannels:
-        if message.attachments:
-            await message.add_reaction("👍")
+
     await bot.process_commands(message)
 
 
