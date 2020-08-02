@@ -1,4 +1,4 @@
-class cmds: 
+class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged person, kyoot!"
     boop = "Boops the pinged person, boop!"
@@ -13,7 +13,8 @@ class cmds:
     random = "Can't make a choice? Use the random command! Only 2 options possible at this point"
     info = "You already know what this does, derp"
 
-class syntax: 
+
+class syntax:
     hug = "`?hug @user1 @user2..."
     snuggle = "?snuggle @user1 @user2..."
     boop = "?boop @user1 @user2..."
