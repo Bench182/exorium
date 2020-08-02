@@ -41,7 +41,7 @@ ban|?ban @user | ID Reason|Bans the mentioned person
 kick|?kick @user | ID reason|Kicks the specified person
 softban|?softban @user | ID reason|Softbans (bans and unbans) the specified person
 poll|?poll choice1, choice2, choice3 [...]|Cast a poll if you can't agree about something!
-decide|?decide <question>"|Casts a simple yes / no poll
+decide|?decide <question>|Casts a simple yes / no poll
 cuddle|?cuddle @user1 @user2...|Cuddle the pinged persons
 say|?say <arguments>|Let the bot say repeat what you said (embedded)
 say2|?say2 <arguments>|Let the bot repeat what you said (no embed)
