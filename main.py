@@ -204,7 +204,16 @@ async def cuddle(ctx, *args):
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
-
+@bot.command(name="awoo")
+async def awoo(ctx, *args):
+    if (len(args) == 0):
+        return
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**howled**" + " " + '**,** '.join(args) + "**, chilling!**"))
+    GIFlist = gifs.AwooList
+    GIF = random.choice(GIFlist)
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+    
 @bot.command(name='random', brief='Randomness!')
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
