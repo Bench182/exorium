@@ -4,5 +4,5 @@
 
 ## Feedback
 
-If you have any feedback in regards to the **CONTRIBUTING.MD**, we ask you give us this in forms of [issues](https://github.com/FireGamingYT/protogen/issues/new/choose). However, we can not guarantee this feedback will be taken into our account and we ask you to consider whether your feedback is reasonable.
+If you have any feedback in regards to the **CONTRIBUTING.MD**, we ask you give us this in forms of [issues](https://github.com/FireGamingYT/protogen/issues/new/choose). However, we can not guarantee this feedback will be taken into our account and we ask you to consider whether your feedback is reasonable. Whether your contributions follow these terms, and/or agreements is at your discretion when you start contributions. However, we reserve any right to deny your contributions to this projects in any way without stating a reason if we think it breaks anything mandatory.
 
