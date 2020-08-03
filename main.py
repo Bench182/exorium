@@ -5,6 +5,7 @@ import random
 import logging
 import discord.ext
 from discord.ext import commands
+from outsources import functions
 
 logger = logging.getLogger('discord')
 
@@ -122,90 +123,42 @@ async def variables(ctx):
 
 @bot.command(name='snuggle', brief='Snuggling, how sweet')
 async def snuggle(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to snuggle!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**snuggled**" + " " + '**,** '.join(x.mention for x in members) + "**, how cute!**\nFor: " + reason))
-    GIFlist = gifs.SnuggleList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "snuggle", "how cute", "snuggled")
 
 
 @bot.command(name='hug', brief='Fandom hug!')
 async def hug(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to hug!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**hugged**" + " " + '**,** '.join(x.mention for x in members) + "**, how lovely!**\nFor: " + reason))
-    GIFlist = gifs.HugList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "hug", "how lovely", "hugged")
 
 
 @bot.command(name='pat', brief='Pats, wholesome!')
 async def pat(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to pat!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**pat**" + " " + '**,** '.join(x.mention for x in members) + "**, how beautiful!**\nFor: " + reason))
-    GIFlist = gifs.PatList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "pat", "how beautiful", "pat")
 
 
 @bot.command(name='boop', aliases=['bp'], brief='Boop!')
 async def boop(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to boop!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**booped**" + " " + '**,** '.join(x.mention for x in members) + "**, so soft!**\nFor: " + reason))
-    GIFlist = gifs.BoopList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "boop", "so soft", "booped")
 
 
 @bot.command(name='kiss', aliases=['smooch'], brief='Smooch!')
 async def kiss(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to smooch!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**smooched**" + " " + '**,** '.join(x.mention for x in members) + "**, lovely!**\nFor: " + reason))
-    GIFlist = gifs.KissList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "smooch", "lovely", "smooched")
 
 
 @bot.command(name="lick", brief='Licking, lol')
 async def lick(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to lick!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**licked**" + " " + '**,** '.join(x.mention for x in members) + "**, tasty!**\nFor: " + reason))
-    GIFlist = gifs.LickList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "lick", "tasty", "licked")
 
 
 @bot.command(name="bellyrub")
 async def bellyrub(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to bellyrub!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**bellyrubs**" + " " + '**,** '.join(x.mention for x in members) + "**, lovely!**\nFor: " + reason))
-    GIFlist = gifs.BellyrubList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "bellyrub", "lovely", "bellyrubbed")
 
 
 @bot.command(name="cuddle")
 async def cuddle(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
-    if not (members):
-        return await ctx.send("Please specify at least one cutie to cuddle!")
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**cuddled**" + " " + '**,** '.join(x.mention for x in members) + "**, heartwarming!**\nFor: " + reason))
-    GIFlist = gifs.CuddleList
-    GIF = random.choice(GIFlist)
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+    await functions.interactions(ctx, members, reason, "cuddle", "heartwarming", "cuddled")
 
 
 @bot.command(name="awoo")
