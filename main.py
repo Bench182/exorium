@@ -161,9 +161,23 @@ async def cuddle(ctx, members: commands.Greedy[discord.Member], *, reason="being
     await functions.interactions(ctx, members, reason, "cuddle", "heartwarming", "cuddled")
 
 
+@bot.command(name="rawr")
+async def rawr(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!"):
+    GIFlist = gifs.rawr
+    GIF = random.choice(GIFlist)
+    if not (members):
+        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**rawred, cute!**\nFor: " + reason))
+        embed.set_image(url=GIF)
+        await ctx.send(embed=embed)
+        return
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**rawred at**" + " " + '**,** '.join(x.mention for x in members) + "**, cute!**\nFor: " + reason))
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+
+
 @bot.command(name="awoo")
 async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!"):
-    GIFlist = gifs.AwooList
+    GIFlist = gifs.awoo
     GIF = random.choice(GIFlist)
     if not (members):
         embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**awoo'd, chilling!**\nFor: " + reason))
