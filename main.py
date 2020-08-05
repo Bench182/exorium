@@ -25,8 +25,16 @@ async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
     await bot.change_presence(status=discord.Status.online, activity=activity)
     print('ProtoPaw has started successfully')
+    print('-----------')
+    print('guilds:')
     print(len(bot.guilds))
+    print('-----------')
+    print('users:')
     print(len(bot.users))
+    print('-----------')
+    print('version:')
+    print(discord.__version__)
+    print('-----------')
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
@@ -407,8 +415,5 @@ class syntax:
     poll = "`?poll choice1, choice2, choice3 [...]`"
     decide = "`?decide <question>"
     cuddle = "?cuddle @user1 @user2...`"
-
-
-print(discord.__version__)
 
 bot.run(config.token)
