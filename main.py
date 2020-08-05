@@ -104,7 +104,7 @@ async def links(ctx):
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
-
+#shows info about the server the command was executed, in an embed. Still being worked on.
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])
 async def serverinfo(ctx):
     embed = discord.Embed(title="Server information", color=config.color)
@@ -113,7 +113,7 @@ async def serverinfo(ctx):
     embed.set_author(name=ctx.guild.name + " Statistics", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
 
-
+#to test things. Currently a way to bully people who arent a fan of furries. 
 @bot.command(name='variable', brief='test variables')
 async def variables(ctx):
     embed = discord.Embed(title='variable tests', color=config.color)
@@ -122,47 +122,47 @@ async def variables(ctx):
     embed.set_author(name="The Paw Kingdom Links", url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1", icon_url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     await ctx.send(embed=embed)
 
-
+#interaction command - snuggle someone. gifs are random!
 @bot.command(name='snuggle', brief='Snuggling, how sweet')
 async def snuggle(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "snuggle", "how cute", "snuggled")
 
-
+#interaction command - hug someone. gifs are random!
 @bot.command(name='hug', brief='Fandom hug!')
 async def hug(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "hug", "how lovely", "hugged")
 
-
+#interaction command - pat someone. gifs are random!
 @bot.command(name='pat', brief='Pats, wholesome!')
 async def pat(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "pat", "how beautiful", "pat")
 
-
+#interaction command - boop someone. gifs are random!
 @bot.command(name='boop', aliases=['bp'], brief='Boop!')
 async def boop(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "boop", "so soft", "booped")
 
-
+#interaction command - kiss someone. gifs are random!
 @bot.command(name='kiss', aliases=['smooch'], brief='Smooch!')
 async def kiss(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "smooch", "lovely", "smooched")
 
-
+#interaction command - lick someone. gifs are random!
 @bot.command(name="lick", brief='Licking, lol')
 async def lick(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "lick", "tasty", "licked")
 
-
+#interaction command - bellyrub someone. gifs are random!
 @bot.command(name="bellyrub")
 async def bellyrub(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "bellyrub", "lovely", "bellyrubbed")
 
-
+#interaction command - cuddle someone. gifs are random!
 @bot.command(name="cuddle")
 async def cuddle(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "cuddle", "heartwarming", "cuddled")
 
-
+#interaction command - rawr at someone. gifs are random!
 @bot.command(name="rawr")
 async def rawr(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!"):
     GIFlist = gifs.rawr
@@ -176,7 +176,7 @@ async def rawr(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!")
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
-
+#interaction command - awoo at someone. gifs are random!
 @bot.command(name="awoo")
 async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!"):
     GIFlist = gifs.awoo
@@ -190,7 +190,7 @@ async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!")
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
-
+#Let protoPaw choose for you!
 @bot.command(name='random', brief='Randomness!')
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
