@@ -38,23 +38,12 @@ async def on_ready():
     print(discord.__version__)
     print('-----------')
 
+#the ping command, simply shows the latency in an embed
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
     embed = discord.Embed(title="ProtoPaw latency", color=config.color)
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
-
-
-@bot.command()
-async def help2(ctx):
-    embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
-    embed.add_field(name="**commands**", value="\n`help`\n`ping`\n`invite`\n`stats`\n`get_id`\n`av`\n`links`\n`snuggle`\n`hug`\n`pat`\n`boop`\n`kiss\ncuddle`\n`random`\n`info`\n`honk`\n`askprotopaw`\n`ban`\n`unban\nkick\nsoftban\npoll\ndecide\nserverinfo`", inline=True)
-    embed.add_field(name="**Description**", value="`shows help menu\nshows bot latency\nbot invite link\nglobal bot stats\nget user ID\nget user avatar\nrelated links\nsnuggle someone\nhug someone\npat someone\nboop someone\nsmooch someone\ncuddle someone\nrandom selection\nshows command info\nHONKS\nask ProtoPaw a question\nban a member\nunban a member\nkick a member\nsoftban a member\ncast a poll\nask a yes/no question\nget server info`", inline=True)
-    embed.add_field(name="developers:", value="`-` ChosenFate#5108\n`-` BluewyFurGame#5108", inline=False)
-    embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
-    await ctx.send(embed=embed)
-
 
 @bot.command()
 async def help(ctx):
