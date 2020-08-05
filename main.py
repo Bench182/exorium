@@ -15,11 +15,13 @@ handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w'
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-
+#sets the bot prefix
 bot = commands.Bot(command_prefix=["p!", "?"])
+#removes the default discord.py help command
 bot.remove_command('help')
 
-
+#sets the bot status and prints when it has started in console with stats.
+#stats include: The amount of users that are in the total amount of guilds and the discord.py version
 @bot.event
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
