@@ -24,7 +24,9 @@ bot.remove_command('help')
 async def on_ready():
     activity = discord.Game(name="in TPK | p!help", type=1)
     await bot.change_presence(status=discord.Status.online, activity=activity)
-
+    print('ProtoPaw has started successfully')
+    print(len(bot.guilds))
+    print(len(bot.users))
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")
 async def latency(ctx):
