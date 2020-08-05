@@ -45,6 +45,7 @@ async def latency(ctx):
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
 
+#the help command, displays all the commands and the developers in an embed
 @bot.command()
 async def help(ctx):
     embed = discord.Embed(title='commands | `?`, `p!`', color=config.color)
@@ -58,14 +59,14 @@ async def help(ctx):
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
 
-
+#shows the bot invite with hyperlink in an embed
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")
 async def invite(ctx):
     embed = discord.Embed(title="ProtoPaw invite link", color=config.color)
     embed.add_field(name="Invite ProtoPaw here", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)")
     await ctx.send(embed=embed)
 
-
+#shows the bot statistics (total amount of users in total amount of guilds) in an embed
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")
 async def statistics(ctx):
     embed = discord.Embed(title="Statistics ProtoPaw:", description="Global Bot Statistics", color=config.color)
@@ -74,13 +75,13 @@ async def statistics(ctx):
     embed.add_field(name="More:", value="Coming soon...", inline=False)
     await ctx.send(embed=embed)
 
-
+#retrieves the ID of a member. Argument can be an ID, just the user's name or the user mention
 @bot.command()
 async def get_id(ctx, member: discord.Member):
     user_id = member.id
     await ctx.send('The user ID is %d.' % user_id)
 
-
+#shows the mentioned user's avatar in an embed
 @bot.command(aliases=['av'])
 async def avatar(ctx, *, user: discord.Member = None):
     if user is None:
@@ -92,7 +93,7 @@ async def avatar(ctx, *, user: discord.Member = None):
         eA.set_image(url=user.avatar_url)
         await ctx.send(embed=eA)
 
-
+#shows the links related to ProtoPaw in an embed
 @bot.command(name='links', brief='Discord related links')
 async def links(ctx):
     embed = discord.Embed(title='Protopaw Links', color=config.color)
