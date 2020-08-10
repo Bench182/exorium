@@ -70,7 +70,6 @@ async def statistics(ctx):
     embed = discord.Embed(title="Statistics ProtoPaw:", description="Global Bot Statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
-    embed.add_field(name="More:", value="Coming soon...", inline=False)
     await ctx.send(embed=embed)
 
 
