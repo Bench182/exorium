@@ -332,7 +332,7 @@ async def decide(ctx, *, arg):
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
-    await ctx.send("<@&738356235841175594>")
+    await ctx.send("<@&738356235841175594>! The chat is dead, we need you now!")
 
 
 @bot.command()
