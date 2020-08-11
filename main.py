@@ -193,11 +193,11 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     GIFlist = gifs.blush
     GIF = random.choice(GIFlist)
     if not (members):
-        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed**\nFor: " + reason))
+        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**blushed**\nFor: " + reason))
         embed.set_image(url=GIF)
         await ctx.send(embed=embed)
         return
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
