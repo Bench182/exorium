@@ -194,7 +194,7 @@ async def randomchoice(ctx, arg1, arg2):
     await ctx.send(random.choice(Arglist))
 
 
-@bot.command(name="info")
+@bot.command(name="info")  # Gives information about the mentioned command
 async def info(ctx, arg):
     embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
     embed.add_field(name=arg, value=getattr(cmds, arg), inline=True)
@@ -208,12 +208,12 @@ async def info(ctx, arg):
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('Please fill in all the required arguments.')
+        await ctx.send('Please fill in all the required arguments.')  # Shows the command isn't completed
     if isinstance(error, commands.MissingPermissions):
-        await ctx.send("You do not have the sufficient permissions.")
+        await ctx.send("You do not have the sufficient permissions.")  # Shows that you dont have the needed permission for this command
 
 
-@bot.command(name="askprotopaw", aliases=["askpp", "askproto"])
+@bot.command(name="askprotopaw", aliases=["askpp", "askproto"])  # Lets you ask something to ProtoPaw, he will answer with a random answer listed in gifs.py
 async def askprotopaw(ctx, *, arg):
     answers = gifs.AskProtopaw
     answer = random.choice(answers)
@@ -228,7 +228,7 @@ async def honk(ctx):
     await ctx.send(embed=embed)
 
 
-@bot.command(name="ban")
+@bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
     if member == ctx.message.author:
@@ -247,7 +247,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         await ctx.send(embed=embed)
 
 
-@bot.command(name='unban')
+@bot.command(name='unban')  # Unbans user with a given ID
 @commands.has_permissions(ban_members=True)
 async def _unban(ctx, id: int):
     user = await bot.fetch_user(id)
@@ -258,7 +258,7 @@ async def _unban(ctx, id: int):
     await ctx.send(embed=embed)
 
 
-@bot.command(name="kick")
+@bot.command(name="kick")  # Kicks the mentioned user from the guild
 @commands.has_permissions(kick_members=True)
 async def kick(ctx, member: discord.Member, *, reason=None):
     if member == ctx.message.author:
@@ -277,7 +277,7 @@ async def kick(ctx, member: discord.Member, *, reason=None):
         await ctx.send(embed=embed)
 
 
-@bot.command(name="softban")
+@bot.command(name="softban")  # bans and immediately unbans the user mentioned
 @commands.has_permissions(ban_members=True)
 async def softban(ctx, member: discord.Member, *, reason=None):
     if member == ctx.message.author:
@@ -297,7 +297,7 @@ async def softban(ctx, member: discord.Member, *, reason=None):
         await ctx.send(embed=embed)
 
 
-@bot.command(name="poll")
+@bot.command(name="poll")  # Makes a poll with up to 10 options, seperate choices with ,
 async def poll(ctx, *, arg):
     await ctx.message.delete()
     choice = str(arg).split(",")
@@ -317,7 +317,7 @@ async def poll(ctx, *, arg):
             break
 
 
-@bot.command(name="decide")
+@bot.command(name="decide")  #Let people vote for something
 async def decide(ctx, *, arg):
     await ctx.message.delete()
     embed = discord.Embed(title=arg, color=config.color)
@@ -327,14 +327,14 @@ async def decide(ctx, *, arg):
     await botmsg.add_reaction("❌")
 
 
-@bot.command(name="revive")
+@bot.command(name="revive")  # Tags the role that was given with a message.
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
     await ctx.send("<@&738356235841175594>! The chat is dead, we need you now!")
 
 
-@bot.command()
+@bot.command()  # In an embed repeats what you said and deletes the original command
 async def say(ctx, *, sentence):
     await ctx.message.delete()
     embed = discord.Embed(title=sentence, color=config.color)
@@ -342,7 +342,7 @@ async def say(ctx, *, sentence):
     await ctx.send(embed=embed)
 
 
-@bot.command()
+@bot.command()  # Repeats what you said and deletes the original command
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
