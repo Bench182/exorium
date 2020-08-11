@@ -234,13 +234,9 @@ async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing
     await ctx.send(embed=embed)
 
 
-@bot.command(name="highfive")  # interaction command - highfive someone. gifs are random!
-async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Doing a good job!"):
-    GIFlist = gifs.highfive
-    GIF = random.choice(GIFlist)
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**high-fived**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+@bot.command(name="highfive")  #interaction command - highfive someone. Gifs are random
+async def highfive(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
+    await functions.interactions(ctx, members, reason, "highfive", "awesome!", "high fived")
 
 
 @bot.command(name="wag")  # interaction command - wag (because of someone). gifs are random!
