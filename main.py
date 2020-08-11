@@ -220,6 +220,20 @@ async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"
     await ctx.send(embed=embed)
 
 
+@bot.command(name="happy")  # interaction command - blush (because of) someone. gifs are random!
+async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing"):
+    GIFlist = gifs.happy
+    GIF = random.choice(GIFlist)
+    if not (members):
+        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Is happy**\nFor: " + reason))
+        embed.set_image(url=GIF)
+        await ctx.send(embed=embed)
+        return
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Is happy because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+
+
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
