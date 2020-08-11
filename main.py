@@ -220,14 +220,6 @@ async def askprotopaw(ctx, *, arg):
     embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
     await ctx.send(embed=embed)
 
-
-@bot.command(name="honk")
-async def honk(ctx):
-    embed = discord.Embed(title=f"{ctx.author.name.upper()} HONKED", color=config.color)
-    embed.set_image(url="https://media1.tenor.com/images/31b7344a138dac565a1c31fe4a1dce78/tenor.gif?itemid=16237480")
-    await ctx.send(embed=embed)
-
-
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
