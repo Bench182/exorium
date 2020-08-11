@@ -109,4 +109,5 @@ feed = ["https://media1.tenor.com/images/5dda2ba3a73de6e8a3abfc45996ed1ba/tenor.
         "https://media1.tenor.com/images/9337abd3a4247c73c218ea3c3662137d/tenor.gif?itemid=7266798",
         "https://media.tenor.com/images/49109825019cb719d771ff54876fe078/tenor.gif"]
 
+glomp = ["https://media.tenor.com/images/2e04038ac35f6e7975f64cd2ba1c2d48/tenor.gif"]
 votechannels = [731848766327619586, 731829759146721320]

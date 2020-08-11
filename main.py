@@ -188,7 +188,7 @@ async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!")
     await ctx.send(embed=embed)
 
 
-@bot.command(name="blush")  # interaction command - awoo at someone. gifs are random!
+@bot.command(name="blush")  # interaction command - blush (because of) someone. gifs are random!
 async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes them kyooter!"):
     GIFlist = gifs.blush
     GIF = random.choice(GIFlist)
@@ -202,11 +202,20 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     await ctx.send(embed=embed)
 
 
-@bot.command(name="feed")  # interaction command - awoo at someone. gifs are random!
+@bot.command(name="feed")  # interaction command - feed someone. gifs are random!
 async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy boy"):
     GIFlist = gifs.feed
     GIF = random.choice(GIFlist)
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**feeds**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+
+
+@bot.command(name="glomp")  # interaction command - feed someone. gifs are random!
+async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy boy"):
+    GIFlist = gifs.glomp
+    GIF = random.choice(GIFlist)
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**glomped on**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
