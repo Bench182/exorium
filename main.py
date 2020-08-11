@@ -187,6 +187,7 @@ async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!")
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
+
 @bot.command(name="blush")  # interaction command - awoo at someone. gifs are random!
 async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes them kyooter!"):
     GIFlist = gifs.blush
@@ -199,6 +200,7 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
+
 
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
