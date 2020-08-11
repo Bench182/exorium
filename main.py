@@ -234,7 +234,7 @@ async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing
     await ctx.send(embed=embed)
 
 
-@bot.command(name="highfive")  #interaction command - highfive someone. Gifs are random
+@bot.command(name="highfive")  # interaction command - highfive someone. Gifs are random
 async def highfive(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "highfive", "awesome!", "high fived")
 
