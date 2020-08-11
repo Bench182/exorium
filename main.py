@@ -187,6 +187,18 @@ async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!")
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
 
+@bot.command(name="blush")  # interaction command - awoo at someone. gifs are random!
+async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes them kyooter!"):
+    GIFlist = gifs.blush
+    GIF = random.choice(GIFlist)
+    if not (members):
+        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed**\nFor: " + reason))
+        embed.set_image(url=GIF)
+        await ctx.send(embed=embed)
+        return
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
 
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
@@ -267,7 +279,6 @@ async def kick(ctx, member: discord.Member, *, reason=None):
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
-
 
 @bot.command(name="softban")  # bans and immediately unbans the user mentioned
 @commands.has_permissions(ban_members=True)
