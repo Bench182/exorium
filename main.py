@@ -234,6 +234,7 @@ async def askprotopaw(ctx, *, arg):
     embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
     await ctx.send(embed=embed)
 
+
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
@@ -282,6 +283,7 @@ async def kick(ctx, member: discord.Member, *, reason=None):
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
 
+
 @bot.command(name="softban")  # bans and immediately unbans the user mentioned
 @commands.has_permissions(ban_members=True)
 async def softban(ctx, member: discord.Member, *, reason=None):
@@ -322,7 +324,7 @@ async def poll(ctx, *, arg):
             break
 
 
-@bot.command(name="decide")  #Let people vote for something
+@bot.command(name="decide")  # Let people vote for something
 async def decide(ctx, *, arg):
     await ctx.message.delete()
     embed = discord.Embed(title=arg, color=config.color)
@@ -351,6 +353,7 @@ async def say(ctx, *, sentence):
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
+
 
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
