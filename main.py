@@ -202,6 +202,15 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     await ctx.send(embed=embed)
 
 
+@bot.command(name="feed")  # interaction command - awoo at someone. gifs are random!
+async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy boy"):
+    GIFlist = gifs.feed
+    GIF = random.choice(GIFlist)
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**feeds**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+
+
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]

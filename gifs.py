@@ -103,4 +103,7 @@ blush = ["https://media1.tenor.com/images/68e8bca8e90cb37fdcc9cc798bbc13f5/tenor
          "https://media1.tenor.com/images/41bc1ff3064c7a5aa0979c2ddee32dc8/tenor.gif?itemid=9869912",
          "https://media1.tenor.com/images/e8ad00d3190adf65434672c075a4c9e1/tenor.gif?itemid=16242697"]
 
+feed = ["https://media1.tenor.com/images/5dda2ba3a73de6e8a3abfc45996ed1ba/tenor.gif?itemid=5879575"
+        ""]
+
 votechannels = [731848766327619586, 731829759146721320]
