@@ -211,7 +211,7 @@ async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy 
     await ctx.send(embed=embed)
 
 
-@bot.command(name="glomp")  # interaction command - feed someone. gifs are random!
+@bot.command(name="glomp")  # interaction command - glomp someone. gifs are random!
 async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"):
     GIFlist = gifs.glomp
     GIF = random.choice(GIFlist)
@@ -220,7 +220,7 @@ async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"
     await ctx.send(embed=embed)
 
 
-@bot.command(name="happy")  # interaction command - blush (because of) someone. gifs are random!
+@bot.command(name="happy")  # interaction command - be happy (because of someone). gifs are random!
 async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing"):
     GIFlist = gifs.happy
     GIF = random.choice(GIFlist)
@@ -234,7 +234,7 @@ async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing
     await ctx.send(embed=embed)
 
 
-@bot.command(name="highfive")  # interaction command - feed someone. gifs are random!
+@bot.command(name="highfive")  # interaction command - highfive someone. gifs are random!
 async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Doing a good job!"):
     GIFlist = gifs.highfive
     GIF = random.choice(GIFlist)
