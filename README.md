@@ -49,6 +49,7 @@ feed|?feed @user1 @user2...|Feed the pinged persons
 glomp|?glomp @user1 @user2...|Glomp on the pinged persons
 happy|?happy @user1 @user2...|Be happy (because of someone)
 highfive|?highfive @user1 @user2...|Highfive the pinged persons
+wag|?wag @user1 @user2...|Wag your tail (because of someone)
 say|?say <arguments>|Let the bot say repeat what you said (embedded)
 say2|?say2 <arguments>|Let the bot repeat what you said (no embed)
 ----
