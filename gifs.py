@@ -121,7 +121,8 @@ happy = ["https://media1.tenor.com/images/4b5d8967536d7235f5231ba9123964ab/tenor
          "https://media1.tenor.com/images/ab69ea03faa81a44af51c86770745f61/tenor.gif?itemid=9273180",
          "https://media1.tenor.com/images/685f1055a8a4dbfe3318e5898d19b97c/tenor.gif?itemid=10253595",
          "https://media1.tenor.com/images/41df672a1055e4f833e2022dce9231fd/tenor.gif?itemid=16660700",
-         "https://d.facdn.net/art/bluemachine/1573314972/1573314972.bluemachine_2.gif"]
+         "https://d.facdn.net/art/bluemachine/1573314972/1573314972.bluemachine_2.gif",
+         "https://media.tenor.com/images/a6fc8a84da7b76176d5b79d56c90ffb3/tenor.gif"]
 
 highfive = ["https://media1.tenor.com/images/bbc34d4c1409ddf777186c773334e3e6/tenor.gif?itemid=6123039",
             "https://media.tenor.com/images/975d05f75a11fca62e2bb0b1ee040772/tenor.gif",
@@ -138,4 +139,6 @@ wag = ["https://media.tenor.com/images/391f32ea35c6bd010fe29425f8a689e3/tenor.gi
        "https://media.tenor.com/images/4a53db6c0267f84b180d7b9d3c34f120/tenor.gif",
        "https://media.tenor.com/images/dd137df1f2badd31405967a12d862f28/tenor.gif",
        "https://media.tenor.com/images/7bd999202fde3cb64395725964ff34ac/tenor.gif"]
+
+
 votechannels = [731848766327619586, 731829759146721320]
