@@ -347,13 +347,6 @@ async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
 
-
-@bot.event
-async def on_message(message):
-
-    await bot.process_commands(message)
-
-
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged persons, kyoot!"
