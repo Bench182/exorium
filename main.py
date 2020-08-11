@@ -50,7 +50,7 @@ async def help(ctx):
     embed.add_field(name="**🔨 moderation**", value="`ban` `unban` `kick` `softban`", inline=True)
     embed.add_field(name="**🤖 bot related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**🏗️ Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide`", inline=True)
-    embed.add_field(name="**🤝 Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `honk`\n `cuddle` `askproto` `lick`\n`blush` `feed` `glomp`\n`happy` `highfive` `wag`", inline=True)
+    embed.add_field(name="**🤝 Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `honk`\n `cuddle` `askproto` `lick` `blush` `feed`\n`glomp` `happy`\n`highfive` `wag`", inline=True)
     embed.add_field(name="**❔ Others**", value="`say` `say2`", inline=True)
     embed.add_field(name="**Developers**", value="`BluewyFurGame#5108`\n`ChosenFate#5108`", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
