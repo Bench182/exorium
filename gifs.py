@@ -76,7 +76,10 @@ cuddle = ["https://thumbs.gfycat.com/WaterloggedFabulousIbis-small.gif",
 bellyrub = ["https://i.imgur.com/VnoVdts.gif",
             "https://i.imgur.com/AGb1AKb.gif",
             "https://i.imgur.com/PbYykOz.gif",
-            "https://i.imgur.com/xxx0Ykb.gif"]
+            "https://i.imgur.com/xxx0Ykb.gif",
+            "https://tenor.com/5pet.gif",
+            "https://tenor.com/bnG1v.gif",
+            "https://tenor.com/ETO4.gif"]
 
 awoo = ["https://cdn.discordapp.com/attachments/715969701771083820/739429902402715748/unknown.gif",
         "https://cdn.discordapp.com/attachments/726377118304305245/739430343962001468/unknown.gif",
