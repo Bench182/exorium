@@ -234,6 +234,15 @@ async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing
     await ctx.send(embed=embed)
 
 
+@bot.command(name="highfive")  # interaction command - feed someone. gifs are random!
+async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Doing a good job!"):
+    GIFlist = gifs.highfive
+    GIF = random.choice(GIFlist)
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**high-fived**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
+    embed.set_image(url=GIF)
+    await ctx.send(embed=embed)
+
+
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]

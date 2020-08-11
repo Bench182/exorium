@@ -122,4 +122,14 @@ happy = ["https://media1.tenor.com/images/4b5d8967536d7235f5231ba9123964ab/tenor
          "https://media1.tenor.com/images/685f1055a8a4dbfe3318e5898d19b97c/tenor.gif?itemid=10253595",
          "https://media1.tenor.com/images/41df672a1055e4f833e2022dce9231fd/tenor.gif?itemid=16660700",
          "https://d.facdn.net/art/bluemachine/1573314972/1573314972.bluemachine_2.gif"]
+
+highfive = ["https://media1.tenor.com/images/bbc34d4c1409ddf777186c773334e3e6/tenor.gif?itemid=6123039",
+            "https://media.tenor.com/images/975d05f75a11fca62e2bb0b1ee040772/tenor.gif",
+            "https://media.tenor.com/images/be4e523990540bb9ad18ac49439e5cd2/tenor.gif",
+            "https://media.tenor.com/images/56eaf6892f8dd40c5f2b4580e8cd34e8/tenor.gif",
+            "https://media1.tenor.com/images/88ece6b5cf8b9df04c6290c5100a8410/tenor.gif?itemid=7367090",
+            "https://media1.tenor.com/images/ce04ff64e42ac6a0fc23dc1e1da79a2c/tenor.gif?itemid=14400946",
+            "https://media1.tenor.com/images/6e5ab91c3133061f67a1843df9ace592/tenor.gif?itemid=5442827",
+            "https://media1.tenor.com/images/59e5bbd7e22503afa1b0ec8176acaae9/tenor.gif?itemid=3431650"]
+
 votechannels = [731848766327619586, 731829759146721320]
