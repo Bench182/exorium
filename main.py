@@ -212,7 +212,7 @@ async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy 
 
 
 @bot.command(name="glomp")  # interaction command - feed someone. gifs are random!
-async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy boy"):
+async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"):
     GIFlist = gifs.glomp
     GIF = random.choice(GIFlist)
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**glomped on**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
