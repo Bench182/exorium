@@ -62,7 +62,13 @@ AskProtopaw = ["yes",
                "that this is an example of a stupid question"]
 
 cuddle = ["https://thumbs.gfycat.com/WaterloggedFabulousIbis-small.gif",
-          "https://media3.giphy.com/media/h4BprYiFYNxRe/giphy.gif"]
+          "https://media3.giphy.com/media/h4BprYiFYNxRe/giphy.gif",
+          "https://tenor.com/ZMZS.gif",
+          "https://tenor.com/xz93.gif",
+          "https://tenor.com/FL7y.gif",
+          "https://tenor.com/bfooz.gif",
+          "https://tenor.com/5Vbq.gif",
+          "https://tenor.com/bdXEX.gif"]
 
 bellyrub = ["https://i.imgur.com/VnoVdts.gif",
             "https://i.imgur.com/AGb1AKb.gif",
