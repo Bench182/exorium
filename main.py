@@ -404,7 +404,8 @@ async def say(ctx, *, sentence):
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
-    
+ 
+   
 @client.command()
 async def clear(ctx, amount=0):
     await ctx.channel.purge(limit=amount)
