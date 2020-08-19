@@ -407,6 +407,7 @@ async def say2(ctx, *, sentence2):
  
    
 @bot.command()
+@commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount=0):
     await ctx.channel.purge(limit=amount)
     await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
