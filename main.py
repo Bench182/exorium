@@ -419,7 +419,8 @@ async def contributors(ctx):
     embed.add_field(name='Contributions', value='Contributors and their commands are listed here.', inline=False)
     embed.add_field(name='Commands', value='`purge`', inline=True)
     embed.add_field(name='Contributor', value='`Bench182#5276`', inline=True)
-    embed.set_footer(text='For other type of contributions check [the repo](https://github.com/FireGamingYT/protogen/)')
+    embed.add_field(name='Other contributions', value="For all contributions please check [the repo](https://github.com/FireGamingYT/protogen)", inline=False)
+    embed.set_footer(text='Only actual contributed commands are shown here.')
     await ctx.send(embed=embed)
     
 
