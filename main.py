@@ -404,15 +404,15 @@ async def say(ctx, *, sentence):
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
- 
-   
+
+
 @bot.command()
 @commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount=0):
-    await ctx.channel.purge(limit=amount)
+    await ctx.channel.purge(limit=amount + 1)
     await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
 
-  
+
 @bot.command()
 async def contributors(ctx):
     embed = discord.Embed(title='command contributors', color=config.color)
@@ -422,7 +422,7 @@ async def contributors(ctx):
     embed.add_field(name='Other contributions', value="For all contributions please check [the repo](https://github.com/FireGamingYT/protogen)", inline=False)
     embed.set_footer(text='Only actual contributed commands are shown here.')
     await ctx.send(embed=embed)
-    
+
 
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
