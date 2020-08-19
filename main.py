@@ -406,10 +406,10 @@ async def say2(ctx, *, sentence2):
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
  
    
-@client.command()
-async def clear(ctx, amount=0):
+@bot.command()
+async def purge(ctx, amount=0):
     await ctx.channel.purge(limit=amount)
-    await ctx.send(f':ballot_box_with_check: | Deleted __{amount}__ messages **successfully**.')
+    await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
 
 
 class cmds:
