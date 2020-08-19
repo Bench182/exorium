@@ -461,7 +461,7 @@ class syntax:
     links = "`links`"
     info = "`?info`"
     honk = "`?honk`"
-    askproto = "`?askreggie <Question>`"
+    askproto = "`?askproto <Question>`"
     lick = "`?lick @user1 @user2..."
     ban = "`?ban @user | ID Reason`"
     kick = "`?kick @user | ID reason`"
