@@ -409,8 +409,12 @@ async def say2(ctx, *, sentence2):
 @bot.command()
 @commands.has_permissions(manage_messages=True)
 async def purge(ctx, amount=0):
-    await ctx.channel.purge(limit=amount + 1)
-    await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
+    if (amount <= 0):
+        return await ctx.send("You can't grow younger either, so neither can I purge negative amounts of messages.")
+    if (amount <= 1500):
+        await ctx.channel.purge(limit=amount + 1)
+        await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
+    return await ctx.send("You can only purge 1500 messages at a time.")
 
 
 @bot.command()
