@@ -19,7 +19,7 @@ async def logging(ctx, type):
     embed = discord.Embed(title="ProtoPaw command log", color=config.color)
     embed.add_field(name="Command", value=f"\"{type}\"", inline=True)
     embed.add_field(name="Author", value=ctx.message.author, inline=True) 
-    embed.add_field(name="Guild", value=ctx.guild, inline=False)
+    embed.add_field(name="Guild", value=ctx.guild, inline=True)
     embed.add_field(name="Channel", value=ctx.channel, inline=True)
     #channel = bot.get_channel(747808767034392626)
     await ctx.send(embed=embed)
