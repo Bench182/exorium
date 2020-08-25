@@ -16,6 +16,7 @@ async def interactions(ctx, members, reason, type, ending, typespecial):
 
 async def logging(ctx, type):
     print(f"Command \"{type}\" was used in {ctx.channel} (guild {ctx.guild}) by {ctx.message.author}")
+    
     embed = discord.Embed(title="ProtoPaw command log", color=config.color)
     embed.add_field(name="Command", value=f"\"{type}\"", inline=True)
     embed.add_field(name="Author", value=ctx.message.author, inline=True)
