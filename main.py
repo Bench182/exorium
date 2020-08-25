@@ -193,11 +193,11 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     GIFlist = gifs.blush
     GIF = random.choice(GIFlist)
     if not (members):
-        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed**\nFor: " + reason))
+        embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**blushed**\nFor: " + reason))
         embed.set_image(url=GIF)
         await ctx.send(embed=embed)
         return
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
+    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Blush")
@@ -234,7 +234,7 @@ async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Happy")
 
-@bot.command(name="highfive")  #interaction command - highfive someone. Gifs are random
+@bot.command(name="highfive")  # interaction command - highfive someone. Gifs are random
 async def highfive(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "highfive", "awesome!", "high fived")
     await functions.logging(ctx, "Highfive")
@@ -406,6 +406,28 @@ async def say2(ctx, *, sentence2):
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
     await functions.logging(ctx, "Say2")
 
+@bot.command()
+@commands.has_permissions(manage_messages=True)
+async def purge(ctx, amount=0):
+    if (amount <= 0):
+        return await ctx.send("You can't grow younger either, so neither can I purge negative amounts of messages.")
+    if (amount <= 1500):
+        await ctx.channel.purge(limit=amount + 1)
+        await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
+    return await ctx.send("You can only purge 1500 messages at a time.")
+
+
+@bot.command()
+async def contributors(ctx):
+    embed = discord.Embed(title='command contributors', color=config.color)
+    embed.add_field(name='Contributions', value='Contributors and their commands are listed here. Please inform us if you believe the list is not correct in an [issue](https://github.com/FireGamingYT/protogen/issues/new). We will get back to you asap.', inline=False)
+    embed.add_field(name='Commands', value='`purge`', inline=True)
+    embed.add_field(name='Contributor', value='`Bench182#5276`', inline=True)
+    embed.add_field(name='Other contributions', value="For all contributions please check [the repo](https://github.com/FireGamingYT/protogen)", inline=False)
+    embed.set_footer(text='Only actual contributed commands are shown here.')
+    await ctx.send(embed=embed)
+
+
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged persons, kyoot!"
@@ -443,7 +465,7 @@ class syntax:
     links = "`links`"
     info = "`?info`"
     honk = "`?honk`"
-    askproto = "`?askreggie <Question>`"
+    askproto = "`?askproto <Question>`"
     lick = "`?lick @user1 @user2..."
     ban = "`?ban @user | ID Reason`"
     kick = "`?kick @user | ID reason`"

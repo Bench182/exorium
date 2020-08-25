@@ -13,7 +13,7 @@ For questions, issues, feedback/suggestions and other things you can DM the deve
 ## Developers
 ProtoPaw is currently being developed by:
 - ChosenFate#5108
-- BluewyFurGamesYT#5108
+- BluewyFurGame#5108
 
 ----
 
