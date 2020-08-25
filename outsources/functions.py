@@ -15,4 +15,4 @@ async def interactions(ctx, members, reason, type, ending, typespecial):
 
 
 async def logging(ctx, type):
-    print(f"Command \"{type}\" was used in {ctx.channel}!")
+    print(f"Command \"{type}\" was used in {ctx.channel} (guild {ctx.guild}) by {ctx.message.author.name}!")
