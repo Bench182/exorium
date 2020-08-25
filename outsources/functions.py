@@ -23,5 +23,4 @@ async def logging(ctx, type):
     embed.add_field(name="Channel", value=f"`{ctx.channel}`", inline=True)
     channel = bot.get_channel(747808767034392626)
     await channel.send(embed=embed)
-    
-    print('<#747808767034392626>')
+    await ctx.send('<#747808767034392626>')
