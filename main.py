@@ -42,7 +42,6 @@ async def latency(ctx):
     embed = discord.Embed(title="ProtoPaw latency", color=config.color)
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
-    print(f'ping was used by {ctx.message.author.name} in {ctx.guild.name}')
 
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
@@ -129,6 +128,7 @@ async def snuggle(ctx, members: commands.Greedy[discord.Member], *, reason="bein
 @bot.command(name='hug', brief='Fandom hug!')  # interaction command - hug someone. gifs are random!
 async def hug(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "hug", "how lovely", "hugged")
+    await functions.logging(ctx, "Hug")
 
 
 @bot.command(name='pat', brief='Pats, wholesome!')  # interaction command - pat someone. gifs are random!

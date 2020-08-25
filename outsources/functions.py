@@ -12,3 +12,7 @@ async def interactions(ctx, members, reason, type, ending, typespecial):
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + f"**{typespecial}**" + " " + '**,** '.join(x.mention for x in members) + f"**, {ending}!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
+
+
+async def logging(ctx, type):
+    print(f"Command \"{type}\" was used in {ctx.channel}!")
