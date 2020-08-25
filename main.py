@@ -44,6 +44,13 @@ async def latency(ctx):
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Ping")
 
+@bot.command(name='test621')
+async def test621(ctx):
+    embed = discord.Embed(title="e621", color=config.color)
+    embed.add_field(name="test", value="<#747808767034392626>", inline=True)
+    channel = bot.get_channel(747808767034392626)
+    await channel.send(embed=embed)
+    
 @bot.command()  # the help command, displays all the commands and the developers in an embed
 async def help(ctx):
     embed = discord.Embed(title='commands | `?`, `p!`', color=config.color)
