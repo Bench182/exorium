@@ -21,5 +21,5 @@ async def logging(ctx, type):
     embed.add_field(name="Author", value=ctx.message.author, inline=True) 
     embed.add_field(name="Guild", value=ctx.guild, inline=False)
     embed.add_field(name="Channel", value=ctx.channel, inline=True)
-       channel = bot.get_channel(747808767034392626)
-    await channel.send(embed=embed)
+    #channel = bot.get_channel(747808767034392626)
+    await ctx.send(embed=embed)
