@@ -42,7 +42,7 @@ async def latency(ctx):
     embed = discord.Embed(title="ProtoPaw latency", color=config.color)
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Ping")
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
 async def help(ctx):
@@ -56,14 +56,14 @@ async def help(ctx):
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Help")
 
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")  # shows the bot invite with hyperlink in an embed
 async def invite(ctx):
     embed = discord.Embed(title="ProtoPaw invite link", color=config.color)
     embed.add_field(name="Invite ProtoPaw here", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Invite")
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")  # shows the bot statistics (total amount of users in total amount of guilds) in an embed
 async def statistics(ctx):
@@ -71,13 +71,13 @@ async def statistics(ctx):
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Stats")
 
 @bot.command()  # retrieves the ID of a member. Argument can be an ID, just the user's name or the user mention
 async def get_id(ctx, member: discord.Member):
     user_id = member.id
     await ctx.send('The user ID is %d.' % user_id)
-
+    await functions.logging(ctx, "Get_id")
 
 @bot.command(aliases=['av'])  # shows the mentioned user's avatar in an embed
 async def avatar(ctx, *, user: discord.Member = None):
@@ -89,7 +89,7 @@ async def avatar(ctx, *, user: discord.Member = None):
         eA.set_author(name=user, icon_url=user.avatar_url)
         eA.set_image(url=user.avatar_url)
         await ctx.send(embed=eA)
-
+        await functions.logging(ctx, "Avatar")
 
 @bot.command(name='links', brief='Discord related links')  # shows the links related to ProtoPaw in an embed
 async def links(ctx):
@@ -100,7 +100,7 @@ async def links(ctx):
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Links")
 
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
@@ -109,7 +109,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Value", value=str(len(ctx.guild.members)) + "\n" + str(ctx.guild.region) + "\n", inline=True)
     embed.set_author(name=ctx.guild.name + " Statistics", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Serverinfo")
 
 @bot.command(name='variable', brief='test variables')  # to test things. Currently a way to bully people who arent a fan of furries.
 async def variables(ctx):
@@ -118,47 +118,47 @@ async def variables(ctx):
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_author(name="The Paw Kingdom Links", url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1", icon_url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Variable")
 
 @bot.command(name='snuggle', brief='Snuggling, how sweet')  # interaction command - snuggle someone. gifs are random!
 async def snuggle(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "snuggle", "how cute", "snuggled")
-
+    await functions.logging(ctx, "Snuggle")
 
 @bot.command(name='hug', brief='Fandom hug!')  # interaction command - hug someone. gifs are random!
 async def hug(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "hug", "how lovely", "hugged")
-
+    await functions.logging(ctx, "Hug")
 
 @bot.command(name='pat', brief='Pats, wholesome!')  # interaction command - pat someone. gifs are random!
 async def pat(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "pat", "how beautiful", "pat")
-
+    await functions.logging(ctx, "Pat")
 
 @bot.command(name='boop', aliases=['bp'], brief='Boop!')  # interaction command - boop someone. gifs are random!
 async def boop(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "boop", "so soft", "booped")
-
+    await functions.logging(ctx, "Boop")
 
 @bot.command(name='kiss', aliases=['smooch'], brief='Smooch!')  # interaction command - kiss someone. gifs are random!
 async def kiss(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "smooch", "lovely", "smooched")
-
+    await functions.logging(ctx, "Kiss")
 
 @bot.command(name="lick", brief='Licking, lol')  # interaction command - lick someone. gifs are random!
 async def lick(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "lick", "tasty", "licked")
-
+    await functions.logging(ctx, "Lick")
 
 @bot.command(name="bellyrub")  # interaction command - bellyrub someone. gifs are random!
 async def bellyrub(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "bellyrub", "lovely", "bellyrubbed")
-
+    await functions.logging(ctx, "Bellyrub")
 
 @bot.command(name="cuddle")  # interaction command - cuddle someone. gifs are random!
 async def cuddle(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "cuddle", "heartwarming", "cuddled")
-
+    await functions.logging(ctx, "Cuddle")
 
 @bot.command(name="rawr")  # interaction command - rawr at someone. gifs are random!
 async def rawr(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!"):
@@ -172,7 +172,7 @@ async def rawr(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!")
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**rawred at**" + " " + '**,** '.join(x.mention for x in members) + "**, cute!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Rawr")
 
 @bot.command(name="awoo")  # interaction command - awoo at someone. gifs are random!
 async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!"):
@@ -186,7 +186,7 @@ async def awoo(ctx, members: commands.Greedy[discord.Member], *, reason="Awoo!")
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**awoo'd at**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Awoo")
 
 @bot.command(name="blush")  # interaction command - blush (because of) someone. gifs are random!
 async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes them kyooter!"):
@@ -200,7 +200,7 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Blushed because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Blush")
 
 @bot.command(name="feed")  # interaction command - feed someone. gifs are random!
 async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy boy"):
@@ -209,7 +209,7 @@ async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy 
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**feeds**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "feed")
 
 @bot.command(name="glomp")  # interaction command - glomp someone. gifs are random!
 async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"):
@@ -218,7 +218,7 @@ async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**glomped on**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Glomp")
 
 @bot.command(name="happy")  # interaction command - be happy (because of someone). gifs are random!
 async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing"):
@@ -232,12 +232,12 @@ async def happy(ctx, members: commands.Greedy[discord.Member], *, reason="Vibing
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**Is happy because of**" + " " + '**,** '.join(x.mention for x in members) + "**, kyoot!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Happy")
 
 @bot.command(name="highfive")  #interaction command - highfive someone. Gifs are random
 async def highfive(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "highfive", "awesome!", "high fived")
-
+    await functions.logging(ctx, "Highfive")
 
 @bot.command(name="wag")  # interaction command - wag (because of someone). gifs are random!
 async def wag(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!"):
@@ -251,13 +251,13 @@ async def wag(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!"):
     embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**wags their tail because of**" + " " + '**,** '.join(x.mention for x in members) + "**, cute!**\nFor: " + reason))
     embed.set_image(url=GIF)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Wag")
 
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
     await ctx.send(random.choice(Arglist))
-
+    await functions.logging(ctx, "Random")
 
 @bot.command(name="info")  # Gives information about the mentioned command
 async def info(ctx, arg):
@@ -268,7 +268,7 @@ async def info(ctx, arg):
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Info")
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -284,7 +284,7 @@ async def askprotopaw(ctx, *, arg):
     answer = random.choice(answers)
     embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Askproto")
 
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
@@ -303,7 +303,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
-
+        await functions.logging(ctx, "Ban")
 
 @bot.command(name='unban')  # Unbans user with a given ID
 @commands.has_permissions(ban_members=True)
@@ -314,7 +314,7 @@ async def _unban(ctx, id: int):
     embed = discord.Embed(title=f"Unbanned {clearname[0]}", color=config.color)
     embed.set_footer(text=user)
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Unban")
 
 @bot.command(name="kick")  # Kicks the mentioned user from the guild
 @commands.has_permissions(kick_members=True)
@@ -333,7 +333,7 @@ async def kick(ctx, member: discord.Member, *, reason=None):
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
-
+        await functions.logging(ctx, "Kick")
 
 @bot.command(name="softban")  # bans and immediately unbans the user mentioned
 @commands.has_permissions(ban_members=True)
@@ -353,7 +353,7 @@ async def softban(ctx, member: discord.Member, *, reason=None):
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
-
+        await functions.logging(ctx, "Softban")
 
 @bot.command(name="poll")  # Makes a poll with up to 10 options, seperate choices with ,
 async def poll(ctx, *, arg):
@@ -373,7 +373,7 @@ async def poll(ctx, *, arg):
         en = en+1
         if en >= n:
             break
-
+            await functions.logging(ctx, "Poll")
 
 @bot.command(name="decide")  # Let people vote for something
 async def decide(ctx, *, arg):
@@ -383,14 +383,14 @@ async def decide(ctx, *, arg):
     botmsg = await ctx.send(embed=embed)
     await botmsg.add_reaction("✅")
     await botmsg.add_reaction("❌")
-
+    await functions.logging(ctx, "Decide")
 
 @bot.command(name="revive")  # Tags the role that was given with a message.
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
     await ctx.send("<@&738356235841175594>! The chat is dead, we need you now!")
-
+    await functions.logging(ctx, "Revive")
 
 @bot.command()  # In an embed repeats what you said and deletes the original command
 async def say(ctx, *, sentence):
@@ -398,13 +398,13 @@ async def say(ctx, *, sentence):
     embed = discord.Embed(title=sentence, color=config.color)
     embed.set_footer(text=f"Executed by {ctx.message.author}")
     await ctx.send(embed=embed)
-
+    await functions.logging(ctx, "Say")
 
 @bot.command()  # Repeats what you said and deletes the original command
 async def say2(ctx, *, sentence2):
     await ctx.message.delete()
     await ctx.send(f"{ctx.author.mention} said:\n{sentence2}")
-
+    await functions.logging(ctx, "Say2")
 
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
