@@ -42,6 +42,7 @@ async def latency(ctx):
     embed = discord.Embed(title="ProtoPaw latency", color=config.color)
     embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
     await ctx.send(embed=embed)
+    print(f'ping was used by {ctx.message.author.name} in {ctx.guild.name}')
 
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
