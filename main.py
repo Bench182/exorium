@@ -134,7 +134,7 @@ async def hug(ctx, members: commands.Greedy[discord.Member], *, reason="being ad
 @bot.command(name='pat', brief='Pats, wholesome!')  # interaction command - pat someone. gifs are random!
 async def pat(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
     await functions.interactions(ctx, members, reason, "pat", "how beautiful", "pat")
-
+    await functions.logging(ctx, "Pat")
 
 @bot.command(name='boop', aliases=['bp'], brief='Boop!')  # interaction command - boop someone. gifs are random!
 async def boop(ctx, members: commands.Greedy[discord.Member], *, reason="being adorable"):
