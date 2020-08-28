@@ -1,3 +1,12 @@
+import mysql.connector
+
 token = 'AUTHTOKEN'
 
-color = (COLOUR)
+color = (COLOR)
+
+DBdata = mysql.connector.connect(
+  host="localhost",
+  user="username",
+  password="password",
+  database="database name"
+)
