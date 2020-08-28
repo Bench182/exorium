@@ -488,9 +488,13 @@ async def warn(ctx, member: discord.Member, *, reason="No reason provided"):
 @bot.command()
 @commands.has_permissions(ban_members=True)
 async def delwarn(ctx, caseID):
-    database.execute("DELETE FROM warnings WHERE id = %s AND serverid = %s", [caseID, ctx.message.guild.id])
-    mydb.commit()
-    await ctx.send(f"Removed warning #{caseID}")
+    database.execute("SELECT * FROM warnings WHERE id = %s AND serverid = %s", [caseID, ctx.message.guild.id])
+    results = database.fetchall()
+    if results:
+        database.execute("DELETE FROM warnings WHERE id = %s AND serverid = %s", [caseID, ctx.message.guild.id])
+        mydb.commit()
+        await ctx.send(f"Removed warning #{caseID}")
+    await ctx.send("No warning with such an ID exists here. Please check again!")
 
 
 @bot.command()
