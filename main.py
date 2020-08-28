@@ -9,9 +9,8 @@ from outsources import functions
 
 mydb = config.DBdata
 database = mydb.cursor()
-
+database.execute("CREATE TABLE IF NOT EXISTS warnings (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), reason VARCHAR(255))")
 logger = logging.getLogger('discord')
-
 
 logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
@@ -473,6 +472,40 @@ async def contributors(ctx):
     embed.add_field(name='Contributor', value='`Bench182#5276`', inline=True)
     embed.add_field(name='Other contributions', value="For all contributions please check [the repo](https://github.com/FireGamingYT/protogen)", inline=False)
     embed.set_footer(text='Only actual contributed commands are shown here.')
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def warn(ctx, member: discord.Member, *, reason="No reason provided"):
+    sql = "INSERT INTO warnings (user, reason) VALUES (%s, %s)"
+    val = (member.id, reason)
+    database.execute(sql, val)
+    mydb.commit()
+    await ctx.send(f"Warned {member.mention} for {reason}")
+
+@bot.command()
+async def delwarn(ctx, caseID):
+    database.execute("DELETE FROM warnings WHERE id = %s", [caseID])
+    mydb.commit()
+    await ctx.send(f"Removed warning #{caseID}")
+
+@bot.command()
+async def warnings(ctx, member: discord.Member):
+    database.execute("SELECT * FROM warnings WHERE user = %s", [member.id])
+    results = database.fetchall()
+    if not results:
+        return await ctx.send("⚠️ User has no warnings!")
+    global totalwarns
+    totalwarns = " "
+    i = 0
+    while i < len(results):
+        print(i)
+        totalwarns += f"{i+1}: Reason: {results[i][2]}\nCase #{results[i][0]}\n"
+        i += 1
+
+    await ctx.send(f"The user has a total of {len(results)} warnings")
+
+    embed = discord.Embed(title='Warnings for ' + member.name, description = totalwarns, color=config.color)
     await ctx.send(embed=embed)
 
 
