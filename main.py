@@ -476,6 +476,7 @@ async def contributors(ctx):
 
 
 @bot.command()
+@commands.has_permissions(ban_members=True)
 async def warn(ctx, member: discord.Member, *, reason="No reason provided"):
     sql = "INSERT INTO warnings (user, reason) VALUES (%s, %s)"
     val = (member.id, reason)
@@ -484,12 +485,14 @@ async def warn(ctx, member: discord.Member, *, reason="No reason provided"):
     await ctx.send(f"Warned {member.mention} for {reason}")
 
 @bot.command()
+@commands.has_permissions(ban_members=True)
 async def delwarn(ctx, caseID):
     database.execute("DELETE FROM warnings WHERE id = %s", [caseID])
     mydb.commit()
     await ctx.send(f"Removed warning #{caseID}")
 
 @bot.command()
+@commands.has_permissions(ban_members=True)
 async def warnings(ctx, member: discord.Member):
     database.execute("SELECT * FROM warnings WHERE user = %s", [member.id])
     results = database.fetchall()
