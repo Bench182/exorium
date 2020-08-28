@@ -9,7 +9,7 @@ from outsources import functions
 
 mydb = config.DBdata
 database = mydb.cursor()
-database.execute("CREATE TABLE IF NOT EXISTS warnings (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), reason VARCHAR(255))")
+database.execute("CREATE TABLE IF NOT EXISTS warnings (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), reason VARCHAR(255), serverid VARCHAR(255))")
 logger = logging.getLogger('discord')
 
 logger.setLevel(logging.DEBUG)
@@ -478,23 +478,26 @@ async def contributors(ctx):
 @bot.command()
 @commands.has_permissions(ban_members=True)
 async def warn(ctx, member: discord.Member, *, reason="No reason provided"):
-    sql = "INSERT INTO warnings (user, reason) VALUES (%s, %s)"
-    val = (member.id, reason)
+    print(ctx.message.guild.id)
+    sql = "INSERT INTO warnings (user, reason, serverid) VALUES (%s, %s, %s)"
+    val = (member.id, reason, ctx.message.guild.id)
     database.execute(sql, val)
     mydb.commit()
     await ctx.send(f"Warned {member.mention} for {reason}")
 
+
 @bot.command()
 @commands.has_permissions(ban_members=True)
 async def delwarn(ctx, caseID):
-    database.execute("DELETE FROM warnings WHERE id = %s", [caseID])
+    database.execute("DELETE FROM warnings WHERE id = %s AND serverid = %s", [caseID, ctx.message.guild.id])
     mydb.commit()
     await ctx.send(f"Removed warning #{caseID}")
+
 
 @bot.command()
 @commands.has_permissions(ban_members=True)
 async def warnings(ctx, member: discord.Member):
-    database.execute("SELECT * FROM warnings WHERE user = %s", [member.id])
+    database.execute("SELECT * FROM warnings WHERE user = %s AND serverid = %s", [member.id, ctx.message.guild.id])
     results = database.fetchall()
     if not results:
         return await ctx.send("⚠️ User has no warnings!")
@@ -502,13 +505,12 @@ async def warnings(ctx, member: discord.Member):
     totalwarns = " "
     i = 0
     while i < len(results):
-        print(i)
         totalwarns += f"{i+1}: Reason: {results[i][2]}\nCase #{results[i][0]}\n"
         i += 1
 
     await ctx.send(f"The user has a total of {len(results)} warnings")
 
-    embed = discord.Embed(title='Warnings for ' + member.name, description = totalwarns, color=config.color)
+    embed = discord.Embed(title='Warnings for ' + member.name, description=totalwarns, color=config.color)
     await ctx.send(embed=embed)
 
 
