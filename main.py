@@ -3,6 +3,7 @@ import config
 import discord
 import random
 import json
+import requests
 import logging
 import discord.ext
 from discord.ext import commands
