@@ -103,7 +103,7 @@ async def animal(ctx):
     r = requests.get(f"https://pixabay.com/api/?key={config.key}&q=animal&image_type=photo")
     finalimg = random.choice(r.json()["hits"])["webformatURL"]
     embed = discord.Embed(title='Random animal', color=config.color)
-    embed.set_image(url=r)
+    embed.set_image(url=finalimg)
     embed.set_footer(text='Powered by pixabay.')
     await ctx.send(embed=embed)
 
