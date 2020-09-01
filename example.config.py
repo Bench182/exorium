@@ -4,6 +4,9 @@ token = 'AUTHTOKEN'
 
 color = (COLOR)
 
+key = 'pixabay api key'
+
+
 DBdata = mysql.connector.connect(
   host="localhost",
   user="username",

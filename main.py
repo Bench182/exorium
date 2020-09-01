@@ -3,6 +3,7 @@ import config
 import discord
 import random
 import logging
+import pixabay
 import discord.ext
 from discord.ext import commands
 from outsources import functions
@@ -92,6 +93,19 @@ async def get_id(ctx, member: discord.Member):
     user_id = member.id
     await ctx.send('The user ID is %d.' % user_id)
     await functions.logging(ctx, "Get_id", bot)
+
+
+pixa = os.getenv(config.key)
+
+image = Image(pixa)
+
+@bot.command(name='animal', help='Generates a random animal!')
+async def animal(ctx):
+    page = random.choice(range(0, 4))
+    embed = discord.Embed(title='Random animal', color=config.color)
+    embed.set_image(url=ims)
+    embed.set_footer(text='Powered by pixabay.')
+    await ctx.send(embed=embed)
 
 
 @bot.command(aliases=['av'])  # shows the mentioned user's avatar in an embed
