@@ -8,7 +8,7 @@ ProtoPaw
 ![License](https://img.shields.io/github/license/FireGamingYT/protogen)
 ![GitHub forks](https://img.shields.io/github/forks/FireGamingYT/protogen)
 ![GitHub stars](https://img.shields.io/github/stars/FireGamingYT/protogen)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/FireGamingYT/protogen)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/FireGamingYT/protogen)
 ![GitHub contributors](https://img.shields.io/github/contributors/FireGamingYT/protogen)
 ![GitHub last commit](https://img.shields.io/github/last-commit/FireGamingYT/protogen)
 [![Support](https://discordapp.com/api/guilds/715969701771083817/widget.png?style=shield)](https://discord.gg/k64tAer)
