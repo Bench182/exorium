@@ -2,6 +2,7 @@ ProtoPaw
 ===
 [![code size](https://img.shields.io/github/languages/code-size/FireGamingYT/protogen)](https://github.com/FireGamingYT/protogen)
  [![issues](https://img.shields.io/github/issues/FireGamingYT/protogen)](https://github.com/FireGamingYT/protogen/issues/)
+ [![issues](https://img.shields.io/github/issues-closed/FireGamingYT/protogen)](https://github.com/FireGamingYT/protogen/issues?q=is%3Aissue+is%3Aclosed)
   [![Support](https://discordapp.com/api/guilds/715969701771083817/widget.png?style=shield)](https://discord.gg/k64tAer)
 
 ----
