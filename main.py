@@ -4,6 +4,7 @@ import discord
 import random
 import json
 import requests
+import urllib.parse
 import logging
 import discord.ext
 from discord.ext import commands
@@ -97,15 +98,12 @@ async def get_id(ctx, member: discord.Member):
     await functions.logging(ctx, "Get_id", bot)
 
 
-pixa = os.getenv(config.key)
-
-image = Image(pixa)
-
 @bot.command(name='animal', help='Generates a random animal!')
 async def animal(ctx):
-    page = random.choice(range(0, 4))
+    r = requests.get(f"https://pixabay.com/api/?key={config.key}&q=animal&image_type=photo")
+    finalimg = random.choice(r.json()["hits"])["webformatURL"]
     embed = discord.Embed(title='Random animal', color=config.color)
-    embed.set_image(url=ims)
+    embed.set_image(url=r)
     embed.set_footer(text='Powered by pixabay.')
     await ctx.send(embed=embed)
 
