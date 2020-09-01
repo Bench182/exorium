@@ -505,6 +505,7 @@ async def delwarn(ctx, caseID):
         database.execute("DELETE FROM warnings WHERE id = %s AND serverid = %s", [caseID, ctx.message.guild.id])
         mydb.commit()
         await ctx.send(f"Removed warning #{caseID}")
+        return
     await ctx.send("No warning with such an ID exists here. Please check again!")
 
 
