@@ -3,10 +3,10 @@ import config
 import discord
 import random
 import logging
-import python-pixabay
 import discord.ext
 from discord.ext import commands
 from outsources import functions
+from pixabay import Image, Video
 
 mydb = config.DBdata
 database = mydb.cursor()
