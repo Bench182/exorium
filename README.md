@@ -1,5 +1,17 @@
 ProtoPaw
 ===
+[![code size](https://img.shields.io/github/languages/code-size/FireGamingYT/protogen)](https://github.com/FireGamingYT/protogen)
+[![issues](https://img.shields.io/github/issues/FireGamingYT/protogen)](https://github.com/FireGamingYT/protogen/issues/)
+ [![issues](https://img.shields.io/github/issues-closed/FireGamingYT/protogen)](https://github.com/FireGamingYT/protogen/issues?q=is%3Aissue+is%3Aclosed)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/FireGamingYT/protogen)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/FireGamingYT/protogen)
+![License](https://img.shields.io/github/license/FireGamingYT/protogen)
+![GitHub forks](https://img.shields.io/github/forks/FireGamingYT/protogen)
+![GitHub stars](https://img.shields.io/github/stars/FireGamingYT/protogen)
+![GitHub contributors](https://img.shields.io/github/contributors/FireGamingYT/protogen)
+![GitHub last commit](https://img.shields.io/github/last-commit/FireGamingYT/protogen)
+[![Support](https://discordapp.com/api/guilds/715969701771083817/widget.png?style=shield)](https://discord.gg/k64tAer)
+
 ----
 ## Information
 ProtoPaw is a publicly available bot with a bunch of features, these will be displayed here along with some information about the bot. Please note that ProtoPaw is continuously being developed and more features will be added, as well as improvements to already existing features. The prefixes of this bot are `?` and `p!`
@@ -13,8 +25,7 @@ For questions, issues, feedback/suggestions and other things you can DM the deve
 ## Developers
 ProtoPaw is currently being developed by:
 - ChosenFate#5108
-- BluewyFurGame#5108
-
+- Bluewy!#5108
 ----
 
 ## Commands
