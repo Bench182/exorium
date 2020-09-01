@@ -1,6 +1,7 @@
 ProtoPaw
 ===
 [![Support](https://discordapp.com/api/guilds/715969701771083817/widget.png?style=shield)](https://discord.gg/k64tAer)
+![code size](https://img.shields.io/github/languages/code-size/FireGamingYT/protogen)
 ----
 ## Information
 ProtoPaw is a publicly available bot with a bunch of features, these will be displayed here along with some information about the bot. Please note that ProtoPaw is continuously being developed and more features will be added, as well as improvements to already existing features. The prefixes of this bot are `?` and `p!`
