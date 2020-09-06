@@ -27,7 +27,7 @@ For questions, issues, feedback/suggestions and other things you can DM the deve
 ## Team
 All ProtoPaw team members currently are:
 - ChosenFate#5108 | main developer 
-- NeoGames#9099 | developer & creator
+- NeoGames#5108 | developer & creator
 - Bench182#5276 | LTD. developer
 - Etile#3166 | Host & provider
 ----
