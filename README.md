@@ -23,7 +23,7 @@ For questions, issues, feedback/suggestions and other things you can DM the deve
 ----
 
 ## Team
-ProtoPaw is currently being developed by:
+All ProtoPaw team members currently are:
 - ChosenFate#5108 | main developer 
 - NeoGames#9099 | developer & creator
 - Bench182#5276 | LTD. developer
