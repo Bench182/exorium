@@ -466,7 +466,7 @@ async def say2(ctx, *, sentence2):
 
 @bot.command()
 @commands.has_permissions(manage_messages=True)
-async def purge(ctx, amount : int):
+async def purge(ctx, amount=0):
     if (amount <= 0):
         return await ctx.send("You can't grow younger either, so neither can I purge negative amounts of messages.")
     if (amount <= 1500):
