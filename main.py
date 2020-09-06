@@ -81,7 +81,7 @@ async def invite(ctx):
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")  # shows the bot statistics (total amount of users in total amount of guilds) in an embed
 async def statistics(ctx):
-    embed = discord.Embed(title="Statistics ProtoPaw:", description="Global Bot Statistics", color=config.color)
+    embed = discord.Embed(title="Protopaw statistics:", description="Global Bot Statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
