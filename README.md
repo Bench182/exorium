@@ -22,10 +22,12 @@ For questions, issues, feedback/suggestions and other things you can DM the deve
 
 ----
 
-## Developers
+## Team
 ProtoPaw is currently being developed by:
-- ChosenFate#5108
-- Bluewy!#5108
+- ChosenFate#5108 | main developer 
+- NeoGames#9099 | developer & creator
+- Bench182#5276 | LTD. developer
+- Etile#3166 | Host & provider
 ----
 
 ## Commands
