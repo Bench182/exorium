@@ -20,6 +20,8 @@ Its main purpose was to serve in a specific discord, though it was later changed
 
 For questions, issues, feedback/suggestions and other things you can DM the developers on Discord or join the [Paw Kingdom Discord server](https://discord.gg/k64tAer). (Please note that the Paw Kingdom is more than just a support server for ProtoPaw, and verification is needed upon joining)
 
+[Invite Protopaw here](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)
+
 ----
 
 ## Team
