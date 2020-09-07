@@ -58,9 +58,9 @@ async def test621(ctx):
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
 async def help(ctx):
-    embed = discord.Embed(title='commands | `?`, `p!`', color=config.color)
-    embed.add_field(name="**🔨 moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
-    embed.add_field(name="**🤖 bot related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
+    embed = discord.Embed(title='Commands | `?`, `p!`', color=config.color)
+    embed.add_field(name="**🔨 Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
+    embed.add_field(name="**🤖 Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**🏗️ Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide`", inline=True)
     embed.add_field(name="**🤝 Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `cuddle`\n `askproto` `lick` `blush`\n`feed` `glomp` `happy`\n`highfive` `wag`", inline=True)
     embed.add_field(name="**❔ Others**", value="`say` `say2`", inline=True)
@@ -81,7 +81,7 @@ async def invite(ctx):
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")  # shows the bot statistics (total amount of users in total amount of guilds) in an embed
 async def statistics(ctx):
-    embed = discord.Embed(title="Statistics ProtoPaw:", description="Global Bot Statistics", color=config.color)
+    embed = discord.Embed(title="Protopaw statistics", description="Global Bot Statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
@@ -478,7 +478,8 @@ async def purge(ctx, amount=0):
     if (amount <= 1500):
         await ctx.channel.purge(limit=amount + 1)
         await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
-    return await ctx.send("You can only purge 1500 messages at a time.")
+    if (amount >= 1500):
+        await ctx.send("You can only purge 1500 messages at a time.")
 
 
 @bot.command()
