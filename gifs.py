@@ -140,5 +140,9 @@ wag = ["https://media.tenor.com/images/391f32ea35c6bd010fe29425f8a689e3/tenor.gi
        "https://media.tenor.com/images/dd137df1f2badd31405967a12d862f28/tenor.gif",
        "https://media.tenor.com/images/7bd999202fde3cb64395725964ff34ac/tenor.gif"]
 
+kill = ["https://i.pinimg.com/originals/1f/ae/2e/1fae2e8c39a27592d1de5bd2f694866b.gif",
+        "https://thumbs.gfycat.com/FinishedMemorableChital-max-1mb.gif",
+        "https://miro.medium.com/max/1100/1*hQiZTx6k7ll-pInvNtS4yg.gif"]
+
 
 votechannels = [731848766327619586, 731829759146721320]

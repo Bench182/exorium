@@ -299,6 +299,12 @@ async def wag(ctx, members: commands.Greedy[discord.Member], *, reason="Rawr!"):
     await functions.logging(ctx, "Wag", bot)
 
 
+@bot.command(name="kill")  # interaction command - highfive someone. Gifs are random
+async def kill(ctx, members: commands.Greedy[discord.Member], *, reason="not paying attention"):
+    await functions.interactions(ctx, members, reason, "kill", "gruesome!", "killed")
+    await functions.logging(ctx, "Kill", bot)
+
+
 @bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
