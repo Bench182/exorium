@@ -455,8 +455,8 @@ async def revive(ctx):
 @bot.command()  # In an embed repeats what you said and deletes the original command
 async def say(ctx, *, sentence):
     await ctx.message.delete()
-    embed = discord.Embed(title=sentence, color=config.color)
-    embed.set_footer(text=f"Executed by {ctx.message.author}")
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name=sentence, value=f'by {ctx.message.author}')
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Say", bot)
 
