@@ -19,7 +19,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 
-bot = commands.Bot(command_prefix=["p!", "?"])  # sets the bot prefix
+bot = commands.Bot(command_prefix=["pp ", "?"])  # sets the bot prefix
 bot.remove_command('help')  # removes the default discord.py help command
 
 
