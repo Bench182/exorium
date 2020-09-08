@@ -97,7 +97,10 @@ async def get_id(ctx, member: discord.Member):
 
 @bot.command(name='animal', help='Generates a random animal!')
 async def animal(ctx):
-    r = requests.get(f"https://pixabay.com/api/?key={config.key}&q=animal&image_type=photo")
+    r = requests.get(
+        'https://pixabay.com/api/',
+        params={'key': config.key, 'q': "animal", "image_type": 'photo'}
+    )
     finalimg = random.choice(r.json()["hits"])["webformatURL"]
     embed = discord.Embed(title='Random animal', color=config.color)
     embed.set_image(url=finalimg)
