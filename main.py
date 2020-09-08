@@ -19,7 +19,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(me
 logger.addHandler(handler)
 
 
-bot = commands.Bot(command_prefix=["p!", "?"])  # sets the bot prefix
+bot = commands.Bot(command_prefix=["pp ", "?"])  # sets the bot prefix
 bot.remove_command('help')  # removes the default discord.py help command
 
 
@@ -42,8 +42,8 @@ async def on_ready():
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
-    embed = discord.Embed(title="ProtoPaw latency", color=config.color)
-    embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s')
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name="ping", value=f'**{bot.latency:.2f}**s', inline=True)
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Ping", bot)
 
@@ -58,7 +58,7 @@ async def test621(ctx):
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
 async def help(ctx):
-    embed = discord.Embed(title='Commands | `?`, `p!`', color=config.color)
+    embed = discord.Embed(title='Commands | `pp `, `p!`', color=config.color)
     embed.add_field(name="**🔨 Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
     embed.add_field(name="**🤖 Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**🏗️ Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide`", inline=True)
@@ -73,15 +73,15 @@ async def help(ctx):
 
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")  # shows the bot invite with hyperlink in an embed
 async def invite(ctx):
-    embed = discord.Embed(title="ProtoPaw invite link", color=config.color)
-    embed.add_field(name="Invite ProtoPaw here", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)")
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name="Invite link", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Invite", bot)
 
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")  # shows the bot statistics (total amount of users in total amount of guilds) in an embed
 async def statistics(ctx):
-    embed = discord.Embed(title="Protopaw statistics", description="Global Bot Statistics", color=config.color)
+    embed = discord.Embed(title="Protopaw statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
@@ -125,8 +125,6 @@ async def avatar(ctx, *, user: discord.Member = None):
 async def links(ctx):
     embed = discord.Embed(title='Protopaw Links', color=config.color)
     embed.add_field(name='Support/community discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
-    embed.add_field(name="Contact", value="ChosenFate#5108\nBluewytheRenegade#2923")
-    embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
@@ -135,10 +133,10 @@ async def links(ctx):
 
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
-    embed = discord.Embed(title="Server information", color=config.color)
+    embed = discord.Embed(color=config.color)
     embed.add_field(name="Info:", value="Membercount:\nRegion:\n", inline=True)
     embed.add_field(name="Value", value=str(len(ctx.guild.members)) + "\n" + str(ctx.guild.region) + "\n", inline=True)
-    embed.set_author(name=ctx.guild.name + " Statistics", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
+    embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Serverinfo", bot)
 
@@ -317,10 +315,10 @@ async def randomchoice(ctx, arg1, arg2):
 
 @bot.command(name="info")  # Gives information about the mentioned command
 async def info(ctx, arg):
-    embed = discord.Embed(title='Help menu - Prefixes `p!` | `?`', color=config.color)
+    embed = discord.Embed(color=config.color)
     embed.add_field(name=arg, value=getattr(cmds, arg), inline=True)
     embed.add_field(name="Syntax of " + arg, value=getattr(syntax, arg), inline=True)
-    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` BluewyFurGame#5108", inline=False)
+    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` NeoGames#5108", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
@@ -460,8 +458,8 @@ async def revive(ctx):
 @bot.command()  # In an embed repeats what you said and deletes the original command
 async def say(ctx, *, sentence):
     await ctx.message.delete()
-    embed = discord.Embed(title=sentence, color=config.color)
-    embed.set_footer(text=f"Executed by {ctx.message.author}")
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name=sentence, value=f'by {ctx.message.author}')
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Say", bot)
 
@@ -483,17 +481,6 @@ async def purge(ctx, amount=0):
         await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
     if (amount >= 1500):
         await ctx.send("You can only purge 1500 messages at a time.")
-
-
-@bot.command()
-async def contributors(ctx):
-    embed = discord.Embed(title='command contributors', color=config.color)
-    embed.add_field(name='Contributions', value='Contributors and their commands are listed here. Please inform us if you believe the list is not correct in an [issue](https://github.com/FireGamingYT/protogen/issues/new). We will get back to you asap.', inline=False)
-    embed.add_field(name='Commands', value='`purge`', inline=True)
-    embed.add_field(name='Contributor', value='`Bench182#5276`', inline=True)
-    embed.add_field(name='Other contributions', value="For all contributions please check [the repo](https://github.com/FireGamingYT/protogen)", inline=False)
-    embed.set_footer(text='Only actual contributed commands are shown here.')
-    await ctx.send(embed=embed)
 
 
 @bot.command()
