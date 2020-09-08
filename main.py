@@ -7,6 +7,7 @@ import logging
 import discord.ext
 from discord.ext import commands
 from outsources import functions
+from requests.auth import HTTPBasicAuth
 
 mydb = config.DBdata
 database = mydb.cursor()
@@ -99,13 +100,31 @@ async def get_id(ctx, member: discord.Member):
 async def animal(ctx):
     r = requests.get(
         'https://pixabay.com/api/',
-        params={'key': config.key, 'q': "animal", "image_type": 'photo'}
+        params={'key': config.pixabaykey, 'q': "animal", "image_type": 'photo'}
     )
     finalimg = random.choice(r.json()["hits"])["webformatURL"]
     embed = discord.Embed(title='Random animal', color=config.color)
     embed.set_image(url=finalimg)
     embed.set_footer(text='Powered by pixabay.')
     await ctx.send(embed=embed)
+
+
+@bot.command()
+async def e621(ctx, *, tags=''):
+    if(ctx.channel.is_nsfw() or ctx.channel.id in config.nsfwexceptions):
+        response = requests.get(
+            'https://e621.net/posts.json',
+            params={'tags': tags},
+            headers={'User-Agent': config.e621agent},
+            auth=HTTPBasicAuth(config.e621username, config.e621key)
+        )
+        finalimg = random.choice(response.json()["posts"])["file"]["url"]
+        embed = discord.Embed(title='Random yiff', color=config.color)
+        embed.set_image(url=finalimg)
+        embed.set_footer(text='Powered by e621.')
+        await ctx.send(embed=embed)
+    else:
+        await ctx.send("Sorry, you can only use e621 commands in an NSFW channel")
 
 
 @bot.command(aliases=['av'])  # shows the mentioned user's avatar in an embed
