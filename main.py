@@ -43,7 +43,7 @@ async def on_ready():
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
     embed = discord.Embed(title="Ping", color=config.color)
-    embed.add_field(name="​", value=f'**{bot.latency:.2f}**s')
+    embed.add_field(name=f'**{bot.latency:.2f}**s', value="​")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Ping", bot)
 
