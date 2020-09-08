@@ -50,10 +50,9 @@ async def latency(ctx):
 
 @bot.command(name='test621')
 async def test621(ctx):
-    embed = discord.Embed(title="e621", color=config.color)
-    embed.add_field(name="test", value="<#747808767034392626>", inline=True)
-    channel = bot.get_channel(747808767034392626)
-    await channel.send(embed=embed)
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name="__**Table of contents**__", value="[About The Paw Kingdom](https://discordapp.com/channels/715969701771083817/715987980988317737/752170795631116400)\n[Staff members](https://discordapp.com/channels/715969701771083817/715987980988317737/752171831963942962)\n[Channels](https://discordapp.com/channels/715969701771083817/715987980988317737/752173579268915250)\n[Roles](https://discordapp.com/channels/715969701771083817/715987980988317737/752177075095339058)\n[Perks](https://discordapp.com/channels/715969701771083817/715987980988317737/752178791937343560)\n[Bots](https://discordapp.com/channels/715969701771083817/715987980988317737/752178978957164594)\n[Links](https://discordapp.com/channels/715969701771083817/715987980988317737/752179008178749440)", inline=True)
+    await ctx.send(embed=embed)
 
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
