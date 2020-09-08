@@ -81,7 +81,7 @@ async def invite(ctx):
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")  # shows the bot statistics (total amount of users in total amount of guilds) in an embed
 async def statistics(ctx):
-    embed = discord.Embed(title="Protopaw statistics", description="Global Bot Statistics", color=config.color)
+    embed = discord.Embed(title="Protopaw statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
@@ -122,8 +122,6 @@ async def avatar(ctx, *, user: discord.Member = None):
 async def links(ctx):
     embed = discord.Embed(title='Protopaw Links', color=config.color)
     embed.add_field(name='Support/community discord Server:', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
-    embed.add_field(name="Contact", value="ChosenFate#5108\nBluewytheRenegade#2923")
-    embed.add_field(name="Social media:", value="Twitter | https://twitter.com/furrycontentuvs", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
     await ctx.send(embed=embed)
