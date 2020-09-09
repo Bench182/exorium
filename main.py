@@ -58,7 +58,7 @@ async def test621(ctx):
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
 async def help(ctx):
-    embed = discord.Embed(title='Commands | `pp `, `p!`', color=config.color)
+    embed = discord.Embed(title='Commands | `pp `, `?`', color=config.color)
     embed.add_field(name="**🔨 Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
     embed.add_field(name="**🤖 Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**🏗️ Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide` `say` `say2`", inline=True)
@@ -66,7 +66,7 @@ async def help(ctx):
     embed.add_field(name="**🔞 NSFW**", value="`e621`", inline=True)
     embed.add_field(name="**Developers**", value="`NeoGames#5108`\n`ChosenFate#5108`", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
+    embed.set_footer(text="Do ?info {command} for command info/usage")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Help", bot)
 
