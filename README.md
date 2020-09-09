@@ -14,7 +14,7 @@ ProtoPaw
 
 ----
 ## Information
-ProtoPaw is a publicly available bot with a bunch of features, these will be displayed here along with some information about the bot. Please note that ProtoPaw is continuously being developed and more features will be added, as well as improvements to already existing features. The prefixes of this bot are `?` and `p!`
+ProtoPaw is a publicly available bot with a bunch of features, these will be displayed here along with some information about the bot. Please note that ProtoPaw is continuously being developed and more features will be added, as well as improvements to already existing features. The prefixes of this bot are `?` and `pp `
 
 Its main purpose was to serve in a specific discord, though it was later changed to be a public bot. ProtoPaw now serves several purposes with the main purpose being entertainment and utility. More categories, commands, and such are coming soon.
 
