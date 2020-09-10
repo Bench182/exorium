@@ -53,7 +53,7 @@ async def latency(ctx):
 async def test621(ctx):
     embed = discord.Embed(color=config.color)
     embed.add_field(name="__**Table of contents**__", value="[About The Paw Kingdom](https://discordapp.com/channels/715969701771083817/715987980988317737/752170795631116400)\n[Staff members](https://discordapp.com/channels/715969701771083817/715987980988317737/752171831963942962)\n[Channels](https://discordapp.com/channels/715969701771083817/715987980988317737/752173579268915250)\n[Roles](https://discordapp.com/channels/715969701771083817/715987980988317737/752177075095339058)\n[Perks](https://discordapp.com/channels/715969701771083817/715987980988317737/752178791937343560)\n[Bots](https://discordapp.com/channels/715969701771083817/715987980988317737/752178978957164594)\n[Links](https://discordapp.com/channels/715969701771083817/715987980988317737/752179008178749440)", inline=True)
-    embed.add_field(name="__**External TPK communities__**", value="[Roblox community](https://www.roblox.com/groups/7604658/TPK-community#!/about)", inline=True)
+    embed.add_field(name="__**External TPK communities**__", value="[Roblox community](https://www.roblox.com/groups/7604658/TPK-community#!/about)", inline=True)
     await ctx.send(embed=embed)
 
 
