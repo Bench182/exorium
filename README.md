@@ -31,7 +31,9 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 * Crossed through commands are currently not working.
 
 Commands, suggestions or features we still plan to add can be seen in our [TO DO project](https://github.com/FireGamingYT/protogen/projects/1).
+
 If a command doesn't work, please make an [issue](https://github.com/FireGamingYT/protogen/issues/).
+
 #### Social commands
 |Command                                                                      |Syntax                |
 | :-------------------------------------------------------------------------: | :------------------: |
