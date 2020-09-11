@@ -45,3 +45,15 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 |[happy](https://github.com/FireGamingYT/protogen/blob/master/main.py#L286)   |`?happy (@user)...`   |
 |[highfive](https://github.com/FireGamingYT/protogen/blob/master/main.py#L301)|`?highfive <@user>...`|
 |[wag](https://github.com/FireGamingYT/protogen/blob/master/main.py#L307)     |`?wag (@user)...`     |
+
+#### Moderation
+|Command                                                                      |Syntax                       |Description                                   |
+| :-------------------------------------------------------------------------: | :-------------------------: | :-------------------------:                  |
+|[ban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L364)     |`?ban <@user> <@reason>`     |permbans the mentioned user from the guild    | 
+|[unban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L384)   |`?unban <ID>`                |Unbans the provided user                      |
+|[softban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L416) |`?softban <@user> <@reason>` |Bans and immediately unbans the mentioned user|
+|[kick](https://github.com/FireGamingYT/protogen/blob/master/main.py#L396)    |`?kick <@user> <@reason>`    |Kicks the mentioned user from the guild       |
+|[warn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L505)    |`?warn <@user> <@reason>`    |Logs a warn for the mentioned user            |
+|[delwarn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L515) |`?delwarn <@user> <@reason>` |Remove a case from someones warning logs      |
+|[warnings](https://github.com/FireGamingYT/protogen/blob/master/main.py#L528)|`?warnings <@user>`          |See the mentioned user's logged warnings      |
+
