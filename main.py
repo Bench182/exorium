@@ -154,7 +154,7 @@ async def links(ctx):
 async def serverinfo(ctx):
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
-    embed.add_field(name="Verification Level", value=len(ctx.guild.verification_level), inline=True)
+    embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Serverinfo", bot)
