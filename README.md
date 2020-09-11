@@ -26,12 +26,22 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 3. Any syntax with `...` means you can give several arguments.
 
 #### Social commands
-|Command  |Syntax               |
-|  :---:  | :-----------------: |
-|[hug](https://github.com/FireGamingYT/protogen/blob/master/main.py#L179)     |`?hug <@user>...`    | |test   |test2  |
-|[snuggle](https://github.com/FireGamingYT/protogen/blob/master/main.py#L173) |`?snuggle <@user>...`| | :---: | :---: |
-|[boop](https://github.com/FireGamingYT/protogen/blob/master/main.py#L191)    |`?boop <@user>...`   | | test  |test2  |
-|[kiss](https://github.com/FireGamingYT/protogen/blob/master/main.py#L197)    |`?kiss <@user>...`   |
-|[pat](https://github.com/FireGamingYT/protogen/blob/master/main.py#L185)     |`?pat <@user>...`    |
-|[cuddle](https://github.com/FireGamingYT/protogen/blob/master/main.py#L215)  |`?cuddle <@user>...` |
-|[askproto](https://github.com/FireGamingYT/protogen/blob/master/main.py#L355)|`?askproto <arg>...` |
+|Command                                                                      |Syntax                |
+| :-------------------------------------------------------------------------: | :------------------: |
+|[hug](https://github.com/FireGamingYT/protogen/blob/master/main.py#L179)     |`?hug <@user>...`     |
+|[snuggle](https://github.com/FireGamingYT/protogen/blob/master/main.py#L173) |`?snuggle <@user>...` |
+|[boop](https://github.com/FireGamingYT/protogen/blob/master/main.py#L191)    |`?boop <@user>...`    |
+|[kiss](https://github.com/FireGamingYT/protogen/blob/master/main.py#L197)    |`?kiss <@user>...`    |
+|[pat](https://github.com/FireGamingYT/protogen/blob/master/main.py#L185)     |`?pat <@user>...`     |
+|[cuddle](https://github.com/FireGamingYT/protogen/blob/master/main.py#L215)  |`?cuddle <@user>...`  |
+|[askproto](https://github.com/FireGamingYT/protogen/blob/master/main.py#L355)|`?askproto <arg>...`  |
+
+|Command                                                                      |Syntax                |  
+| :-------------------------------------------------------------------------: | :------------------: |
+|[lick](https://github.com/FireGamingYT/protogen/blob/master/main.py#L203)    |`?lick <@user>...`    |
+|[blush](https://github.com/FireGamingYT/protogen/blob/master/main.py#L251)   |`?blush (@user)...`   |
+|[feed](https://github.com/FireGamingYT/protogen/blob/master/main.py#L266)    |`?feed <@user>...`    |
+|[glomp](https://github.com/FireGamingYT/protogen/blob/master/main.py#L276)   |`?glomp <@user>...`   |
+|[happy](https://github.com/FireGamingYT/protogen/blob/master/main.py#L286)   |`?happy (@user)...`   |
+|[highfive](https://github.com/FireGamingYT/protogen/blob/master/main.py#L301)|`?highfive <@user>...`|
+|[wag](https://github.com/FireGamingYT/protogen/blob/master/main.py#L307)     |`?wag (@user)...`     |
