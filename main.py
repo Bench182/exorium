@@ -154,7 +154,7 @@ async def serverinfo(ctx):
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
     embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
-    embed.add_field(name="Creation Date", value=f"({ctx.guild.created_at.year}) + ({ctx.guild.created_at.month}) + ({ctx.guild.created_at.day}) + ({ctx.guild.created_at.hour})", inline=True)
+    embed.add_field(name="Creation Date", value=f"{ctx.guild.created_at.year} {ctx.guild.created_at.month} {ctx.guild.created_at.day} {ctx.guild.created_at.hour}", inline=True)
     embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
     embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
     embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
