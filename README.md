@@ -93,3 +93,5 @@ If a command doesn't work, please make an [issue](https://github.com/FireGamingY
 | :-------------------------------------------------------------------------:   | :-------------------------: | :----------------------------------------------: |
 |~~[e621](https://github.com/FireGamingYT/protogen/blob/master/main.py#L112)~~  |~~`?e621 (arg)...`~~         |Shows a random post from e621 | NSFW channels only|
 ---
+#### Selfhosting
+You are able to host this bot yourself, however we do not recommend, nor support doing this. We will not provide any type of support on how to selfhost ProtoPaw. We always advise using ProtoPaw itself and just contributing to it wherever needed.
