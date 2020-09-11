@@ -149,19 +149,16 @@ async def links(ctx):
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Links", bot)
 
-true_member_count = len([m for m in ctx.guild.members if not m.bot])
-
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
     embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
-    embed.add_field(name="Creation Date", value=str(ctx.guild.created_at), inline=True)
+    embed.add_field(name="Creation Date", value=str(ctx.guild.created_at.year), inline=True)
     embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
     embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
     embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
     embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=False)
-    embed.add_field(name="Server Members", value=true_member_count, inline=False)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Serverinfo", bot)
