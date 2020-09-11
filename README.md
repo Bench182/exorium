@@ -17,6 +17,10 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 **Host & provider:**
 - [Etile](https://github.com/Etile0/)
 ---
+### contributions
+Anyone is free to contribute to Protopaw as long as they follow the [Contribution guidelines](https://github.com/FireGamingYT/protogen/blob/master/CONTRIBUTING.md). Contributions can be done through [forks](https://github.com/FireGamingYT/protogen/network/members). In your fork you can edit, add and remove code. After you did that, you are always free to make a [pull request](https://github.com/FireGaming/protogen/pulls/). They will then be reviewed by one of the [main developers](https://github.com/FireGamingYT/protogen#protopaw-team).
+
+---
 ### Commands
 All available commands are listed here. This list may not be fully up-to-date at all times.
 Please report this in an issue if it's not complete, or make a [pull request](https://github.com/FireGamingYT/protogen/pulls/) With a complete list. Note that for making a pull request you will need to [fork](https://github.com/FireGamingYT/protogen/network/members) this repository first, and edit the fork's readme. Prefixes of this bot are `?` and `pp `
@@ -27,7 +31,7 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 * Crossed through commands are currently not working.
 
 Commands, suggestions or features we still plan to add can be seen in our [TO DO project](https://github.com/FireGamingYT/protogen/projects/1).
-
+If a command doesn't work, please make an [issue](https://github.com/FireGamingYT/protogen/issues/).
 #### Social commands
 |Command                                                                      |Syntax                |
 | :-------------------------------------------------------------------------: | :------------------: |
@@ -86,4 +90,4 @@ Commands, suggestions or features we still plan to add can be seen in our [TO DO
 |Command                                                                        |Syntax                       |Description                                       |
 | :-------------------------------------------------------------------------:   | :-------------------------: | :----------------------------------------------: |
 |~~[e621](https://github.com/FireGamingYT/protogen/blob/master/main.py#L112)~~  |~~`?e621 (arg)...`~~         |Shows a random post from e621 | NSFW channels only|
-
+---
