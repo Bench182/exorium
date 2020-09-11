@@ -24,6 +24,7 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 * Syntax args surrounded by `<>` are required. 
 * Syntax args surrounded by `()` are optional. 
 * Any syntax with `...` means you can give several arguments.
+* Crossed through commands are currently not working
 
 #### Social commands
 |Command                                                                      |Syntax                |
@@ -47,15 +48,15 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 |[wag](https://github.com/FireGamingYT/protogen/blob/master/main.py#L307)     |`?wag (@user)...`     |
 
 #### Moderation
-|Command                                                                      |Syntax                       |Description                                   |
-| :-------------------------------------------------------------------------: | :-------------------------: | :-------------------------:                  |
-|[ban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L364)     |`?ban <@user> <@reason>`     |permbans the mentioned user from the guild    | 
-|[unban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L384)   |`?unban <ID>`                |Unbans the provided user                      |
-|[softban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L416) |`?softban <@user> <@reason>` |Bans and immediately unbans the mentioned user|
-|[kick](https://github.com/FireGamingYT/protogen/blob/master/main.py#L396)    |`?kick <@user> <@reason>`    |Kicks the mentioned user from the guild       |
-|[warn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L505)    |`?warn <@user> <@reason>`    |Logs a warn for the mentioned user            |
-|[delwarn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L515) |`?delwarn <@user> <@reason>` |Remove a case from someones warning logs      |
-|[warnings](https://github.com/FireGamingYT/protogen/blob/master/main.py#L528)|`?warnings <@user>`          |See the mentioned user's logged warnings      |
+|Command                                                                        |Syntax                       |description                                      |
+| :---------------------------------------------------------------------------: | :-------------------------: | :---------------------------------------------: |
+|[ban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L364)       |`?ban <@user> <@reason>`     |permbans the mentioned user from the guild       | 
+|[unban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L384)     |`?unban <ID>`                |Unbans the provided user                         |
+|[softban](https://github.com/FireGamingYT/protogen/blob/master/main.py#L416)   |`?softban <@user> <@reason>` |Bans and immediately unbans the mentioned user   |
+|[kick](https://github.com/FireGamingYT/protogen/blob/master/main.py#L396)      |`?kick <@user> <@reason>`    |Kicks the mentioned user from the guild          |
+|[warn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L505)      |`?warn <@user> <@reason>`    |Logs a warn for the mentioned user               |
+|[delwarn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L515)   |`?delwarn <@user> <@reason>` |Remove a case from someones warning logs         |
+|[warnings](https://github.com/FireGamingYT/protogen/blob/master/main.py#L528)  |`?warnings <@user>`          |See the mentioned user's logged warnings         |
 
 #### Utility
 |Command                                                                        |Syntax                       |Description                                      |
@@ -69,4 +70,18 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 |[say](https://github.com/FireGamingYT/protogen/blob/master/main.py#L477)       |`?say <args>...`             |Repeats what you said in an embed                |
 |[id](https://github.com/FireGamingYT/protogen/blob/master/main.py#L92)         |`?id <@user/ID/name>`        |Shows the ID of the provided user                |
 
+#### Bot related
+|Command                                                                        |Syntax                       |Description                                      |
+| :-------------------------------------------------------------------------:   | :-------------------------: | :---------------------------------------------: |
+|[invite](https://github.com/FireGamingYT/protogen/blob/master/main.py#L75)     |`?invite`                    |Invite Protopaw through the given invite link    |
+|[stats](https://github.com/FireGamingYT/protogen/blob/master/main.py#L83)      |`?stats`                     |The statistics of Protopaw (guilds & total users)|
+|[links](https://github.com/FireGamingYT/protogen/blob/master/main.py#L143)     |`?links`                     |Links to things related to Protopaw & TPK        |
+|[pings](https://github.com/FireGamingYT/protogen/blob/master/main.py#L44)      |`?ping`                      |Shows the bot's latency in seconds               |
+|[help](https://github.com/FireGamingYT/protogen/blob/master/main.py#L60)       |`?help`                      |Shows all the commands and the Protopaw team     |
+|[info](https://github.com/FireGamingYT/protogen/blob/master/main.py#L335)      |`?info <command>`            |Shows information about an individual command    |
+
+#### NSFW
+|Command                                                                        |Syntax                       |Description                                       |
+| :-------------------------------------------------------------------------:   | :-------------------------: | :----------------------------------------------: |
+|~~[e621](https://github.com/FireGamingYT/protogen/blob/master/main.py#L112)  |`?e621 (arg)...`             |Shows a random post from e621 | NSFW channels only~~|
 
