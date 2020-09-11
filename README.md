@@ -81,7 +81,7 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 |[info](https://github.com/FireGamingYT/protogen/blob/master/main.py#L335)      |`?info <command>`            |Shows information about an individual command    |
 
 #### NSFW
-|Command                                                                        |Syntax                       |Description                                            |
-| :-------------------------------------------------------------------------:   | :-------------------------: | :----------------------------------------------:      |
-|~~[e621](https://github.com/FireGamingYT/protogen/blob/master/main.py#L112)~~  |~~`?e621 (arg)...`~~         |~~Shows a random post from e621 | NSFW channels only~~ |
+|Command                                                                        |Syntax                       |Description                                       |
+| :-------------------------------------------------------------------------:   | :-------------------------: | :----------------------------------------------: |
+|~~[e621](https://github.com/FireGamingYT/protogen/blob/master/main.py#L112)~~  |~~`?e621 (arg)...`~~         |Shows a random post from e621 | NSFW channels only|
 
