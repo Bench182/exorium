@@ -21,9 +21,9 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 All available commands are listed here. This list may not be fully up-to-date at all times.
 Please report this in an issue if it's not complete, or make a [pull request](https://github.com/FireGamingYT/protogen/pulls/) With a complete list. Note that for making a pull request you will need to [fork](https://github.com/FireGamingYT/protogen/network/members) this repository first, and edit the fork's readme. Prefixes of this bot are `?` and `pp `
 
-1. Syntax args surrounded by `<>` are required. 
-2. Syntax args surrounded by `()` are optional. 
-3. Any syntax with `...` means you can give several arguments.
+* Syntax args surrounded by `<>` are required. 
+* Syntax args surrounded by `()` are optional. 
+* Any syntax with `...` means you can give several arguments.
 
 #### Social commands
 |Command                                                                      |Syntax                |
