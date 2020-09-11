@@ -153,7 +153,7 @@ async def links(ctx):
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
     embed = discord.Embed(color=config.color)
-    embed.add_field(name="Region", value=len(ctx.guild.region), inline=True)
+    embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Serverinfo", bot)
