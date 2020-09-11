@@ -155,7 +155,7 @@ async def serverinfo(ctx):
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
     embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
-    embed.add_field(name="Created at", value=str(ctx.guild.created_at), inline=True)
+    embed.add_field(name="Creation date", value=str(ctx.guild.created_at:.2f), inline=True)
     embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
     embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
