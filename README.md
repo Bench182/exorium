@@ -24,7 +24,9 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 * Syntax args surrounded by `<>` are required. 
 * Syntax args surrounded by `()` are optional. 
 * Any syntax with `...` means you can give several arguments.
-* Crossed through commands are currently not working
+* Crossed through commands are currently not working.
+
+Commands, suggestions or features we still plan to add can be seen in our [TO DO project](https://github.com/FireGamingYT/protogen/projects/1).
 
 #### Social commands
 |Command                                                                      |Syntax                |
