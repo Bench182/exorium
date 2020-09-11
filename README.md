@@ -8,11 +8,11 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 ---
 ### Protopaw team
 **main developers:**
-[FireGamingYT](https://github.com/FireGamingYT/)
-[ChosenFate](https://github.com/Chosen-Fate/)
+- [FireGamingYT](https://github.com/FireGamingYT/)
+- [ChosenFate](https://github.com/Chosen-Fate/)
 
 **LTD. developers**
-[Bench](https://github.com/Bench182/)
+- [Bench](https://github.com/Bench182/)
 
 **Host & provider:**
-[Etile](https://github.com/Etile0/)
+- [Etile](https://github.com/Etile0/)
