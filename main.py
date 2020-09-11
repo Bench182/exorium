@@ -156,6 +156,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
     embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
     embed.add_field(name="Creation Date", value=str(ctx.guild.created_at), inline=True)
+    embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
     embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
     embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
     embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=False)
