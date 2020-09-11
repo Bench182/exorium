@@ -57,3 +57,16 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 |[delwarn](https://github.com/FireGamingYT/protogen/blob/master/main.py#L515) |`?delwarn <@user> <@reason>` |Remove a case from someones warning logs      |
 |[warnings](https://github.com/FireGamingYT/protogen/blob/master/main.py#L528)|`?warnings <@user>`          |See the mentioned user's logged warnings      |
 
+#### Utility
+|Command                                                                        |Syntax                       |Description                                      |
+| :-------------------------------------------------------------------------:   | :-------------------------: | :---------------------------------------------: |
+|[serverinfo](https://github.com/FireGamingYT/protogen/blob/master/main.py#L153)|`?serverinfo`                |Shows membercount and guild region               |
+|[avatar](https://github.com/FireGamingYT/protogen/blob/master/main.py#L130)    |`?avatar <@user>`            |Shows the mentioned user's avatar                |
+|[random](https://github.com/FireGamingYT/protogen/blob/master/main.py#L328)    |`?random <arg1> <arg2>...`   |Randomly picks one from the given args           |
+|[decide](https://github.com/FireGamingYT/protogen/blob/master/main.py#L458)    |`?decide <arg>...`           |Lets people choose with :white_check_mark:	or :x:|
+|[poll](https://github.com/FireGamingYT/protogen/blob/master/main.py#L437)      |`?poll <arg1>... (arg10)`    |Host a poll with up to 10 things to pick from    |
+|[say2](https://github.com/FireGamingYT/protogen/blob/master/main.py#L486)      |`?say2 <args>...`            |Repeats what you said without an embed           |
+|[say](https://github.com/FireGamingYT/protogen/blob/master/main.py#L477)       |`?say <args>...`             |Repeats what you said in an embed                |
+|[id](https://github.com/FireGamingYT/protogen/blob/master/main.py#L92)         |`?id <@user/ID/name>`        |Shows the ID of the provided user                |
+
+
