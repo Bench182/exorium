@@ -17,4 +17,21 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 **Host & provider:**
 - [Etile](https://github.com/Etile0/)
 ---
+### Commands
+All available commands are listed here. This list may not be fully up-to-date at all times.
+Please report this in an issue if it's not complete, or make a [pull request](https://github.com/FireGamingYT/protogen/pulls/) With a complete list. Note that for making a pull request you will need to [fork](https://github.com/FireGamingYT/protogen/network/members) this repository first, and edit the fork's readme. Prefixes of this bot are `?` and `pp `
 
+1. Syntax args surrounded by `<>` are required. 
+2. Syntax args surrounded by `()` are optional. 
+3. Any syntax with `...` means you can give several arguments.
+
+#### Social commands
+|Command  |Syntax               |
+|  :---:  | :-----------------: |
+|[hug](https://github.com/FireGamingYT/protogen/blob/master/main.py#L179)     |`?hug <@user>...`    | |test   |test2  |
+|[snuggle](https://github.com/FireGamingYT/protogen/blob/master/main.py#L173) |`?snuggle <@user>...`| | :---: | :---: |
+|[boop](https://github.com/FireGamingYT/protogen/blob/master/main.py#L191)    |`?boop <@user>...`   | | test  |test2  |
+|[kiss](https://github.com/FireGamingYT/protogen/blob/master/main.py#L197)    |`?kiss <@user>...`   |
+|[pat](https://github.com/FireGamingYT/protogen/blob/master/main.py#L185)     |`?pat <@user>...`    |
+|[cuddle](https://github.com/FireGamingYT/protogen/blob/master/main.py#L215)  |`?cuddle <@user>...` |
+|[askproto](https://github.com/FireGamingYT/protogen/blob/master/main.py#L355)|`?askproto <arg>...` |
