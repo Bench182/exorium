@@ -16,3 +16,5 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 
 **Host & provider:**
 - [Etile](https://github.com/Etile0/)
+---
+
