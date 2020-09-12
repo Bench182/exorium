@@ -268,16 +268,12 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
     await functions.logging(ctx, "Blush", bot)
 
 
-@bot.command(name="feed")  # interaction command - feed someone. gifs are random!
-async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy boy"):
-    GIFlist = gifs.feed
-    GIF = random.choice(GIFlist)
-    embed = discord.Embed(title="", color=config.color, description=(ctx.message.author.mention + " " + "**feeds**" + " " + '**,** '.join(x.mention for x in members) + "**, chilling!**\nFor: " + reason))
-    embed.set_image(url=GIF)
-    await ctx.send(embed=embed)
+@bot.command(name="feed")  # interaction command - feed someone. Gifs are random
+async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy"):
+    await functions.interactions(ctx, members, reason, "feed", "sweet!", "fed")
     await functions.logging(ctx, "feed", bot)
-
-
+    
+    
 @bot.command(name="glomp")  # interaction command - glomp someone. gifs are random!
 async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"):
     GIFlist = gifs.glomp
