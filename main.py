@@ -8,13 +8,18 @@ def get_prefix(bot, message):
     
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
-
-
+initial_extensions = ['cogs.bot']
 
 bot = commands.Bot(command_prefix=get_prefix)
 bot.remove_command('help')
 
-
+if __name__ == '__main__':
+    for extension in initial_extensions:
+        try:
+            bot.load_extension(extension)
+        except Exception as e:
+            print(f'Failed to load extension {extension}.', file=.stderr)
+            traceback.print_exc()
 
 
 @bot.event
