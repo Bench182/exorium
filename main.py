@@ -32,3 +32,5 @@ async def on_ready():
     print('version:')
     print(discord.__version__)
     print('-----------')
+
+bot.run(config.token)
