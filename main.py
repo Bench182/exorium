@@ -149,6 +149,7 @@ async def links(ctx):
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Links", bot)
 
+
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
     embed = discord.Embed(color=config.color)
@@ -159,7 +160,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
     embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
     if ctx.guild.features:
-        embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=False) 
+        embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=False)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "Serverinfo", bot)
@@ -272,8 +273,8 @@ async def blush(ctx, members: commands.Greedy[discord.Member], *, reason="Makes 
 async def feed(ctx, members: commands.Greedy[discord.Member], *, reason="Hungwy"):
     await functions.interactions(ctx, members, reason, "feed", "sweet!", "fed")
     await functions.logging(ctx, "feed", bot)
-    
-    
+
+
 @bot.command(name="glomp")  # interaction command - glomp someone. gifs are random!
 async def glomp(ctx, members: commands.Greedy[discord.Member], *, reason="Love!"):
     GIFlist = gifs.glomp
