@@ -18,7 +18,7 @@ async def logging(ctx, type, bot):
     print(f"Command \"{type}\" was used in {ctx.channel} (guild {ctx.guild}) by {ctx.message.author}")
     embed = discord.Embed(title="ProtoPaw command log", color=config.color)
     embed.add_field(name="Command", value=f"`\"{type}\"`", inline=True)
-    embed.add_field(name="Author", value=f"`{ctx.message.author}`", inline=True) 
+    embed.add_field(name="Author", value=f"`{ctx.message.author}`", inline=True)
     embed.add_field(name="Guild", value=f"`{ctx.guild}`", inline=True)
     embed.add_field(name="Channel", value=f"`{ctx.channel}`", inline=True)
     channel = bot.get_channel(747808767034392626)
