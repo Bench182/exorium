@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+import config
+from outsources import functions
 
 
 class Botrelated(commands.Cog):
@@ -18,4 +20,4 @@ class Botrelated(commands.Cog):
         embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
         embed.set_footer(text="Do ?info {command} for command info/usage")
         await ctx.send(embed=embed)
-        await functions.logging(ctx, "help", bot)
+        await functions.logging(ctx, "help", self)

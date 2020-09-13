@@ -1,12 +1,14 @@
 import discord
 from discord.ext import commands
+import sys
+import traceback
+import config
 
-import sys, traceback
 
 def get_prefix(bot, message):
     prefixes = ['p/', 'pp ']
-    
     return commands.when_mentioned_or(*prefixes)(bot, message)
+
 
 initial_extensions = ['cogs.bot']
 
@@ -18,7 +20,7 @@ if __name__ == '__main__':
         try:
             bot.load_extension(extension)
         except Exception as e:
-            print(f'Failed to load extension {extension}.', file=.stderr)
+            print(f'Failed to load extension {extension}, {e}', file=sys.stderr)
             traceback.print_exc()
 
 
