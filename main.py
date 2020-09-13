@@ -541,7 +541,6 @@ async def warnings(ctx, member: discord.Member):
     results = database.fetchall()
     if not results:
         return await ctx.send("⚠️ User has no warnings!")
-    global totalwarns
     totalwarns = " "
     i = 0
     while i < len(results):
