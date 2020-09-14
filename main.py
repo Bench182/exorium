@@ -50,6 +50,7 @@ async def on_guild_join(guild):
     embed.add_field(name="Members", value=len(guild.members), inline=True)
     channel = bot.get_channel(747808767034392626)
     return await channel.send(embed=embed)
+    
     embed = discord.Embed(color=config.color)
     embed.add_field(name="useful information", value="**Thank you for adding exorium to your server <a:shibaheartbeat:755130116316856363>**.\nexorium is a multifunctional bot to fit your needs. <a:glowpaw:755131095032397874>\nFor commands, use the `exo help` command, for more info on commands you can use `exo info {command`.)
     embed.add_field(name="useful links", value="It's possible that you may find bugs, or errors in ProtoPaw <a:Toothlessuhmwhat:753170277915164672> Or you just want to suggest something, for that you can make an [issue](https://github.com/ThePawKingdom/exorium/issues/new/choose) in our [github repo](https://github.com/ThePawKingdom/exorium).\nFurthermore, if you just need support with exorium, you can join our [support server](https://discord.gg/RQMaHzE)! 
