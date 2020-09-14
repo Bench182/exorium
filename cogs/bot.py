@@ -21,3 +21,6 @@ class Botrelated(commands.Cog):
         embed.set_footer(text="Do ?info {command} for command info/usage")
         await ctx.send(embed=embed)
         await functions.logging(ctx, "help", self)
+
+def setup(bot):
+    bot.add_cog(Botrelated(bot))
