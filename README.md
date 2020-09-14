@@ -1,4 +1,5 @@
 # Protopaw discord bot | Since 2020
+[![DeepScan grade](https://deepscan.io/api/teams/10900/projects/13816/branches/242987/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=10900&pid=13816&bid=242987)
 ----
 ### Protopaw information
 Protopaw is a multifunctional bot used for many categories. The main aim for Protopaw was, and still is social commands. With a variety of commands and more being added regularly, we aim to ensure user experience to be at it's best and try to improve our commands as well as the bot as much as possible.
