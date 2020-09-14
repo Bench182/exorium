@@ -28,7 +28,7 @@ class Botrelated(commands.Cog):
         embed = discord.Embed(color=config.color)
         embed.add_field(name="<a:loadingbounce:753173725263822858> ping", value=f'**{bot.latency:.2f}**s', inline=True)
         await ctx.send(embed=embed)
-        await functions.logging(ctx, "ping", bot)
+        await functions.logging(ctx, "ping", self)
 
 def setup(bot):
     bot.add_cog(Botrelated(bot))
