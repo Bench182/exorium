@@ -184,6 +184,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
     if ctx.guild.features:
         embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=False)
+    embed.add_field(name="Afk Channel", value=f"**{str(ctx.guild.afk_channel)}**\n**Timeout {str(ctx.guild.afk_timeout)}**")
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "serverinfo", bot)
