@@ -9,7 +9,7 @@ class Botrelated(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def help(self, ctx):
+    async def help(bot, ctx):
         embed = discord.Embed(title='Commands | `p/`, `p?`', color=config.color)
         embed.add_field(name="**<a:yoshiban:753151857852940309> Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
         embed.add_field(name="**<a:TPKProtogenDance:728615119910862898> Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
@@ -20,15 +20,15 @@ class Botrelated(commands.Cog):
         embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
         embed.set_footer(text="Do ?info {command} for command info/usage")
         await ctx.send(embed=embed)
-        await functions.logging(ctx, "help", self)
-
+        await functions.logging(ctx, "help", bot)
 
     @commands.command()
-    async def ping(self, ctx):
+    async def ping(bot, ctx):
         embed = discord.Embed(color=config.color)
         embed.add_field(name="<a:loadingbounce:753173725263822858> ping", value=f'**{bot.latency:.2f}**s', inline=True)
         await ctx.send(embed=embed)
-        await functions.logging(ctx, "ping", self)
+        await functions.logging(ctx, "ping", bot)
+
 
 def setup(bot):
     bot.add_cog(Botrelated(bot))
