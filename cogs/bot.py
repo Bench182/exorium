@@ -22,5 +22,6 @@ class Botrelated(commands.Cog):
         await ctx.send(embed=embed)
         await functions.logging(ctx, "help", self)
 
+
 def setup(bot):
     bot.add_cog(Botrelated(bot))
