@@ -55,7 +55,7 @@ async def on_guild_join(guild):
     embed.add_field(name="useful links", value="It's possible that you may find bugs, or errors in ProtoPaw <a:Toothlessuhmwhat:753170277915164672> Or you just want to suggest something, for that you can make an [issue](https://github.com/ThePawKingdom/exorium/issues/new/choose) in our [github repo](https://github.com/ThePawKingdom/exorium).\nFurthermore, if you just need support with exorium, you can join our [support server](https://discord.gg/RQMaHzE)!") 
     embed.set_author(name=ctx.guild.name, url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
     embed.set_footer(text=f"exorium is now in (len{bot.guilds}) guilds with (len{bot.users} users")                          
-    await guild.text_channels[0].send(embed=embed)
+    await ctx.text_channels[0].send(embed=embed)
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
