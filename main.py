@@ -172,8 +172,8 @@ async def links(ctx):
     await ctx.send(embed=embed)
     await functions.logging(ctx, "links", bot)
 
-community server = 'COMMUNITY'
-news channels = 'NEWS'
+COMMUNITY = 'community server' 
+NEWS = 'news channels'
 
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
