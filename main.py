@@ -41,6 +41,17 @@ async def on_ready():
     print('-----------')
 
 
+@bot.event
+async def on_guild_join(guild):
+    print(f"I just joined {guild.name}, ID: {guild.id}")
+    embed = discord.Embed(title="exorium server join", color=config.color)
+    embed.add_field(name="Server Name", value=guild.name, inline=True)
+    embed.add_field(name="Server ID", value=guild.id, inline=True)
+    embed.add_field(name="Members", value=len(guild.members), inline=True)
+    channel = bot.get_channel(747808767034392626)
+    return await channel.send(embed=embed)
+
+
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
     embed = discord.Embed(color=config.color)
