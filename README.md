@@ -21,6 +21,10 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 Anyone is free to contribute to Protopaw as long as they follow the [Contribution guidelines](https://github.com/FireGamingYT/protogen/blob/master/CONTRIBUTING.md). Contributions can be done through [forks](https://github.com/FireGamingYT/protogen/network/members). In your fork you can edit, add and remove code. After you did that, you are always free to make a [pull request](https://github.com/FireGaming/protogen/pulls/). They will then be reviewed by one of the [main developers](https://github.com/FireGamingYT/protogen#protopaw-team).
 
 ---
+## Warning
+**Protopaw is currently being rewritten into [cogs](https://github.com/ThePawKingdom/protogen/tree/cogs/). This could cause more downtime while it's being rewritten, as well as being able to cause more issues and errors. Of course we will try to keep this to the minimal, for as far as what we can do. But we can not guarantee this will go flawless. If you spot an error/issue or there's something else concerning that you think you need to report, please make an [issue](https://github.com/ThePawKingdom/protogen/issues).**
+
+---
 ### Commands
 All available commands are listed here. This list may not be fully up-to-date at all times.
 Please report this in an issue if it's not complete, or make a [pull request](https://github.com/FireGamingYT/protogen/pulls/) With a complete list. Note that for making a pull request you will need to [fork](https://github.com/FireGamingYT/protogen/network/members) this repository first, and edit the fork's readme. Prefixes of this bot are `?` and `pp `
