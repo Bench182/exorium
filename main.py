@@ -75,7 +75,7 @@ async def help(ctx):
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")  # shows the bot invite with hyperlink in an embed
 async def invite(ctx):
     embed = discord.Embed(color=config.color)
-    embed.add_field(name="Invite link", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)")
+    embed.add_field(name="Invites", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support & community server](https://discord.gg/k64tAer)")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "invite", bot)
 
@@ -146,7 +146,6 @@ async def avatar(ctx, *, user: discord.Member = None):
 @bot.command(name='links', brief='Discord related links')  # shows the links related to ProtoPaw in an embed
 async def links(ctx):
     embed = discord.Embed(title='Protopaw Links', color=config.color)
-    embed.add_field(name='Support/community discord Server', value="https://discord.gg/k64tAer\nhttps://discord.gg/bcjdqyn\nhttps://discord.me/thepawkingdom\nhttps://discord.st/thepawkingdom", inline=True)
     embed.add_field(name="Github", value="[Repo](https://github.com/ThePawKingdom/protogen)\n[Organisation](https://github.com/ThePawKingdom/)", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
