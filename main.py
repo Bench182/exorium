@@ -28,7 +28,7 @@ bot.remove_command('help')  # removes the default discord.py help command
 async def on_ready():
     activity = discord.Game(name=f'with {len(bot.users)} furs', type=1)
     await bot.change_presence(status=discord.Status.online, activity=activity)
-    print('ProtoPaw has started successfully')
+    print('exorium has started successfully')
     print('-----------')
     print('guilds:')
     print(len(bot.guilds))
@@ -75,14 +75,14 @@ async def help(ctx):
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")  # shows the bot invite with hyperlink in an embed
 async def invite(ctx):
     embed = discord.Embed(color=config.color)
-    embed.add_field(name="Invites", value="[Add ProtoPaw to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support & community server](https://discord.gg/k64tAer)")
+    embed.add_field(name="Invites", value="[Add exorium to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support & community server](https://discord.gg/k64tAer)")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "invite", bot)
 
 
 @bot.command(name="stats", aliases=["statistics"], brief="shows bot statistics.")  # shows the bot statistics (total amount of users in total amount of guilds) in an embed
 async def statistics(ctx):
-    embed = discord.Embed(title="Protopaw statistics", color=config.color)
+    embed = discord.Embed(title="exorium statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
     embed.add_field(name="Total users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
@@ -143,12 +143,12 @@ async def avatar(ctx, *, user: discord.Member = None):
         await functions.logging(ctx, "avatar", bot)
 
 
-@bot.command(name='links', brief='Discord related links')  # shows the links related to ProtoPaw in an embed
+@bot.command(name='links', brief='Discord related links')  # shows the links related to exorium in an embed
 async def links(ctx):
-    embed = discord.Embed(title='Protopaw Links', color=config.color)
+    embed = discord.Embed(title='exorium Links', color=config.color)
     embed.add_field(name="Github", value="[Repo](https://github.com/ThePawKingdom/protogen)\n[Organisation](https://github.com/ThePawKingdom/)", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using exorium!")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "links", bot)
 
@@ -330,7 +330,7 @@ async def kill(ctx, members: commands.Greedy[discord.Member], *, reason="not pay
     await functions.logging(ctx, "kill", bot)
 
 
-@bot.command(name='random', brief='Randomness!')  # Let protoPaw choose for you!
+@bot.command(name='random', brief='Randomness!')  # Let exorium choose for you!
 async def randomchoice(ctx, arg1, arg2):
     Arglist = [arg1, arg2]
     await ctx.send(random.choice(Arglist))
@@ -344,7 +344,7 @@ async def info(ctx, arg):
     embed.add_field(name="Syntax of " + arg, value=getattr(syntax, arg), inline=True)
     embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` NeoGames#5108", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using ProtoPaw!")
+    embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using exorium!")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "info", bot)
 
@@ -357,8 +357,8 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")  # Shows that you dont have the needed permission for this command
 
 
-@bot.command(name="askprotopaw", aliases=["askpp", "askproto"])  # Lets you ask something to ProtoPaw, he will answer with a random answer listed in gifs.py
-async def askprotopaw(ctx, *, arg):
+@bot.command(name="askexorium", aliases=["askpp", "askproto"])  # Lets you ask something to exorium, he will answer with a random answer listed in gifs.py
+async def askexorium(ctx, *, arg):
     answers = gifs.AskProtopaw
     answer = random.choice(answers)
     embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
@@ -568,7 +568,7 @@ class cmds:
     random = "Can't make a choice? Use the random command! Only 2 options possible at this point"
     info = "You already know what this does, derp"
     honk = "HONK"
-    askprotopaw = "Ask ProtoPaw, and he shall give you an answer"
+    askexorium = "Ask exorium, and he shall give you an answer"
     unban = "Unbans the given user"
     lick = "Licks the pinged persons, yum!"
     ban = "Bans the mentioned person"
