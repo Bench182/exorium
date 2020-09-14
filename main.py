@@ -44,7 +44,7 @@ async def on_ready():
 @bot.event
 async def on_guild_join(guild):
     print(f"I just joined {guild.name}, ID: {guild.id}")
-    embed = discord.Embed(title="exorium server join", color=config.color)
+    embed = discord.Embed(title="exorium joined server", color=config.color)
     embed.add_field(name="Server Name", value=guild.name, inline=True)
     embed.add_field(name="Server ID", value=guild.id, inline=True)
     embed.add_field(name="Members", value=len(guild.members), inline=True)
