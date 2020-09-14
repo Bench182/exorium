@@ -63,7 +63,7 @@ async def help(ctx):
     embed.add_field(name="**<a:yoshiban:753151857852940309> Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
     embed.add_field(name="**<a:TPKProtogenDance:728615119910862898> Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**<a:pikaxe:753164460184830013> Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide` `say` `say2`", inline=True)
-    embed.add_field(name="**<a:tacklehug:753169705862430772> Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `cuddle`\n `askproto` `lick` `blush`\n`feed` `glomp` `happy`\n`highfive` `wag`", inline=True)
+    embed.add_field(name="**<a:tacklehug:753169705862430772> Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `cuddle`\n `askexo` `lick` `blush`\n`feed` `glomp` `happy`\n`highfive` `wag`", inline=True)
     embed.add_field(name="**<a:Toothlessuhmwhat:753170277915164672> NSFW**", value="`e621`", inline=True)
     embed.add_field(name="**<a:TPK_ProtoBoop:740828362045653073> Developers**", value="[NeoGames#5108](https://github.com/FireGamingYT/)\n[ChosenFate#5108](https://github.com/Chosen-Fate)", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
@@ -357,13 +357,14 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")  # Shows that you dont have the needed permission for this command
 
 
-@bot.command(name="askexorium", aliases=["askpp", "askproto"])  # Lets you ask something to exorium, he will answer with a random answer listed in gifs.py
+@bot.command(name="askexo", aliases=["askexorium"])  # Lets you ask something to exorium, he will answer with a random answer listed in gifs.py
 async def askexorium(ctx, *, arg):
-    answers = gifs.AskProtopaw
+    answers = gifs.Askexorium
     answer = random.choice(answers)
-    embed = discord.Embed(title=f"{arg} - Proto says {answer}", color=config.color)
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name=arg, value=f"Exo says {answer}", inline=False)
     await ctx.send(embed=embed)
-    await functions.logging(ctx, "askproto", bot)
+    await functions.logging(ctx, "askexo", bot)
 
 
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
@@ -590,7 +591,7 @@ class syntax:
     links = "`links`"
     info = "`?info`"
     honk = "`?honk`"
-    askproto = "`?askproto <Question>`"
+    askexo = "`?askexo <Question>`"
     lick = "`?lick @user1 @user2..."
     ban = "`?ban @user | ID Reason`"
     kick = "`?kick @user | ID reason`"
