@@ -581,8 +581,10 @@ async def warnings(ctx, member: discord.Member):
 
 @bot.command()    
 @commands.is_owner()
-async for member in guild.fetch_members(limit=150):    
-    await ctx.send(member.name)    
+async def exoinfo(ctx):
+    e = discord.Embed(color=config.color)
+    e.add_field(name='Invites', value=ctx.guild.invites, inline=True)
+    await ctx.send(embed=e)
 
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
