@@ -60,7 +60,6 @@ async def on_guild_join(guild):
             break
     return
 
-gu = ctx.guild
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
@@ -176,6 +175,8 @@ async def links(ctx):
     
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
+    gu = ctx.guild
+    
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(gu.name), inline=True)
     embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
