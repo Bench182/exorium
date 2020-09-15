@@ -179,15 +179,15 @@ async def serverinfo(ctx):
     
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(gu.name), inline=True)
-    embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
-    embed.add_field(name="Creation Date", value=f"{ctx.guild.created_at.day}/{ctx.guild.created_at.month}/{ctx.guild.created_at.year} {ctx.guild.created_at.hour}:{ctx.guild.created_at.minute}", inline=True)
-    embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
-    embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
-    embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
+    embed.add_field(name="Owner", value=str(gu.owner), inline=True)
+    embed.add_field(name="Creation Date", value=f"{gu.created_at.day}/{ctx.guild.created_at.month}/{ctx.guild.created_at.year} {ctx.guild.created_at.hour}:{ctx.guild.created_at.minute}", inline=True)
+    embed.add_field(name="Server ID", value=str(gu.id), inline=True)
+    embed.add_field(name="Region", value=str(gu.region), inline=True)
+    embed.add_field(name="Verification Level", value=str(gu.verification_level), inline=True)
     if ctx.guild.features:
-        embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=True)
-    embed.add_field(name="Afk Channel", value=f"`{str(ctx.guild.afk_channel)}`\nTimeout {str(ctx.guild.afk_timeout)}s", inline=False)
-    embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
+        embed.add_field(name="Server Features", value=str(gu.features), inline=True)
+    embed.add_field(name="Afk Channel", value=f"`{str(gu.afk_channel)}`\nTimeout {str(gu.afk_timeout)}s", inline=False)
+    embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(gu.id) + "/" + str(gu.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(gu.id) + "/" + str(gu.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "serverinfo", bot)
 
