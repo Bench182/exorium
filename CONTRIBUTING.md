@@ -17,7 +17,8 @@ We ("exorium team") will not accept unmodified code, or barely modified code com
     6. Links, or others to the orginal author(s) (profiles)
 - You may not remove any parts of the command that make it functional.
 
-**Only a few base points on what type of commands, or parts of commands will not be accepted/are not allowed will be noted, below:**
+## Content policy
+We have established a content policy to keep exorium safe from unwanted, and dangerous content. Contributions must follow ALL points established and will get denied if even *one* gets broken. Pull requests will always be reviewed by both the [main developers](https://github.com/ThePawKingdom/exorium#exorium-team) to ensure that we don't miss anything. Exceptions can be made but rarely. **Everything that's not allowed is listed down below.**
 - Any and all malicious code that can internally break the VPS it's hosted on
 - Any and all code that tricks users into malicious links
     1. Ip grabbers/loggers
@@ -32,4 +33,4 @@ We ("exorium team") will not accept unmodified code, or barely modified code com
     2. Child abuse
     3. General abuse of humans, or animals
     
-    
+# PLEASE NOTE THAT ANYTHING HERE IS SUBJECT TO CHANGE WITHOUT NOTIFYING ANYONE.
