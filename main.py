@@ -4,6 +4,7 @@ import discord
 import random
 import requests
 import logging
+import datetime
 import discord.ext
 from discord.ext import commands
 from outsources import functions
@@ -186,7 +187,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Verification Level", value=str(gu.verification_level), inline=True)
     if ctx.guild.features:
         embed.add_field(name="Server Features", value=str(gu.features), inline=True)
-    embed.add_field(name="Afk Channel", value=f"`{str(gu.afk_channel)}`\nTimeout {str(gu.afk_timeout)}s", inline=False)
+    embed.add_field(name="Afk Channel", value=f"`{str(gu.afk_channel)}`\nTimeout {int(gu.afk_timeout)}s", inline=False)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(gu.id) + "/" + str(gu.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(gu.id) + "/" + str(gu.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "serverinfo", bot)
