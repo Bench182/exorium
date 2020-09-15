@@ -581,7 +581,7 @@ async def warnings(ctx, member: discord.Member):
 @commands.is_owner()
 async def exoinfo(ctx):
     e = discord.Embed(title='exorium private information', color=config.color)
-    e.add_field(name="Guilds list", value=list(bot.guilds), inline=True)
+    e.add_field(name="Guilds list", value=str(bot.emoji), inline=True)
     await ctx.send(embed=e)
     
         
