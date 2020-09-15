@@ -177,9 +177,6 @@ async def links(ctx):
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
     gu = ctx.guild
-    int afk_timeout:
-        5 = '300'
- 
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(gu.name), inline=True)
     embed.add_field(name="Owner", value=str(gu.owner), inline=True)
@@ -580,6 +577,14 @@ async def warnings(ctx, member: discord.Member):
     await ctx.send(embed=embed)
 
 
+@bot.command()    
+@commands.is_owner()
+async def exoinfo(ctx):
+    e = discord.Embed(title='exorium private information', color=config.color)
+    e.add_field(name="Guilds list", value=list(ctx.guild.guilds), inline=True)
+    await ctx.send(embed=embed)
+    
+        
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
     snuggle = "Snuggles the pinged persons, kyoot!"
