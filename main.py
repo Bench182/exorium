@@ -172,13 +172,22 @@ async def links(ctx):
     await ctx.send(embed=embed)
     await functions.logging(ctx, "links", bot)
 
-is_text = isinstance(channel, discord.TextChannel)
-text_channels += is_text
-
-voice_channels = len(guild.channels) - text_channels
     
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
+    
+        secret_channels = 0
+        secret_voice = 0
+        text_channels = 0
+        for channel in guild.channels:
+            perms = channel.permissions_for(secret_member)
+            is_text = isinstance(channel, discord.TextChannel)
+            text_channels += is_text
+            if is_text and not perms.read_messages:
+                secret_channels += 1
+            elif not is_text and (not perms.connect or not perms.speak):
+                secret_voice += 1
+    
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
     embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
