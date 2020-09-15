@@ -33,4 +33,4 @@ We have established a content policy to keep exorium safe from unwanted, and dan
     2. Child abuse
     3. General abuse of humans, or animals
     
-# PLEASE NOTE THAT ANYTHING HERE IS SUBJECT TO CHANGE WITHOUT NOTIFYING ANYONE.
+## PLEASE NOTE THAT ANYTHING HERE IS SUBJECT TO CHANGE WITHOUT NOTIFYING ANYONE.
