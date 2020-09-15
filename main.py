@@ -581,10 +581,8 @@ async def warnings(ctx, member: discord.Member):
 
 @bot.command()    
 @commands.is_owner()
-async def exoinfo(ctx):
-    e = discord.Embed(title='exorium private information', color=config.color)
-    e.add_field(name="Guilds list", value=ctx.guild.discovery_splash_url_as(format='png', size=2048), inline=True)
-    await ctx.send(embed=e)
+async def einfo(ctx):
+    channel = await guild.create_text_channel('testingstuff')
     
         
 class cmds:
