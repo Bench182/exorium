@@ -155,7 +155,12 @@ async def e621(ctx, *, tags=''):
 @bot.command(aliases=['av'])  # shows the mentioned user's avatar in an embed
 async def avatar(ctx, *, user: discord.Member = None):
     if not (members):
-        ctx.author
+        user0 = ctx.author
+        eA = discord.Embed(title='Avatar', color=config.color)
+        eA.set_author(name=user0, icon_url=user0.avatar_url)
+        eA.set_image(url=user0.avatar_url)
+        await ctx.send(embed=eA)
+        await functions.logging(ctx, "avatar", bot)
     else:
         user = user
         eA = discord.Embed(title='Avatar', color=config.color)
