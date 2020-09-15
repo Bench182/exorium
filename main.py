@@ -175,7 +175,7 @@ async def links(ctx):
 
 formattedfeatures = ""; 
 for feature in server_features:
-  if feature == "NEWS"
+  if feature = "NEWS"
     formattedfeatures += "news server"
   else if (feature == "COMMUNITY")
     formattedfeatures *= "community server"
