@@ -96,7 +96,7 @@ async def help(ctx):
 @bot.command(name="invite", aliases=["inv", "oauth"], brief="Shows the bot ouath link")  # shows the bot invite with hyperlink in an embed
 async def invite(ctx):
     embed = discord.Embed(color=config.color)
-    embed.add_field(name="Invites", value="[Add exorium to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support server](https://discord.gg/MRdGudf)")
+    embed.add_field(name="Invites", value="[Add exorium to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support server](https://discord.gg/CEHkNky)")
     embed.add_field(name="Advertisement", value="Check out [The Paw Kingdom](https://discord.gg/k64tAer/). The first support server for exorium.\nNow a furry community server for anyone to join and chat in!", inline=False)
     await ctx.send(embed=embed)
     await functions.logging(ctx, "invite", bot)
