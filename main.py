@@ -80,7 +80,7 @@ async def test621(ctx):
 
 @bot.command()  # the help command, displays all the commands and the developers in an embed
 async def help(ctx):
-    embed = discord.Embed(title='Commands | `p/`, `p?`', color=config.color)
+    embed = discord.Embed(title='Commands | `p/`, `exo `', color=config.color)
     embed.add_field(name="**<a:yoshiban:753151857852940309> Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
     embed.add_field(name="**<a:TPKProtogenDance:728615119910862898> Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
     embed.add_field(name="**<a:pikaxe:753164460184830013> Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide` `say` `say2`", inline=True)
