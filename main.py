@@ -581,9 +581,8 @@ async def warnings(ctx, member: discord.Member):
 
 @bot.command()    
 @commands.is_owner()
-async def einfo(ctx):
-    channel = await guild.create_text_channel('testingstuff')
-    
+async def exoinfo(ctx):
+    await leave()    
         
 class cmds:
     hug = "Hugs the pinged person, kyoot!"
