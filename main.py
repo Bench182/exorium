@@ -174,22 +174,21 @@ async def links(ctx):
     await functions.logging(ctx, "links", bot)
 
     
-#@bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
-#async def serverinfo(ctx):
-    #embed = discord.Embed(color=config.color)
-    #embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
-    #embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
-    #embed.add_field(name="Creation Date", value=f"{ctx.guild.created_at.day}/{ctx.guild.created_at.month}/{ctx.guild.created_at.year} {ctx.guild.created_at.hour}:{ctx.guild.created_at.minute}", inline=True)
-    #embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
-    #embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
-    #embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
-    #if ctx.guild.features:
-    #    embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=True)
-    #embed.add_field(name="Afk Channel", value=f"`{str(ctx.guild.afk_channel)}`\nTimeout {str(ctx.guild.afk_timeout)}s", inline=False)
-    ##embed.add_field(name="Channels", value=f"voice: {voice_channels}", inline=True)
-    #embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
-    #await ctx.send(embed=embed)
-    #await functions.logging(ctx, "serverinfo", bot)
+@bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
+async def serverinfo(ctx):
+    embed = discord.Embed(color=config.color)
+    embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
+    embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
+    embed.add_field(name="Creation Date", value=f"{ctx.guild.created_at.day}/{ctx.guild.created_at.month}/{ctx.guild.created_at.year} {ctx.guild.created_at.hour}:{ctx.guild.created_at.minute}", inline=True)
+    embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
+    embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
+    embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
+    if ctx.guild.features:
+        embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=True)
+    embed.add_field(name="Afk Channel", value=f"`{str(ctx.guild.afk_channel)}`\nTimeout {str(ctx.guild.afk_timeout)}s", inline=False)
+    embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
+    await ctx.send(embed=embed)
+    await functions.logging(ctx, "serverinfo", bot)
 
 
 @bot.command(name='variable', brief='test variables')  # to test things. Currently a way to bully people who arent a fan of furries.
