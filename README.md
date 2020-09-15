@@ -35,7 +35,7 @@ Please report this in an issue if it's not complete, or make a [pull request](ht
 * Crossed through commands are currently not working.
 
 Commands, suggestions or features we still plan to add can be seen in our [TO DO project](https://github.com/ThePawKingdom/exorium/projects/1).
-
+Support can be received in our [support server](https://discord.gg/MRdGudf).
 If a command doesn't work, please make an [issue](https://github.com/ThePawKingdom/exorium/issues/).
 
 #### Social commands
