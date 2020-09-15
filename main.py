@@ -60,6 +60,7 @@ async def on_guild_join(guild):
             break
     return
 
+ctx_tick = ("❌", "☑️")
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
