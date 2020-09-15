@@ -173,35 +173,22 @@ async def links(ctx):
     await functions.logging(ctx, "links", bot)
 
     
-@bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
-async def serverinfo(ctx):
-    
-        secret_channels = 0
-        secret_voice = 0
-        text_channels = 0
-        for channel in guild.channels:
-            perms = channel.permissions_for(secret_member)
-            is_text = isinstance(channel, discord.TextChannel)
-            text_channels += is_text
-            if is_text and not perms.read_messages:
-                secret_channels += 1
-            elif not is_text and (not perms.connect or not perms.speak):
-                secret_voice += 1
-    
-    embed = discord.Embed(color=config.color)
-    embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
-    embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
-    embed.add_field(name="Creation Date", value=f"{ctx.guild.created_at.day}/{ctx.guild.created_at.month}/{ctx.guild.created_at.year} {ctx.guild.created_at.hour}:{ctx.guild.created_at.minute}", inline=True)
-    embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
-    embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
-    embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
-    if ctx.guild.features:
-        embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=True)
-    embed.add_field(name="Afk Channel", value=f"`{str(ctx.guild.afk_channel)}`\nTimeout {str(ctx.guild.afk_timeout)}s", inline=False)
-    embed.add_field(name="Channels", value=f"voice: {voice_channels}", inline=True)
-    embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
-    await ctx.send(embed=embed)
-    await functions.logging(ctx, "serverinfo", bot)
+#@bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
+#async def serverinfo(ctx):
+    #embed = discord.Embed(color=config.color)
+    #embed.add_field(name="Server Name", value=str(ctx.guild.name), inline=True)
+    #embed.add_field(name="Owner", value=str(ctx.guild.owner), inline=True)
+    #embed.add_field(name="Creation Date", value=f"{ctx.guild.created_at.day}/{ctx.guild.created_at.month}/{ctx.guild.created_at.year} {ctx.guild.created_at.hour}:{ctx.guild.created_at.minute}", inline=True)
+    #embed.add_field(name="Server ID", value=str(ctx.guild.id), inline=True)
+    #embed.add_field(name="Region", value=str(ctx.guild.region), inline=True)
+    #embed.add_field(name="Verification Level", value=str(ctx.guild.verification_level), inline=True)
+    #if ctx.guild.features:
+    #    embed.add_field(name="Server Features", value=str(ctx.guild.features), inline=True)
+    #embed.add_field(name="Afk Channel", value=f"`{str(ctx.guild.afk_channel)}`\nTimeout {str(ctx.guild.afk_timeout)}s", inline=False)
+    ##embed.add_field(name="Channels", value=f"voice: {voice_channels}", inline=True)
+    #embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(ctx.guild.id) + "/" + str(ctx.guild.icon) + ".webp?size=1024")
+    #await ctx.send(embed=embed)
+    #await functions.logging(ctx, "serverinfo", bot)
 
 
 @bot.command(name='variable', brief='test variables')  # to test things. Currently a way to bully people who arent a fan of furries.
@@ -587,6 +574,85 @@ async def warnings(ctx, member: discord.Member):
 
     embed = discord.Embed(title='Warnings for ' + member.name, description=totalwarns, color=config.color)
     await ctx.send(embed=embed)
+
+
+    @bot.command(name='serverinfo', pass_context=True, no_pm=True)
+    async def server_info(ctx):
+        guild = ctx.guild
+        roles = [role.name.replace('@', '@\u200b') for role in guild.roles]
+
+        class Secret:
+            pass
+
+        secret_member = Secret()
+        secret_member.id = 0
+        secret_member.roles = [guild.default_role]
+
+        # figure out what channels are 'secret'
+        secret_channels = 0
+        secret_voice = 0
+        text_channels = 0
+        for channel in guild.channels:
+            perms = channel.permissions_for(secret_member)
+            is_text = isinstance(channel, discord.TextChannel)
+            text_channels += is_text
+            if is_text and not perms.read_messages:
+                secret_channels += 1
+            elif not is_text and (not perms.connect or not perms.speak):
+                secret_voice += 1
+
+        voice_channels = len(guild.channels) - text_channels
+        member_by_status = Counter(str(m.status) for m in guild.members)
+
+        e = discord.Embed()
+        e.title = 'Info for ' + guild.name
+        e.add_field(name='ID', value=guild.id)
+        e.add_field(name='Owner', value=guild.owner)
+        if guild.icon:
+            e.set_thumbnail(url=guild.icon_url)
+
+        if guild.splash:
+            e.set_image(url=guild.splash_url)
+
+        info = []
+        info.append(ctx_tick[len(guild.features) >= 3] + " Partnered")
+
+        sfw = guild.explicit_content_filter is not discord.ContentFilter.disabled
+        info.append(ctx_tick[sfw] + " Scanning Images")
+        info.append(ctx_tick[guild.member_count > 100] + " Large")
+
+        e.add_field(name='Info', value='\n'.join(map(str, info)))
+
+        fmt = f'Text {text_channels} ({secret_channels} secret)\nVoice {voice_channels} ({secret_voice} locked)'
+        e.add_field(name='Channels', value=fmt)
+
+        fmt = '<:online:346921745279746048> {} ' \
+              '<:away:346921747330891780> {} ' \
+              '<:dnd:346921781786836992> {} ' \
+              '<:offline:346921814435430400> {}\n' \
+              'Total: {}'.format(member_by_status["online"], member_by_status["idle"],
+                                 member_by_status["dnd"], member_by_status["offline"], guild.member_count)
+
+        e.add_field(name='Members', value=fmt)
+        e.add_field(name='Roles', value=', '.join(roles)
+                    if len(roles) < 10 else f'{len(roles)} roles')
+        e.set_footer(text='Created').timestamp = guild.created_at
+        await ctx.send(embed=e)
+
+    async def say_permissions(self, ctx, member, channel):
+        permissions = channel.permissions_for(member)
+        e = discord.Embed()
+        allowed, denied = [], []
+        for name, value in permissions:
+            name = name.replace('_', ' ').title()
+            if value:
+                allowed.append(name)
+            else:
+                denied.append(name)
+
+        e.add_field(name='Allowed', value='\n'.join(allowed))
+        e.add_field(name='Denied', value='\n'.join(denied))
+        await ctx.send(embed=e)
 
 
 class cmds:
