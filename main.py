@@ -173,13 +173,12 @@ async def links(ctx):
     await functions.logging(ctx, "links", bot)
 
 
-def formattedfeatures ""; 
-for feature in server_features:
-  if(feature == "NEWS")
-    formattedfeatures += "news server"
-  else if (feature == "COMMUNITY")
-    formattedfeatures *= "community server"
-
+#def formattedfeatures ""; 
+#for feature in server_features:
+#  if(feature == "NEWS")
+#    formattedfeatures += "news server"
+#  else if (feature == "COMMUNITY")
+#    formattedfeatures *= "community server"
     
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
