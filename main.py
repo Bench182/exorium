@@ -173,7 +173,7 @@ async def links(ctx):
     await functions.logging(ctx, "links", bot)
 
 
-def formattedfeatures: ""; 
+def formattedfeatures ""; 
 for feature in server_features:
   if(feature == "NEWS")
     formattedfeatures += "news server"
