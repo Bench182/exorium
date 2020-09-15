@@ -20,7 +20,7 @@ We ("exorium team") will not accept unmodified code, or barely modified code com
 **Only a few base points on what type of commands, or parts of commands will not be accepted/are not allowed will be noted, below:**
 - Any and all malicious code that can internally break the VPS it's hosted on
 - Any and all code that tricks users into malicious links
-    1. Ip grabbers
+    1. Ip grabbers/loggers
     2. Direct download links
     3. Malicious, strange or scammy websites
 - Code including any unsafe content
