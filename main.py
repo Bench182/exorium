@@ -586,7 +586,7 @@ async def warnings(ctx, member: discord.Member):
 async def exoinfo(ctx):
     e = discord.Embed(title='exorium private information', color=config.color)
     e.add_field(name="Guilds list", value=len(bot.guilds), inline=True)
-    await ctx.send(embed=embed)
+    await ctx.send(embed=e)
     
         
 class cmds:
