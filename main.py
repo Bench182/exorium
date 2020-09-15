@@ -62,6 +62,10 @@ async def on_guild_join(guild):
     return
 
 
+owner_ids:
+    '698080201158033409'
+    '341988909363757057'
+
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
 async def latency(ctx):
     embed = discord.Embed(color=config.color)
