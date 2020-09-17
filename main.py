@@ -403,7 +403,7 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         await ctx.send(f"Make sure you provide a reason with this command {ctx.author.mention}.")
         return
     else:
-        messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`\nhttps://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
+        messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`\nhttps://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338"
         await member.send(messageok)
         await member.ban(reason=f"{ctx.message.author}: {reason}")
         embed = discord.Embed(title=f"{member} has been casted from {ctx.guild.name}!", color=config.color)
