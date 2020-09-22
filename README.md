@@ -3,7 +3,7 @@
 ### exorium information
 exorium is a multifunctional bot used for many categories. The main aim for exorium was, and still is social commands. With a variety of commands and more being added regularly, we aim to ensure user experience to be at it's best and try to improve our commands as well as the bot as much as possible.
 
-exorium started off as a small bot named Protogen, which was created by [FireGamingYT](https://github.com/FireGamingYT/) for own use. Later on the decision was made to give Protogen a new purpose: Social commands for [The Paw Kingdom](https://linktr.ee/pawkingdom). A while later the name was changed to ProtoPaw. Protopaw eventually moved to Heroku as host, where it was made public and [ChosenFate](https://github.com/Chosen-Fate) joined the team as developer. Shortly after [Etile](https://github.com/Etile0) provided us with a vps we could use to host Protopaw, a while after that, we changed the name to exorium.
+exorium started off as a small bot named Protogen, which was created by [BluewyDev](https://github.com/BluewyDev/) for own use. Later on the decision was made to give Protogen a new purpose: Social commands for [The Paw Kingdom](https://linktr.ee/pawkingdom). A while later the name was changed to ProtoPaw. Protopaw eventually moved to Heroku as host, where it was made public and [ChosenFate](https://github.com/Chosen-Fate) joined the team as developer. Shortly after [Etile](https://github.com/Etile0) provided us with a vps we could use to host Protopaw, a while after that, we changed the name to exorium.
 
 ---
 ### exorium team
@@ -92,4 +92,4 @@ Commands, suggestions or features we still plan to add can be seen in our [TO DO
 
 ---
 #### Selfhosting
-Selfhosting exorium is not endorsed by the exorium team and is not recommended. We will not provide any type of support for editing or compiling the code in this repository. The source code is given here for education purposes, and so users can better contribute themselves as well as see how the bot works. If you do decide to selfhost exorium, please respect the [license](https://github.com/FireGamingYT/protogen/blob/master/LICENSE)
+Selfhosting exorium is not endorsed by the exorium team and is not recommended. We will not provide any type of support for editing or compiling the code in this repository. The source code is given here for education purposes, and so users can better contribute themselves as well as see how the bot works. If you do decide to selfhost exorium, please respect the [license](https://github.com/ThePawKingdom/exorium/blob/master/LICENSE)
