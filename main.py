@@ -15,11 +15,6 @@ database = mydb.cursor()
 database.execute("CREATE TABLE IF NOT EXISTS warnings (id INT AUTO_INCREMENT PRIMARY KEY, user VARCHAR(255), reason VARCHAR(255), serverid VARCHAR(255))")
 logger = logging.getLogger('discord')
 
-logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
-handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-logger.addHandler(handler)
-
 
 bot = commands.Bot(command_prefix=["exo ", "p/"])  # sets the bot prefix
 bot.remove_command('help')  # removes the default discord.py help command
