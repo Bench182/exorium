@@ -376,9 +376,7 @@ async def on_command_error(ctx, error):
         await ctx.send("You do not have the sufficient permissions.")  # Shows that you dont have the needed permission for this command
     if isinstance(error, commands.NotOwner):
         await ctx.send('Only bot owners can use this command.')  # Shows when a user executes a bot owner only command while not being a bot owner
-    if isinstance(error, commands.BadArgument):
-        if len(ctx.args) == 1:
-            await ctx.send('Could not find member. Please @mention someone.') 
+
 
 @bot.command(name="askexo", aliases=["askexorium"])  # Lets you ask something to exorium, he will answer with a random answer listed in gifs.py
 async def askexorium(ctx, *, arg):
