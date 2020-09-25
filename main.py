@@ -188,10 +188,10 @@ async def serverinfo(ctx):
     await functions.logging(ctx, "serverinfo", bot)
 
 
-@bot.command()
-async def userinfo(ctx):
-    e = discord.Embed(color=config.color)
-    e.add_field(name="Username", value=str(
+#@bot.command()
+#async def userinfo(ctx):
+#    e = discord.Embed(color=config.color)
+#    e.add_field(name="Username", value=str(
 
 
 @bot.command(name='variable', brief='test variables')  # to test things. Currently a way to bully people who arent a fan of furries.
