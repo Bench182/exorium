@@ -46,7 +46,7 @@ async def on_guild_join(guild):
     embed.add_field(name="Members", value=len(guild.members), inline=True)
     channel = bot.get_channel(747808767034392626)
     await channel.send(embed=embed)
-    embed = discord.Embed(color=config.color)
+    embed2 = discord.Embed(color=config.color)
     embed2.add_field(name="useful information", value="**Thank you for adding exorium to your server <a:shibaheartbeat:755130116316856363>**.\nexorium is a multifunctional bot to fit your needs. <a:glowpaw:755131095032397874>\nFor commands, use the `exo help` command, for more info on commands you can use `exo info {command`.")
     embed2.add_field(name="useful links", value="It's possible that you may find bugs, or errors in ProtoPaw <a:Toothlessuhmwhat:753170277915164672> Or you just want to suggest something, for that you can make an [issue](https://github.com/ThePawKingdom/exorium/issues/new/choose) in our [github repo](https://github.com/ThePawKingdom/exorium).\nFurthermore, if you just need support with exorium, you can join our [support server](https://discord.gg/RQMaHzE)!")
     embed2.set_author(name=guild.name, url="https://cdn.discordapp.com/icons/" + str(guild.id) + "/" + str(guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(guild.id) + "/" + str(guild.icon) + ".webp?size=1024")
@@ -169,7 +169,7 @@ async def links(ctx):
     await ctx.send(embed=embed)
     await functions.logging(ctx, "links", bot)
 
-    
+
 @bot.command(name="serverinfo", aliases=["servinfo", "sinfo"])  # shows info about the server the command was executed, in an embed. Still being worked on.
 async def serverinfo(ctx):
     gu = ctx.guild
@@ -581,7 +581,7 @@ async def warnings(ctx, member: discord.Member):
     await ctx.send(embed=embed)
 
 
-@bot.command()    
+@bot.command()
 @commands.is_owner()
 async def exoinfo(ctx):
     e = discord.Embed(color=config.color)
