@@ -4,7 +4,6 @@ import discord
 import random
 import requests
 import logging
-import datetime
 import discord.ext
 from discord.ext import commands
 from outsources import functions
