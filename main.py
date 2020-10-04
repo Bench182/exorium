@@ -43,7 +43,7 @@ async def on_guild_join(guild):
     embed.add_field(name="Server Name", value=guild.name, inline=True)
     embed.add_field(name="Server ID", value=guild.id, inline=True)
     embed.add_field(name="Members", value=len(guild.members), inline=True)
-    channel = bot.get_channel(747808767034392626)
+    channel = bot.get_channel(762203326519181312)
     await channel.send(embed=embed)
     embed2 = discord.Embed(color=config.color)
     embed2.add_field(name="useful information", value="**Thank you for adding exorium to your server <a:shibaheartbeat:755130116316856363>**.\nexorium is a multifunctional bot to fit your needs. <a:glowpaw:755131095032397874>\nFor commands, use the `exo help` command, for more info on commands you can use `exo info {command`.")
