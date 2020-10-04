@@ -1,5 +1,5 @@
 # exorium privacy policy | since 2020
-*Please note that the privacy polciy can change at any given time. We will notify you if the privacy policy is changed in our [support server](https://discord.gg/CEHkNky)*
+*Please note that the privacy policy can change at any given time. We will notify you if the privacy policy is changed in our [support server](https://discord.gg/CEHkNky)*
 *We reserve the right to change this at any given time without notice however, and will sometimes change it without notification.*
 
 ## What information do you store and why?
