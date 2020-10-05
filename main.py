@@ -396,8 +396,8 @@ async def askexorium(ctx, *, arg):
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
-if:
-    755072923886288927 > top_role
+    if 755072923886288927 > top_role:
+        await ctx.send("The bot's role is too low (it's below the highest role the member has)")
     if member == ctx.message.author:
         await ctx.send("You can't ban yourself, derp!")
         return
