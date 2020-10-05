@@ -4,7 +4,8 @@ import discord
 import random
 import requests
 import logging
-import aiohttp, json
+import aiohttp
+import json
 import discord.ext
 from discord.ext import tasks, commands
 from outsources import functions
