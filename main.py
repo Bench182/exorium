@@ -398,8 +398,9 @@ async def askexorium(ctx, *, arg):
 async def ban(ctx, member: discord.Member, *, reason=None):
     if not bot.roles[1] > member.top_role:
         await ctx.send("Could not ban user due to bot role being too low in role hierarchy. Please move the role above the user's highest role.")
+        return
     else:
-        print("Didn't go in if")
+        await ctx.send("This is for testing purposes, if you see this, ignore it (yes)")
     if member == ctx.message.author:
         await ctx.send("You can't ban yourself, derp!")
         return
