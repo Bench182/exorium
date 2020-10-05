@@ -396,26 +396,24 @@ async def askexorium(ctx, *, arg):
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
-    if not bot.roles[1] > member.top_role:
-        await ctx.send("Could not ban user due to bot role being too low in role hierarchy. Please move the role above the user's highest role.")
-        return
-    else:
-        await ctx.send("This is for testing purposes, if you see this, ignore it (yes)")
     if member == ctx.message.author:
         await ctx.send("You can't ban yourself, derp!")
+        return
+    botmember = ctx.guild.me
+    if not botmember.top_role > member.top_role:
+        await ctx.send("Could not ban user due to bot role being too low in role hierarchy. Please move the role above the user's highest role.")
         return
     if reason is None:
         await ctx.send(f"Make sure you provide a reason with this command {ctx.author.mention}.")
         return
-    else:
-        messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`\nhttps://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338"
-        await member.send(messageok)
-        await member.ban(reason=f"{ctx.message.author}: {reason}")
-        embed = discord.Embed(title=f"{member} has been casted from {ctx.guild.name}!", color=config.color)
-        embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
-        embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
-        await ctx.send(embed=embed)
-        await functions.logging(ctx, "ban", bot)
+    messageok = f"You have been banned from **{ctx.guild.name}** | Reason: `{reason}`\nhttps://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338"
+    await member.send(messageok)
+    await member.ban(reason=f"{ctx.message.author}: {reason}")
+    embed = discord.Embed(title=f"{member} has been casted from {ctx.guild.name}!", color=config.color)
+    embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
+    embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
+    await ctx.send(embed=embed)
+    await functions.logging(ctx, "ban", bot)
 
 
 @bot.command(name='unban')  # Unbans user with a given ID
