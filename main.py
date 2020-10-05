@@ -4,8 +4,9 @@ import discord
 import random
 import requests
 import logging
+import aiohttp, json
 import discord.ext
-from discord.ext import commands
+from discord.ext import tasks, commands
 from outsources import functions
 from requests.auth import HTTPBasicAuth
 
@@ -54,6 +55,20 @@ async def on_guild_join(guild):
         if await channel.send(embed=embed):
             break
     return
+
+
+@tasks.loop(minutes=30.0)
+async def del_update_stats(ctx):
+    await bot.wait_until_ready()
+    async with aiohttp.ClientSession() as session:
+        async with session.post(f'https://api.discordextremelist.xyz/v2/bot/{bot.user.id}/stats',
+        headers={'Authorization': 'TOKEN', # Make sure you put your API Token Here
+        "Content-Type": 'application/json'},
+        data=json.dumps({'guildCount': len(bot.guilds)
+        })) as r:
+            js = await r.json()
+            if js['error'] == True:
+                print(f'Failed to post to discordextremelist.xyz\n{js}')
 
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
