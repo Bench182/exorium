@@ -396,6 +396,8 @@ async def askexorium(ctx, *, arg):
 @bot.command(name="ban")  # Permanently bans the user that was mentioned (user must be in guild)
 @commands.has_permissions(ban_members=True)
 async def ban(ctx, member: discord.Member, *, reason=None):
+if:
+    755072923886288927 > top_role
     if member == ctx.message.author:
         await ctx.send("You can't ban yourself, derp!")
         return
@@ -411,6 +413,8 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
         await functions.logging(ctx, "ban", bot)
+else:
+    await ctx.send("Could not ban user due to bot role being too low in role hierarchy. Please move the role above the user's highest role.")
 
 
 @bot.command(name='unban')  # Unbans user with a given ID
