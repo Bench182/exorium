@@ -18,3 +18,5 @@ DBdata = mysql.connector.connect(
   password="password",
   database="database name"
 )
+
+DELTOKEN = 'TOKEN FOR DEL'
