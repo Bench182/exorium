@@ -62,7 +62,7 @@ async def del_update_stats(ctx):
     await bot.wait_until_ready()
     async with aiohttp.ClientSession() as session:
         async with session.post(f'https://api.discordextremelist.xyz/v2/bot/{bot.user.id}/stats',
-        headers={'Authorization': 'TOKEN', # Make sure you put your API Token Here
+        headers={'Authorization': DELTOKEN, # Make sure you put your API Token Here
         "Content-Type": 'application/json'},
         data=json.dumps({'guildCount': len(bot.guilds)
         })) as r:
