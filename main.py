@@ -15,7 +15,7 @@ database.execute("CREATE TABLE IF NOT EXISTS warnings (id INT AUTO_INCREMENT PRI
 logger = logging.getLogger('discord')
 
 
-bot = commands.Bot(command_prefix=["exo ", "p/"])  # sets the bot prefix
+bot = commands.Bot(command_prefix=["exo ", "p/", "Exo "])  # sets the bot prefix
 bot.remove_command('help')  # removes the default discord.py help command
 
 
@@ -410,6 +410,10 @@ async def ban(ctx, member: discord.Member, *, reason=None):
         embed.set_image(url="https://media1.tenor.com/images/b90428d4fbe48cc19ef950bd85726bba/tenor.gif?itemid=17178338")
         embed.set_footer(text=f"Reason: {reason}\nModerator: {ctx.message.author}")
         await ctx.send(embed=embed)
+    except RoleHierarchy:
+        await ctx.send("We could not ban this user. Please put the bot's role above the member's highest role.")
+    except MissingBanperms:
+        await ctx.send("We could not ban this user. Please grant the bot ban permissions.")
         await functions.logging(ctx, "ban", bot)
 
 
