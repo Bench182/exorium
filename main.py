@@ -202,16 +202,16 @@ async def serverinfo(ctx):
     await functions.logging(ctx, "serverinfo", bot)
 
 
-@bot.command()
-async def userinfo(ctx, *, user: discord.Member = None):
-    if user is None:
-        user = ctx.author
-    else:
-        user = user
-        e = discord.Embed(color=config.color)
-        e.add_field(name='test', value='your mom gay', inline=True)
-        await ctx.send(embed=embed)
-        await functions.logging(ctx, "userinfo", bot)
+#@bot.command()
+#async def userinfo(ctx, *, user: discord.Member = None):
+#    if user is None:
+#        user = ctx.author
+#    else:
+#        user = user
+#       e = discord.Embed(color=config.color)
+#       e.add_field(name='test', value='your mom gay', inline=True)
+#       await ctx.send(embed=embed)
+#       await functions.logging(ctx, "userinfo", bot)
 
 
 @bot.command(name='variable', brief='test variables')  # to test things. Currently a way to bully people who arent a fan of furries.
