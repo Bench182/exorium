@@ -209,7 +209,7 @@ async def userinfo(ctx, *, user: discord.Member = None):
     else:
         user = user
         e = discord.Embed(color=config.color)
-        e.add_field(name='test' value='your mom gay', inline=True)
+        e.add_field(name='test', value='your mom gay', inline=True)
         ctx.send(embed=embed)
         await functions.logging(ctx, "userinfo", bot)
 
