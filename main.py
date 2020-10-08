@@ -202,8 +202,8 @@ async def serverinfo(ctx):
     await functions.logging(ctx, "serverinfo", bot)
 
 
-#@bot.command()
-#async def userinfo(ctx, *, user: discord.Member = None):
+# @bot.command()
+# async def userinfo(ctx, *, user: discord.Member = None):
 #    if user is None:
 #        user = ctx.author
 #    else:
