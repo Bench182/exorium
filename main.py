@@ -10,7 +10,7 @@ def get_prefix(bot, message):
     return commands.when_mentioned_or(*prefixes)(bot, message)
 
 
-initial_extensions = ['cogs.bot']
+initial_extensions = ['cogs.robo']
 
 bot = commands.Bot(command_prefix=get_prefix)
 bot.remove_command('help')
