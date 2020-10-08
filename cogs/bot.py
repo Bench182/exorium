@@ -10,7 +10,7 @@ class Botrelated(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def help(bot, ctx):
+    async def help(self, ctx):
         embed = discord.Embed(title='Commands | `p/`, `p?`', color=config.color)
         embed.add_field(name="**<a:yoshiban:753151857852940309> Moderation**", value="`ban` `unban` `kick`\n`softban` `warn` `warnings`", inline=True)
         embed.add_field(name="**<a:TPKProtogenDance:728615119910862898> Bot Related**", value="`help` `ping` `invite` `stats` `links` `info`", inline=True)
@@ -24,7 +24,7 @@ class Botrelated(commands.Cog):
         # await functions.logging(ctx, "help", bot)
 
     @commands.command()
-    async def ping(bot, ctx):
+    async def ping(self, ctx):
         embed = discord.Embed(color=config.color)
         embed.add_field(name="<a:loadingbounce:753173725263822858> ping", value=f'**{self.latency}**s', inline=True)
         await ctx.send(embed=embed)
