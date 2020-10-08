@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import config
 from outsources import functions
+import discord.ext
 
 
 class Botrelated(commands.Cog):
