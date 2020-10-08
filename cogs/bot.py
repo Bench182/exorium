@@ -24,11 +24,10 @@ class Botrelated(commands.Cog):
         # await functions.logging(ctx, "help", bot)
 
     @commands.command()
-    async def ping(self, ctx):
-        embed = discord.Embed(color=config.color)
-        embed.add_field(name="<a:loadingbounce:753173725263822858> ping", value=f'**{self.latency}**s', inline=True)
-        await ctx.send(embed=embed)
-        # await functions.logging(ctx, "ping", bot)
+    async def ping(ctx):
+        em = discord.Embed(color=config.color)
+        em.add_field(name='ping', value=f'{bot.latency * 1000} ms')
+        await ctx.send(embed=em)
 
     @commands.command()
     async def invite(self, ctx):
