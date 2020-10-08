@@ -20,15 +20,22 @@ class Botrelated(commands.Cog):
         embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
         embed.set_footer(text="Do ?info {command} for command info/usage")
         await ctx.send(embed=embed)
-        await functions.logging(ctx, "help", bot)
+        #await functions.logging(ctx, "help", bot)
 
     @commands.command()
     async def ping(bot, ctx):
         embed = discord.Embed(color=config.color)
         embed.add_field(name="<a:loadingbounce:753173725263822858> ping", value=f'**{bot.latency}**s', inline=True)
         await ctx.send(embed=embed)
-        await functions.logging(ctx, "ping", bot)
-
+        #await functions.logging(ctx, "ping", bot)
+    
+    @commands.command()
+    assync def invite(bot, ctx):
+        e = discord.Embed(color=config.color)
+        e.add_field=(name=':<a:eyess:477763967209570304> exorium invites', value='[Invite exorium to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support server](https://discord.gg/CEHkNky)', inline=True)
+        e.add_footer(text="Also check out 'exo links'!")
+        await ctx.send(embed=e0
+        #await functions.logging(ctx, "help". bot)
 
 def setup(bot):
     bot.add_cog(Botrelated(bot))
