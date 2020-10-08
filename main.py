@@ -10,6 +10,7 @@ import discord.ext
 from discord.ext import tasks, commands
 from outsources import functions
 from requests.auth import HTTPBasicAuth
+from datetime import datetime
 
 mydb = config.DBdata
 database = mydb.cursor()
@@ -163,15 +164,13 @@ async def e621(ctx, *, tags=''):
 
 @bot.command(aliases=['av'])  # shows the mentioned user's avatar in an embed
 async def avatar(ctx, *, user: discord.Member = None):
-    if user is None:
+    if not user:
         user = ctx.author
-    else:
-        user = user
-        eA = discord.Embed(title='Avatar', color=config.color)
-        eA.set_author(name=user, icon_url=user.avatar_url)
-        eA.set_image(url=user.avatar_url)
-        await ctx.send(embed=eA)
-        await functions.logging(ctx, "avatar", bot)
+    eA = discord.Embed(title='Avatar', color=config.color)
+    eA.set_author(name=user, icon_url=user.avatar_url)
+    eA.set_image(url=user.avatar_url)
+    await ctx.send(embed=eA)
+    await functions.logging(ctx, "avatar", bot)
 
 
 @bot.command(name='links', brief='Discord related links')  # shows the links related to exorium in an embed
@@ -202,16 +201,36 @@ async def serverinfo(ctx):
     await functions.logging(ctx, "serverinfo", bot)
 
 
-# @bot.command()
-# async def userinfo(ctx, *, user: discord.Member = None):
-#    if user is None:
-#        user = ctx.author
-#    else:
-#        user = user
-#       e = discord.Embed(color=config.color)
-#       e.add_field(name='test', value='your mom gay', inline=True)
-#       await ctx.send(embed=embed)
-#       await functions.logging(ctx, "userinfo", bot)
+@bot.command()
+async def userinfo(ctx, *, user: discord.Member = None):
+    if not user:
+        user = ctx.author
+    if user.created_at.minute < 10:
+        createmin = f"0{user.created_at.minute}"
+    else:
+        createmin = user.created_at.minute
+    if user.joined_at.minute < 10:
+        joinmin = f"0{user.joined_at.minute}"
+    else:
+        joinmin = user.joined_at.minute
+    roles = ''
+    user.roles.reverse()
+    for role in user.roles:
+        print(role.name)
+        if role.name == "@everyone":
+            continue
+        print(role.name)
+        roles += f" {role.mention}"
+    embed = discord.Embed(color=config.color, description=user.mention)
+    embed.set_author(name=user, icon_url=user.avatar_url)
+    embed.set_thumbnail(url=user.avatar_url)
+    embed.add_field(name="Joined:", value=f"{user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
+    embed.add_field(name="Created at:", value=f"{user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
+    if roles:
+        embed.add_field(name="Roles:", value=roles, inline=False)
+    embed.set_footer(text=f"ID: {user.id}")
+    await ctx.send(embed=embed)
+    await functions.logging(ctx, "userinfo", bot)
 
 
 @bot.command(name='variable', brief='test variables')  # to test things. Currently a way to bully people who arent a fan of furries.
