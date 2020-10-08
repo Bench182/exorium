@@ -7,6 +7,7 @@ Protopaw started off as a small bot named Protogen, which was created by [FireGa
 
 ### exorium on bot lists
 https://discordextremelist.xyz/en-US/bots/exorium
+
 **TOP.GG STATUS: Still in reviewal**
 
 
