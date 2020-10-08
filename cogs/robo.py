@@ -5,7 +5,7 @@ from outsources import functions
 import discord.ext
 
 
-class Botrelated(commands.Cog):
+class Roborelated(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -39,4 +39,4 @@ class Botrelated(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Botrelated(bot))
+    bot.add_cog(Roborelated(bot))
