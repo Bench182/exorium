@@ -26,7 +26,7 @@ class Roborelated(commands.Cog):
     @commands.command()
     async def ping(ctx):
         em = discord.Embed(color=config.color)
-        em.add_field(name='ping', value=f'{bot.latency * 1000} ms')
+        em.add_field(name='ping', value=f'{self.bot.latency * 1000} ms')
         await ctx.send(embed=em)
 
     @commands.command()
