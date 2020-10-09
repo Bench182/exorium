@@ -19,7 +19,7 @@ database.execute("CREATE TABLE IF NOT EXISTS warnings (id INT AUTO_INCREMENT PRI
 logger = logging.getLogger('discord')
 
 
-bot = commands.Bot(command_prefix=["exo ", "p/", "Exo "])  # sets the bot prefix
+bot = commands.Bot(command_prefix=["exo ", "Exo "])  # sets the bot prefix
 bot.remove_command('help')  # removes the default discord.py help command
 
 
@@ -215,8 +215,8 @@ async def userinfo(ctx, *, user: discord.Member = None):
     else:
         joinmin = user.joined_at.minute
     roles = ''
-    userroles = reversed(user.roles)
-    for role in userroles:
+    user.roles.reverse()
+    for role in user.roles:
         if role.name == "@everyone":
             continue
         roles += f" {role.mention}"
