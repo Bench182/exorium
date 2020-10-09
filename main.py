@@ -10,6 +10,7 @@ import discord.ext
 from discord.ext import commands
 from outsources import functions, util
 from requests.auth import HTTPBasicAuth
+from datetime import datetime
 
 
 mydb = config.DBdata
@@ -183,14 +184,10 @@ async def serverinfo(ctx):
 async def userinfo(ctx, *, user: discord.Member = None):
     if not user:
         user = ctx.author
-    createmin = await util.minuteFormat(user.created_at.minute)
-    joinmin = await util.minuteFormat(user.joined_at.minute)
     roles = ''
-    userroles = reversed(user.roles)
-    for role in userroles:
-        if role.name == "@everyone":
-            continue
-        roles += f" {role.mention}"
+    for role in reversed(user.roles):
+        if role.name != "@everyone":
+            roles += f" {role.mention}"
     createday = user.created_at.day
     joinday = user.joined_at.day
     while joinday > 7:
@@ -200,8 +197,9 @@ async def userinfo(ctx, *, user: discord.Member = None):
     embed = discord.Embed(color=user.color, description=f"{user.mention} {util.statusemoji.get(str(user.status))}")
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
-    embed.add_field(name="Joined:", value=f"{util.weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
-    embed.add_field(name="Created at:", value=f"{util.weekdays[createday]} {user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
+    print(user.joined_at.strftime("%d.%m.%Y %H:%M"))
+    embed.add_field(name="Joined:", value=f"{util.weekdays[joinday]} {user.joined_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
+    embed.add_field(name="Created at:", value=f"{util.weekdays[createday]} {user.created_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
     if roles:
         embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     if user.voice:
