@@ -11,6 +11,7 @@ from discord.ext import tasks, commands
 from outsources import functions
 from requests.auth import HTTPBasicAuth
 from datetime import datetime
+import math
 
 mydb = config.DBdata
 database = mydb.cursor()
@@ -219,11 +220,18 @@ async def userinfo(ctx, *, user: discord.Member = None):
         if role.name == "@everyone":
             continue
         roles += f" {role.mention}"
+    weekdays = ['', "Mon,", "Tue,", "Wed,", "Thu,", "Fri,", "Sat,", "Sun,"]
+    createday = user.created_at.day
+    joinday = user.joined_at.day
+    while joinday > 7:
+        joinday -= 7
+    while createday > 7:
+        joinday -= 7
     embed = discord.Embed(color=config.color, description=user.mention)
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
-    embed.add_field(name="Joined:", value=f"{user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
-    embed.add_field(name="Created at:", value=f"{user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
+    embed.add_field(name="Joined:", value=f"{weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
+    embed.add_field(name="Created at:", value=f"{weekdays[createday]} {user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
     if roles:
         embed.add_field(name="Roles:", value=roles, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
