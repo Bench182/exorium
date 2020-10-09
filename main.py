@@ -197,7 +197,6 @@ async def userinfo(ctx, *, user: discord.Member = None):
     embed = discord.Embed(color=user.color, description=f"{user.mention} {util.statusemoji.get(str(user.status))}")
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
-    print(user.joined_at.strftime("%d.%m.%Y %H:%M"))
     embed.add_field(name="Joined:", value=f"{util.weekdays[joinday]} {user.joined_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
     embed.add_field(name="Created at:", value=f"{util.weekdays[createday]} {user.created_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
     if roles:
