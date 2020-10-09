@@ -10,8 +10,7 @@ import discord.ext
 from discord.ext import tasks, commands
 from outsources import functions
 from requests.auth import HTTPBasicAuth
-from datetime import datetime
-import math
+
 
 mydb = config.DBdata
 database = mydb.cursor()
@@ -233,6 +232,7 @@ async def userinfo(ctx, *, user: discord.Member = None):
     if roles:
         embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
+    embed.set_timestamp()
     await ctx.send(embed=embed)
     await functions.logging(ctx, "userinfo", bot)
 
@@ -545,7 +545,7 @@ async def decide(ctx, *, arg):
     await functions.logging(ctx, "decide", bot)
 
 
-@bot.command(name="revive")  # currently only usable for the paw kingdom. Tags the role
+@bot.command(name="revive")  # Tags the role that was given with a message.
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
@@ -625,6 +625,14 @@ async def warnings(ctx, member: discord.Member):
 
     embed = discord.Embed(title='Warnings for ' + member.name, description=totalwarns, color=config.color)
     await ctx.send(embed=embed)
+
+
+@bot.command()
+@commands.is_owner()
+async def exoinfo(ctx):
+    e = discord.Embed(color=config.color)
+    e.add_field(name='Invites', value=str(ctx.guild.invites), inline=True)
+    await ctx.send(embed=e)
 
 
 class cmds:
