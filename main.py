@@ -232,7 +232,6 @@ async def userinfo(ctx, *, user: discord.Member = None):
     if roles:
         embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
-    embed.set_timestamp()
     await ctx.send(embed=embed)
     await functions.logging(ctx, "userinfo", bot)
 
