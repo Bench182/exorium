@@ -233,7 +233,7 @@ async def userinfo(ctx, *, user: discord.Member = None):
         "dnd": "<:dnd:764099993035997184>",
         "offline": "<:offline:764099989327970344>"
     }
-    embed = discord.Embed(color=config.color, description=f"{user.mention} {statusemoji.get(str(user.status))}")
+    embed = discord.Embed(color=user.color, description=f"{user.mention} {statusemoji.get(str(user.status))}")
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
     embed.add_field(name="Joined:", value=f"{weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
