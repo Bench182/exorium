@@ -216,10 +216,8 @@ async def userinfo(ctx, *, user: discord.Member = None):
     roles = ''
     user.roles.reverse()
     for role in user.roles:
-        print(role.name)
         if role.name == "@everyone":
             continue
-        print(role.name)
         roles += f" {role.mention}"
     embed = discord.Embed(color=config.color, description=user.mention)
     embed.set_author(name=user, icon_url=user.avatar_url)
