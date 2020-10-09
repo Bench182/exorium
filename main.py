@@ -61,6 +61,7 @@ async def on_guild_join(guild):
 
 @tasks.loop(minutes=30.0)
 async def del_update_stats(ctx):
+    print("I tried posting to DEL")
     await bot.wait_until_ready()
     async with aiohttp.ClientSession() as session:
         async with session.post(f'https://api.discordextremelist.xyz/v2/bot/{bot.user.id}/stats',
