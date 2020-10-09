@@ -7,9 +7,6 @@ exorium started off as a small bot named Protogen, which was created by [BluewyD
 
 ---
 ### exorium team
-**Just creators**
-- [Bluewy](https://github.com/BluewyDev)
-
 **main developers:**
 - [ChosenFate](https://github.com/Chosen-Fate/)
 
