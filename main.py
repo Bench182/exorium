@@ -545,7 +545,7 @@ async def decide(ctx, *, arg):
     await functions.logging(ctx, "decide", bot)
 
 
-@bot.command(name="revive")  # Tags the role that was given with a message.
+@bot.command(name="revive")  # currently only usable for the paw kingdom. Tags the role
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
@@ -625,14 +625,6 @@ async def warnings(ctx, member: discord.Member):
 
     embed = discord.Embed(title='Warnings for ' + member.name, description=totalwarns, color=config.color)
     await ctx.send(embed=embed)
-
-
-@bot.command()
-@commands.is_owner()
-async def exoinfo(ctx):
-    e = discord.Embed(color=config.color)
-    e.add_field(name='Invites', value=str(ctx.guild.invites), inline=True)
-    await ctx.send(embed=e)
 
 
 class cmds:
