@@ -215,8 +215,8 @@ async def userinfo(ctx, *, user: discord.Member = None):
     else:
         joinmin = user.joined_at.minute
     roles = ''
-    user.roles.reverse()
-    for role in user.roles:
+    userroles = reversed(user.roles)
+    for role in userroles:
         if role.name == "@everyone":
             continue
         roles += f" {role.mention}"
