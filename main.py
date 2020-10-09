@@ -8,8 +8,10 @@ import aiohttp
 import json
 import discord.ext
 from discord.ext import tasks, commands
+from discord.ext.tasks import loop
 from outsources import functions
 from requests.auth import HTTPBasicAuth
+import asyncio
 
 
 mydb = config.DBdata
@@ -37,10 +39,24 @@ async def on_ready():
     print('version:')
     print(discord.__version__)
     print('-----------')
+    async with aiohttp.ClientSession() as session:
+        async with session.post("https://api.discordextremelist.xyz/v2/bot/620990340630970425/stats",
+                                headers={'Authorization': config.DELTOKEN, "Content-Type": 'application/json'},
+                                data=json.dumps({'guildCount': len(bot.guilds)})) as r:
+            js = await r.json()
+            if js['error']:
+                print(f'Failed to post to discordextremelist.xyz\n{js}')
 
 
 @bot.event
 async def on_guild_join(guild):
+    async with aiohttp.ClientSession() as session:
+        async with session.post("https://api.discordextremelist.xyz/v2/bot/620990340630970425/stats",
+                                headers={'Authorization': config.DELTOKEN, "Content-Type": 'application/json'},
+                                data=json.dumps({'guildCount': len(bot.guilds)})) as r:
+            js = await r.json()
+            if js['error']:
+                print(f'Failed to post to discordextremelist.xyz\n{js}')
     print(f"I just joined {guild.name}, ID: {guild.id}")
     embed = discord.Embed(title="exorium joined server", color=config.color)
     embed.add_field(name="Server Name", value=guild.name, inline=True)
@@ -57,20 +73,6 @@ async def on_guild_join(guild):
         if await channel.send(embed=embed):
             break
     return
-
-
-@tasks.loop(minutes=30.0)
-async def del_update_stats(ctx):
-    print("I tried posting to DEL")
-    await bot.wait_until_ready()
-    async with aiohttp.ClientSession() as session:
-        async with session.post(f'https://api.discordextremelist.xyz/v2/bot/{bot.user.id}/stats',
-                                headers={'Authorization': config.DELTOKEN, "Content-Type": 'application/json'},
-                                data=json.dumps({'guildCount': len(bot.guilds)})
-                                ) as r:
-            js = await r.json()
-            if js['error'] is True:
-                print(f'Failed to post to discordextremelist.xyz\n{js}')
 
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
