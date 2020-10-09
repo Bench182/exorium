@@ -545,7 +545,7 @@ async def decide(ctx, *, arg):
     await functions.logging(ctx, "decide", bot)
 
 
-@bot.command(name="revive")  # Tags the role that was given with a message.
+@bot.command(name="revive")  # currently only usable for the paw kingdom. Tags the role
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
