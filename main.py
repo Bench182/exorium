@@ -227,7 +227,6 @@ async def userinfo(ctx, *, user: discord.Member = None):
         joinday -= 7
     while createday > 7:
         joinday -= 7
-    print(user.status)
     statusemoji = {
         "online": "<:online:764099989558657035>",
         "idle": "<:idle:764099993236930560>",
@@ -240,7 +239,7 @@ async def userinfo(ctx, *, user: discord.Member = None):
     embed.add_field(name="Joined:", value=f"{weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
     embed.add_field(name="Created at:", value=f"{weekdays[createday]} {user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
     if roles:
-        embed.add_field(name="Roles:", value=roles, inline=False)
+        embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "userinfo", bot)
