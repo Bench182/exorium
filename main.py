@@ -226,7 +226,7 @@ async def userinfo(ctx, *, user: discord.Member = None):
     while joinday > 7:
         joinday -= 7
     while createday > 7:
-        joinday -= 7
+        createday -= 7
     statusemoji = {
         "online": "<:online:764099989558657035>",
         "idle": "<:idle:764099993236930560>",
