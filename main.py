@@ -418,7 +418,7 @@ async def info(ctx, arg):
     embed = discord.Embed(color=config.color)
     embed.add_field(name=arg, value=getattr(cmds, arg), inline=True)
     embed.add_field(name="Syntax of " + arg, value=getattr(syntax, arg), inline=True)
-    embed.add_field(name="Developers:", value="`-` ChosenFate#5108\n`-` NeoGames#5108", inline=False)
+    embed.add_field(name="Developers:", value="`-` ChosenFate#5108", inline=False)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using exorium!")
     await ctx.send(embed=embed)
