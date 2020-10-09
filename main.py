@@ -7,11 +7,9 @@ import logging
 import aiohttp
 import json
 import discord.ext
-from discord.ext import tasks, commands
-from discord.ext.tasks import loop
+from discord.ext import commands
 from outsources import functions
 from requests.auth import HTTPBasicAuth
-import asyncio
 
 
 mydb = config.DBdata
