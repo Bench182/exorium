@@ -227,7 +227,14 @@ async def userinfo(ctx, *, user: discord.Member = None):
         joinday -= 7
     while createday > 7:
         joinday -= 7
-    embed = discord.Embed(color=config.color, description=user.mention)
+    print(user.status)
+    statusemoji = {
+        "online": "<:online:764099989558657035>",
+        "idle": "<:idle:764099993236930560>",
+        "dnd": "<:dnd:764099993035997184>",
+        "offline": "<:offline:764099989327970344>"
+    }
+    embed = discord.Embed(color=config.color, description=f"{user.mention} {statusemoji.get(str(user.status))}")
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
     embed.add_field(name="Joined:", value=f"{weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
