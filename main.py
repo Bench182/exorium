@@ -58,21 +58,6 @@ async def on_guild_join(guild):
             if js['error']:
                 print(f'Failed to post to discordextremelist.xyz\n{js}')
     print(f"I just joined {guild.name}, ID: {guild.id}")
-    embed = discord.Embed(title="exorium joined server", color=config.color)
-    embed.add_field(name="Server Name", value=guild.name, inline=True)
-    embed.add_field(name="Server ID", value=guild.id, inline=True)
-    embed.add_field(name="Members", value=len(guild.members), inline=True)
-    channel = bot.get_channel(747808767034392626)
-    await channel.send(embed=embed)
-    embed2 = discord.Embed(color=config.color)
-    embed2.add_field(name="useful information", value="**Thank you for adding exorium to your server <a:shibaheartbeat:755130116316856363>**.\nexorium is a multifunctional bot to fit your needs. <a:glowpaw:755131095032397874>\nFor commands, use the `exo help` command, for more info on commands you can use `exo info {command`.")
-    embed2.add_field(name="useful links", value="It's possible that you may find bugs, or errors in ProtoPaw <a:Toothlessuhmwhat:753170277915164672> Or you just want to suggest something, for that you can make an [issue](https://github.com/ThePawKingdom/exorium/issues/new/choose) in our [github repo](https://github.com/ThePawKingdom/exorium).\nFurthermore, if you just need support with exorium, you can join our [support server](https://discord.gg/RQMaHzE)!")
-    embed2.set_author(name=guild.name, url="https://cdn.discordapp.com/icons/" + str(guild.id) + "/" + str(guild.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(guild.id) + "/" + str(guild.icon) + ".webp?size=1024")
-    embed2.set_footer(text=f"exorium is now in (len{bot.guilds}) guilds with (len{bot.users} users")
-    for channel in guild.channels:
-        if await channel.send(embed=embed):
-            break
-    return
 
 
 @bot.command(name="ping", aliases=["pong", "latency"], brief="shows the bot's latency.")  # the ping command, simply shows the latency in an embed
