@@ -8,7 +8,7 @@ import aiohttp
 import json
 import discord.ext
 from discord.ext import commands
-from outsources import functions
+from outsources import functions, util
 from requests.auth import HTTPBasicAuth
 
 
@@ -183,38 +183,25 @@ async def serverinfo(ctx):
 async def userinfo(ctx, *, user: discord.Member = None):
     if not user:
         user = ctx.author
-    if user.created_at.minute < 10:
-        createmin = f"0{user.created_at.minute}"
-    else:
-        createmin = user.created_at.minute
-    if user.joined_at.minute < 10:
-        joinmin = f"0{user.joined_at.minute}"
-    else:
-        joinmin = user.joined_at.minute
+    createmin = await util.minuteFormat(user.created_at.minute)
+    joinmin = await util.minuteFormat(user.joined_at.minute)
     roles = ''
     userroles = reversed(user.roles)
     for role in userroles:
         if role.name == "@everyone":
             continue
         roles += f" {role.mention}"
-    weekdays = ['', "Mon,", "Tue,", "Wed,", "Thu,", "Fri,", "Sat,", "Sun,"]
     createday = user.created_at.day
     joinday = user.joined_at.day
     while joinday > 7:
         joinday -= 7
     while createday > 7:
         createday -= 7
-    statusemoji = {
-        "online": "<:online:764099989558657035>",
-        "idle": "<:idle:764099993236930560>",
-        "dnd": "<:dnd:764099993035997184>",
-        "offline": "<:offline:764099989327970344>"
-    }
-    embed = discord.Embed(color=user.color, description=f"{user.mention} {statusemoji.get(str(user.status))}")
+    embed = discord.Embed(color=user.color, description=f"{user.mention} {util.statusemoji.get(str(user.status))}")
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
-    embed.add_field(name="Joined:", value=f"{weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
-    embed.add_field(name="Created at:", value=f"{weekdays[createday]} {user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
+    embed.add_field(name="Joined:", value=f"{util.weekdays[joinday]} {user.joined_at.day}.{user.joined_at.month}.{user.joined_at.year} {user.joined_at.hour}:{joinmin}", inline=True)
+    embed.add_field(name="Created at:", value=f"{util.weekdays[createday]} {user.created_at.day}.{user.created_at.month}.{user.created_at.year} {user.created_at.hour}:{createmin}", inline=True)
     if roles:
         embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
