@@ -615,7 +615,7 @@ class cmds:
     invite = "Displays the invite link to invite exorium to your server"
     stats = "Shows some neat stats about exorium"
     get_id = "Gets a users Discord ID"
-    av = "Gets and posts avatar of the pinged person. (ID works too)"
+    av = "Gets and posts avatar of the pinged person (ID works too)."
     links = "Displays some links to get to The Paw Kingdom, this bots home!"
     random = "Can't make a choice? Use the random command! Only 2 options possible at this point"
     info = "You already know what this does, derp"
