@@ -549,7 +549,7 @@ async def purge(ctx, amount=0):
         await ctx.channel.purge(limit=amount + 1)
         await ctx.send(f'{ctx.author} deleted **{amount}** messages using the purge command.')
         await functions.logging(ctx, f"purge ({amount})", bot)
-    if (amount >= 1501):
+    if (amount >= 1500):
         await ctx.send("You can only purge 1500 messages at a time.")
 
 
