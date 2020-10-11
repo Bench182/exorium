@@ -75,9 +75,9 @@ async def help(ctx):
     embed.add_field(name="**<a:pikaxe:753164460184830013> Utils**", value="`get_id` `avatar` `serverinfo` `random` `poll` `decide` `say` `say2`", inline=True)
     embed.add_field(name="**<a:tacklehug:753169705862430772> Social**", value="`hug` `snuggle` `boop`\n `kiss` `pat` `cuddle`\n `askexo` `lick` `blush`\n`feed` `glomp` `happy`\n`highfive` `wag`", inline=True)
     embed.add_field(name="**<a:Toothlessuhmwhat:753170277915164672> ~~NSFW~~**", value="~~`e621`~~`(broken)`", inline=True)
-    embed.add_field(name="**<a:TPK_ProtoBoop:740828362045653073> Team**", value="[ChosenFate#5108](https://github.com/Chosen-Fate)\n[Bench182#5276](https://github.com/Bench182/)\n[Etile#3166](https://github.com/Etile0/)", inline=True)
+    embed.add_field(name="**<a:TPK_ProtoBoop:740828362045653073> Team**", value="[ChosenFate#5108](https://github.com/Chosen-Fate)\n[Bench182#3166](https://github.com/Bench182/)\n[Etile#3166](https://github.com/Etile0/)", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
-    embed.set_footer(text="Do ?info {command} for command info/usage")
+    embed.set_footer(text="Do exo info {command} for command info/usage")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "help", bot)
 
@@ -86,7 +86,7 @@ async def help(ctx):
 async def invite(ctx):
     embed = discord.Embed(color=config.color)
     embed.add_field(name="Invites", value="[Add exorium to your server](https://discord.com/api/oauth2/authorize?client_id=620990340630970425&permissions=806218999&scope=bot)\n[Join the support server](https://discord.gg/CEHkNky)")
-    embed.add_field(name="Advertisement", value="Check out [The Paw Kingdom](https://discord.gg/k64tAer/). The first support server for exorium.\nNow a furry community server for anyone to join and chat in!", inline=False)
+    embed.add_field(name="Advertisement", value="Check out [The Paw Kingdom](https://discord.gg/k64tAer). The first support server for exorium.\nNow a furry community server for anyone to join and chat in!", inline=False)
     await ctx.send(embed=embed)
     await functions.logging(ctx, "invite", bot)
 
@@ -95,7 +95,7 @@ async def invite(ctx):
 async def statistics(ctx):
     embed = discord.Embed(title="exorium statistics", color=config.color)
     embed.add_field(name="Total Guilds", value=len(bot.guilds), inline=False)
-    embed.add_field(name="Total users", value=len(bot.users), inline=False)
+    embed.add_field(name="Total Users", value=len(bot.users), inline=False)
     await ctx.send(embed=embed)
     await functions.logging(ctx, "stats", bot)
 
@@ -103,7 +103,7 @@ async def statistics(ctx):
 @bot.command()  # retrieves the ID of a member. Argument can be an ID, just the user's name or the user mention
 async def get_id(ctx, member: discord.Member):
     user_id = member.id
-    await ctx.send('The user ID is %d.' % user_id)
+    await ctx.send(f'The user ID of {member} is **{member.id}**.')
     await functions.logging(ctx, "get_id", bot)
 
 
@@ -155,7 +155,7 @@ async def avatar(ctx, *, user: discord.Member = None):
 @bot.command(name='links', brief='Discord related links')  # shows the links related to exorium in an embed
 async def links(ctx):
     embed = discord.Embed(title='exorium Links', color=config.color)
-    embed.add_field(name="Github", value="[Repo](https://github.com/ThePawKingdom/protogen)\n[Organisation](https://github.com/ThePawKingdom/)", inline=True)
+    embed.add_field(name="Github", value="[Repo](https://github.com/ThePawKingdom/exorium)\n[Organisation](https://github.com/ThePawKingdom/)", inline=True)
     embed.set_thumbnail(url="https://www.dropbox.com/s/yx7z6iefnx0q576/Icon.jpg?dl=1")
     embed.set_footer(text="Thank you, " + ctx.message.author.name + ", for using exorium!")
     await ctx.send(embed=embed)
@@ -174,7 +174,7 @@ async def serverinfo(ctx):
     embed.add_field(name="Verification Level", value=str(gu.verification_level), inline=True)
     if ctx.guild.features:
         embed.add_field(name="Server Features", value=str(gu.features), inline=True)
-    embed.add_field(name="Afk Channel", value=f"`{str(gu.afk_channel)}`\nTimeout {int(gu.afk_timeout)}s", inline=False)
+    embed.add_field(name="AFK Channel", value=f"`{str(gu.afk_channel)}`\nTimeout {int(gu.afk_timeout)}s", inline=False)
     embed.set_author(name=ctx.guild.name + " information", url="https://cdn.discordapp.com/icons/" + str(gu.id) + "/" + str(gu.icon) + ".webp?size=1024", icon_url="https://cdn.discordapp.com/icons/" + str(gu.id) + "/" + str(gu.icon) + ".webp?size=1024")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "serverinfo", bot)
@@ -198,11 +198,11 @@ async def userinfo(ctx, *, user: discord.Member = None):
     embed.set_author(name=user, icon_url=user.avatar_url)
     embed.set_thumbnail(url=user.avatar_url)
     embed.add_field(name="Joined:", value=f"{util.weekdays[joinday]} {user.joined_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
-    embed.add_field(name="Created at:", value=f"{util.weekdays[createday]} {user.created_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
+    embed.add_field(name="Created At:", value=f"{util.weekdays[createday]} {user.created_at.strftime('%d.%m.%Y %H:%M')}", inline=True)
     if roles:
         embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     if user.voice:
-        embed.add_field(name="Voicechannel:", value=user.voice.channel.name, inline=False)
+        embed.add_field(name="Voice channel:", value=user.voice.channel.name, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "userinfo", bot)
@@ -391,7 +391,7 @@ async def info(ctx, arg):
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('Please fill in all the required arguments.')  # Shows the command isn't completed
+        await ctx.send('Please fill in all the required arguments. (use exo info <command> for usage)')  # Shows the command isn't completed
     if isinstance(error, commands.MissingPermissions):
         await ctx.send("You do not have the sufficient permissions.")  # Shows that you dont have the needed permission for this command
     if isinstance(error, commands.NotOwner):
@@ -520,7 +520,7 @@ async def decide(ctx, *, arg):
 @commands.has_permissions(manage_messages=True)
 async def revive(ctx):
     await ctx.message.delete()
-    await ctx.send("<@&738356235841175594>! The chat is dead, we need you now!")
+    await ctx.send(f"<@&738356235841175594>! The chat is dead, we need you now! (revived by {ctx.message.author})")
     await functions.logging(ctx, "revive", bot)
 
 
@@ -547,9 +547,9 @@ async def purge(ctx, amount=0):
         return await ctx.send("You can't grow younger either, so neither can I purge negative amounts of messages.")
     if (amount <= 1500):
         await ctx.channel.purge(limit=amount + 1)
-        await ctx.send(f'Successfully deleted **{amount}** messages with the purge command.')
+        await ctx.send(f'{ctx.message.author} deleted **{amount}** messages using the purge command.')
         await functions.logging(ctx, f"purge ({amount})", bot)
-    if (amount >= 1500):
+    if (amount >= 1501):
         await ctx.send("You can only purge 1500 messages at a time.")
 
 
@@ -607,50 +607,50 @@ async def exoinfo(ctx):
 
 
 class cmds:
-    hug = "Hugs the pinged person, kyoot!"
-    snuggle = "Snuggles the pinged persons, kyoot!"
-    boop = "Boops the pinged persons, boop!"
-    kiss = "Smooches the pinged persons :*"
-    pat = "Pats the pinged persons, good boy!"
-    ping = "Displays the latency of the bo -connection lost"
-    invite = "Displays the invite link to invite TPKP to your server"
-    stats = "Shows some neat stats about TPKP"
+    hug = "Hugs the pinged people, kyoot!"
+    snuggle = "Snuggles the pinged people, kyoot!"
+    boop = "Boops the pinged people, boop!"
+    kiss = "Smooches the pinged people :*"
+    pat = "Pats the pinged people, good boy!"
+    ping = "Displays the latency of the bot"
+    invite = "Displays the invite link to invite exorium to your server"
+    stats = "Shows some neat stats about exorium"
     get_id = "Gets a users Discord ID"
-    av = "Gets and posts avatar of the pinged person / ID works too"
+    av = "Gets and posts avatar of the pinged person. (ID works too)"
     links = "Displays some links to get to The Paw Kingdom, this bots home!"
     random = "Can't make a choice? Use the random command! Only 2 options possible at this point"
     info = "You already know what this does, derp"
     honk = "HONK"
     askexorium = "Ask exorium, and he shall give you an answer"
     unban = "Unbans the given user"
-    lick = "Licks the pinged persons, yum!"
-    ban = "Bans the mentioned person"
-    kick = "Kicks the specified person"
-    softban = "Softbans (bans and unbans) the specified"
+    lick = "Licks the pinged people, yum!"
+    ban = "Bans the given user"
+    kick = "Kicks the given user"
+    softban = "Softbans (bans and unbans) the given user"
     poll = "Cast a poll if you can't agree about something!"
     decide = "Casts a simple yes / no poll"
-    cuddle = "Cuddle the pinged persons"
+    cuddle = "Cuddles the pinged people, kyoot!"
 
 
 class syntax:
-    hug = "`?hug @user1 @user2...`"
-    snuggle = "`?snuggle @user1 @user2...`"
-    boop = "`?boop @user1 @user2...`"
-    kiss = "`?kiss  @user1 @user2...`"
-    pat = "`?pat  @user1 @user2...!`"
-    invite = "`?invite`"
-    get_id = "`?get_id @user`"
-    links = "`links`"
-    info = "`?info`"
-    honk = "`?honk`"
-    askexo = "`?askexo <Question>`"
-    lick = "`?lick @user1 @user2..."
-    ban = "`?ban @user | ID Reason`"
-    kick = "`?kick @user | ID reason`"
-    softban = "`?softban @user | ID reason"
-    poll = "`?poll choice1, choice2, choice3 [...]`"
-    decide = "`?decide <question>"
-    cuddle = "?cuddle @user1 @user2...`"
+    hug = "`exo hug @user1 @user2... reason`"
+    snuggle = "`exo snuggle @user1 @user2... reason`"
+    boop = "`exo boop @user1 @user2... reason`"
+    kiss = "`exo kiss  @user1 @user2... reason`"
+    pat = "`exo pat  @user1 @user2...! reason`"
+    invite = "`exo invite`"
+    get_id = "`exo get_id @user`"
+    links = "`exo links`"
+    info = "`exo info <Command>`"
+    honk = "`exo honk`"
+    askexo = "`exo askexo <Question>`"
+    lick = "`exo lick @user1 @user2... reason"
+    ban = "`exo ban @user | ID Reason`"
+    kick = "`exo kick @user | ID reason`"
+    softban = "`exo softban @user | ID reason"
+    poll = "`exo poll choice1, choice2, choice3 [...]`"
+    decide = "`exo decide <question>"
+    cuddle = "exo cuddle @user1 @user2... reason`"
 
 
 bot.run(config.token)
