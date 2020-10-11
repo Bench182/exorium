@@ -390,7 +390,7 @@ async def info(ctx, arg):
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-        await ctx.send('Please fill in all the required arguments. (use exo info <command> for usage)')  # Shows the command isn't completed
+        await ctx.send('Please fill in all the required arguments (use exo info <command> for usage).')  # Shows the command isn't completed
     if isinstance(error, commands.MissingPermissions):
         await ctx.send("You do not have the sufficient permissions.")  # Shows that you dont have the needed permission for this command
     if isinstance(error, commands.NotOwner):
