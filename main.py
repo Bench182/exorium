@@ -202,7 +202,7 @@ async def userinfo(ctx, *, user: discord.Member = None):
     if roles:
         embed.add_field(name=f"Roles [{len(user.roles)-1}]:", value=roles, inline=False)
     if user.voice:
-        embed.add_field(name="Voice channel:", value=user.voice.channel.name, inline=False)
+        embed.add_field(name="Voice Channel:", value=user.voice.channel.name, inline=False)
     embed.set_footer(text=f"ID: {user.id}")
     await ctx.send(embed=embed)
     await functions.logging(ctx, "userinfo", bot)
