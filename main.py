@@ -640,7 +640,7 @@ class syntax:
     invite = "`exo invite`"
     get_id = "`exo get_id @user`"
     links = "`exo links`"
-    info = "`exo info <Command>`"
+    info = "`exo info <command>`"
     honk = "`exo honk`"
     askexo = "`exo askexo <Question>`"
     lick = "`exo lick @user1 @user2... reason"
