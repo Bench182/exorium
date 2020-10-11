@@ -637,7 +637,7 @@ class syntax:
     snuggle = "`exo snuggle @user1 @user2... reason`"
     boop = "`exo boop @user1 @user2... reason`"
     kiss = "`exo kiss  @user1 @user2... reason`"
-    pat = "`exo pat  @user1 @user2...! reason`"
+    pat = "`exo pat  @user1 @user2... reason`"
     invite = "`exo invite`"
     get_id = "`exo get_id @user`"
     links = "`exo links`"
